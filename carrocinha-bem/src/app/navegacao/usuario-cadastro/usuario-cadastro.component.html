@@ -1,0 +1,39 @@
+<section style="background-color: #df8c4e;">
+    <div class="container position-absolute top-50 start-50 translate-middle bg-dark rounded-4">
+        <form [formGroup]="formUser" (ngSubmit)="onSubmit" class="needs-validation" class="row g-3">
+            <div class="col-md-6">
+                <label for="nome" class="form-label text-light">Nome</label>
+                <input type="text" class="form-control" formControlName="nome" id="nome" required>
+                <div class="invalid-feedback">
+                    Nome obrigatório
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="password" class="form-label text-light">Senha</label>
+                <input type="password" class="form-control" formControlName="password" id="password" required>
+                <div class="invalid-feedback">
+                    Senha obrigatória
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label text-light">Email</label>
+                <input type="email" class="form-control" formControlName="email" id="email" required>
+                <div class="invalid-feedback">
+                    Email obrigatório
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="cpf" class="form-label text-light">CPF</label>
+                <input type="text" class="form-control" formControlName="cpf" id="cpf" required>
+                <div class="invalid-feedback">
+                    CPF obrigatório
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+                <div class="col-12">
+            </div>
+        </form>
+    </div>
+</section>
