@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
 }
 body {
     background-image: url('../../../assets/front-view-beautiful-dog-with-copy-space.jpg');
@@ -11,4 +11,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
+}
+.bg-card {
+    max-height: 100vh;
+    min-height: 8vh; /* Defina uma altura mínima em relação à altura da viewport */
+}
+.mb-4{
+    max-height: 9vh;
 }

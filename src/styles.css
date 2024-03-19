@@ -17,10 +17,25 @@ body, html {
   width: 100%;
   height: 20px;
   padding: 1rem;
-  font-size: 19px;
+  font-size: 16px;
   color: #726C5E;
   margin-top: 20px;
   background: #FBFAFA;
+}
+
+.form-check-carrocinha {
+  background: #FBFAFA;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.form-check-input:checked {
+  background-color: #EEB336;
+  border-color: #151515;
+}
+.form-check-input:focus {
+  border-color: #EEB336;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(214, 190, 6, 0.25);
 }
 
   
