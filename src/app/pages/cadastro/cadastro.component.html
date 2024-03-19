@@ -1,0 +1,72 @@
+<section class="  ">    
+  <div class="mask d-flex align-items-center gradient-custom-3 w-auto bg-carrocinha">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5" style="background-color: #FFFFFF;">
+                <img class=" rounded mx-auto d-block" src="../../../assets/logo.svg" alt="Logo">
+  
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+  
+                  <div class="mb-4" *ngIf="signupForm">
+                    <input type="text" id="nome" placeholder="insira seu nome" class="form-control form-control-lg form-carrocinha" formControlName="nome" [required]="signupForm.get('nome')?.errors?.['required']">
+                    <div *ngIf="signupForm.get('nome')?.invalid && (signupForm.get('nome')?.dirty || signupForm.get('nome')?.touched)" class="invalid-feedback">
+                        <div *ngIf="signupForm.get('nome')?.errors?.['required']">Nome é obrigatório.</div>
+                    </div>
+                </div>
+                
+                
+                
+  
+                  <div class="mb-4">
+                    <label for="email" class="form-label">Endereço de email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Seu email" formControlName="email" required>
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                    <div class="invalid-feedback">
+                      Email é obrigatório.
+                    </div>
+                  </div>
+  
+                  <div class="mb-4">
+                    <label for="senha" class="form-label">Digite sua senha</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Password" formControlName="senha" required>
+                    <div class="invalid-feedback">
+                      Senha é obrigatória.
+                    </div>
+                  </div>
+  
+                  <div class="mb-4">
+                    <label for="confirmarSenha" class="form-label">Repita sua senha</label>
+                    <input type="password" class="form-control" id="confirmarSenha" placeholder="Password" formControlName="confirmarSenha" required>
+                    <div class="invalid-feedback">
+                      Confirmação de senha é obrigatória.
+                    </div>
+                  </div>
+  
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="concordatermos" formControlName="concordatermos" required>
+                    <label class="form-check-label" for="concordatermos">
+                      Eu concordo com os <a href="#!" class="text-body"><u>termos de serviço</u></a>
+                    </label>
+                    <div class="invalid-feedback">
+                      Você deve concordar com os termos de serviço.
+                    </div>
+                  </div>
+  
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+  
+                  <p class="text-center text-muted mt-5 mb-0">Já possui uma conta? <a href="#!" class="fw-bold text-body"><u>Login aqui</u></a></p>
+  
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
