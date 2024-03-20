@@ -1,4 +1,4 @@
-<div class="mask d-flex align-items-center gradient-custom-3 w-auto bg-carrocinha">
+<div class="mask d-flex align-items-center gradient-custom-3 w-auto bg-carrocinha position-relative">
   <div class="container vh-100">
     <div class="row justify-content-center h-100">
       <div class="col-lg-6">
@@ -35,10 +35,10 @@
                 <!--                    </div>-->
               </div>
 
+
               <div class="d-grid mt-4">
                 <button type="submit" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #EEB336; color: #9D6A00;">CADASTRAR</button>
                 <p class="text-center text-muted mt-5 mb-0" style="color: #726C5E">Já possui uma conta? <a [routerLink]="['login']" class="fw-bold text-body" ><u class="fw-semibold" style="color: #9D6A00;">Login aqui</u></a></p>
-
               </div>
             </form>
 
@@ -46,5 +46,11 @@
         </div>
       </div>
     </div>
+  </div>
+  <div *ngIf="listaErros.length > 0" class="d-flex flex-column alert alert-danger position-absolute top-50 start-50 translate-middle error-box" role="alert">
+    <ul class="px-4 d-flex flex-column gap-2">
+      <li *ngFor="let erro of listaErros">{{ erro }}</li>
+    </ul>
+    <button (click)="fecharModal()" type="button" class="btn btn-danger mx-auto px-3 py-2">OK</button>
   </div>
 </div>

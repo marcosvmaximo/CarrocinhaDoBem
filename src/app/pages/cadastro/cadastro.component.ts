@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors} from '@angular/forms';
+import {delay, of} from "rxjs";
 
 @Component({
   selector: 'app-cadastro',
@@ -8,13 +9,14 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 })
 export class CadastroComponent {
   signupForm: FormGroup;
+  listaErros: string[] = [];
 
   constructor(private formBuilder: FormBuilder) {
     this.signupForm = this.formBuilder.group({
-      nome: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required, this.validarSenha]],
-      confirmarSenha: ['', Validators.required],
+      nome: ['', Validators.required, Validators.maxLength(30), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")],
+      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
+      senha: ['', [Validators.required, this.validarSenha, Validators.maxLength(100)]],
+      confirmarSenha: ['', Validators.required, this.validarSenha, Validators.maxLength(100), this.validarConfirmarSenha.bind(this)],
       concordatermos: [false, Validators.requiredTrue]
     });
   }
@@ -29,46 +31,62 @@ export class CadastroComponent {
     return null;
   }
 
-  onSubmit() {
-    const senhaControl = this.signupForm.controls['senha'];
-    const confirmarSenhaControl = this.signupForm.controls['confirmarSenha'];
+  validarConfirmarSenha(control: AbstractControl): ValidationErrors | null {
+    const senha = control.get('senha');
+    const confirmarSenha = control.get('confirmarSenha');
 
-    if (this.signupForm.valid) {
-      if (senhaControl.value !== confirmarSenhaControl.value) {
-        alert('As senhas não coincidem.');
-      } else {
-        alert('Formulário enviado com sucesso!');
-        console.log(this.signupForm.value)
-        // Aqui você pode adicionar a lógica para enviar os dados para o servidor, por exemplo:
-        // this.authService.signup(this.signupForm.value).subscribe(...);
-      }
-    } else {
-      let errorMessage = '';
-
-      if (this.signupForm.controls['nome'].invalid) {
-        errorMessage += 'Nome é obrigatório.\n';
-      }
-      if (this.signupForm.controls['email'].invalid) {
-        errorMessage += 'Email é obrigatório.\n';
-        if (this.signupForm.controls['email'].hasError('email')) {
-          errorMessage += 'Email inválido.\n';
-        }
-      }
-      if (senhaControl.invalid) {
-        if (senhaControl.hasError('senhaInvalida')) {
-          errorMessage += 'Senha deve conter pelo menos uma letra maiúscula e um número.\n';
-        } else {
-          errorMessage += 'Senha é obrigatória.\n';
-        }
-      }
-      if (confirmarSenhaControl.invalid) {
-        errorMessage += 'Confirmação de senha é obrigatória.\n';
-      }
-      if (!this.signupForm.controls['concordatermos'].value) {
-        errorMessage += 'Você deve concordar com os termos de serviço.\n';
-      }
-      
-      alert(errorMessage);
+    if (senha && confirmarSenha && senha.value !== confirmarSenha.value) {
+      return { senhaDiferente: true };
     }
+
+    return null;
+  }
+
+  onSubmit() {
+    this.listaErros = [];
+
+    Object.keys(this.signupForm.controls).forEach(campo => {
+      const control = this.signupForm.get(campo);
+
+      // @ts-ignore
+      if (control.invalid) {
+        // @ts-ignore
+        Object.keys(control.errors).forEach(erro => {
+          switch (erro) {
+            case 'required':
+              this.listaErros.push(`O campo ${campo} é obrigatório.`);
+              break;
+            case 'maxlength':
+              this.listaErros.push(`O campo ${campo} excedeu o número máximo de caracteres permitidos.`);
+              break;
+            case 'email':
+              this.listaErros.push(`O campo ${campo} deve ser um e-mail válido.`);
+              break;
+            case 'senhaCurta':
+              this.listaErros.push(`A senha deve ter no mínimo 8 caracteres.`);
+              break;
+            case 'senhasDiferentes':
+              this.listaErros.push(`As senhas não coincidem.`);
+              break;
+            // Adicione outros casos de erro conforme necessário
+          }
+        });
+      }
+    });
+
+    this.esconder();
+  }
+
+  esconder(): void{
+    const timer = of(null).pipe(delay(5000));
+
+    // Quando o atraso terminar, define mostrarDiv como false
+    timer.subscribe(() => {
+      this.listaErros = [];
+    });
+  }
+
+  fecharModal(): void{
+    this.listaErros = [];
   }
 }
