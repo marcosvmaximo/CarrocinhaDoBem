@@ -4,24 +4,24 @@
       <div class="col-lg-6">
         <div class="card">
           <div class="card-body p-4 bg-card" style="background-color: #FFFFFF;">
-            <img class=" rounded mx-auto d-block" width="300px" height="125px" src="../../../assets/logo.svg" alt="Logo">
+            <img class="logo rounded mx-auto d-block" width="300px" height="125px" src="../../../assets/logo.svg" alt="Logo">
 
-            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="needs-validation px-5 py-2 d-flex flex-column gap-4 mt-5" style="max-width: 100%" novalidate>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-5 py-2 d-flex flex-column gap-4 mt-5" style="max-width: 100%" novalidate>
 
               <div>
-                <input type="text" id="nome" placeholder="nome" class="form-control form-control-lg form-carrocinha" formControlName="nome" [required]="signupForm.get('nome')?.errors?.['required']">
+                <input type="text" id="nome" placeholder="nome" class="form-control form-control-lg form-carrocinha" formControlName="nome">
               </div>
 
               <div>
-                <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="e-mail" formControlName="email" [required]="signupForm.get('email')?.errors?.['required']">
+                <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="e-mail" formControlName="email">
               </div>
 
               <div>
-                <input type="password" class="form-control form-control-lg form-carrocinha" id="senha" placeholder="senha" formControlName="senha" [required]="signupForm.get('senha')?.errors?.['required']">
+                <input type="password" class="form-control form-control-lg form-carrocinha" id="senha" placeholder="senha" formControlName="senha">
               </div>
 
               <div>
-                <input type="password" class="form-control form-control-lg form-carrocinha" id="confirmarSenha" placeholder="confirmar senha" formControlName="confirmarSenha" [required]="signupForm.get('confirmarSenha')?.errors?.['required']">
+                <input type="password" class="form-control form-control-lg form-carrocinha" id="confirmarSenha" placeholder="confirmar senha" formControlName="confirmarSenha" >
               </div>
 
 
@@ -30,9 +30,6 @@
                 <label class="form-check-label mt-1" for="concordatermos" style="color: #726C5E;">
                   concordo com os <a href="#" class="text-body"><u class="fw-semibold" style="color: #9D6A00;">termos e serviços</u></a>
                 </label>
-                <!--                    <div class="invalid-feedback">-->
-                <!--                      Você deve concordar com os termos de serviço.-->
-                <!--                    </div>-->
               </div>
 
 
