@@ -17,7 +17,7 @@ export class LoginComponent {
       senha: ['', [Validators.required, this.validarSenha, Validators.maxLength(100)]]
     });
   }
-  
+
   validarSenha(control: AbstractControl): { [key: string]: boolean } | null {
     const senha = control.value;
     const possuiLetraMaiuscula = /[A-Z]/.test(senha);
@@ -51,7 +51,6 @@ export class LoginComponent {
             case 'senhaCurta':
               this.listaErros.push(`A senha deve ter no mínimo 8 caracteres.`);
               break;
-            // Adicione outros casos de erro conforme necessário
           }
         });
       }
@@ -63,7 +62,6 @@ export class LoginComponent {
   esconder(): void{
     const timer = of(null).pipe(delay(5000));
 
-    // Quando o atraso terminar, define mostrarDiv como false
     timer.subscribe(() => {
       this.listaErros = [];
     });

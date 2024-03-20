@@ -7,6 +7,7 @@
 }
 body {
     height: 100vh;
+    overflow: hidden;
 }
 .bg-card {
     max-height: 100vh;
@@ -23,14 +24,29 @@ ul {
 
 @keyframes fadeOut {
   from {
-    opacity: 0; /* Começa com opacidade 1 (totalmente visível) */
+    opacity: 0;
   }
   to {
-    opacity: 1; /* Termina com opacidade 0 (totalmente transparente) */
+    opacity: 1;
   }
 }
 
-/* Aplica a animação à div */
 .error-box {
-  animation: fadeOut 1s ease; /* Usa a animação 'fadeOut' com duração de 0.5 segundos */
+  animation: fadeOut 1s ease;
+}
+
+@media only screen and (max-width: 768px) {
+    .form-body {
+        padding: 5px !important;
+        font-size: .8rem;
+    }
+
+    .card-body{
+        height: 100vh !important;
+    }
+
+    .logo {
+        width: 200px !important;
+        height: 100px !important;
+    }
 }

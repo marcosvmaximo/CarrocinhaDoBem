@@ -1,23 +1,19 @@
 .bg-carrocinha {
-    background-image: url('../../../assets/front-view-beautiful-dog-with-copy-space.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+  background-image: url('../../../assets/front-view-beautiful-dog-with-copy-space.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 body {
-    height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 .bg-card {
-    max-height: 100vh;
-    min-height: 8vh; /* Defina uma altura mínima em relação à altura da viewport */
+  max-height: 100vh;
+  min-height: 8vh; /* Defina uma altura mínima em relação à altura da viewport */
 }
-.card{
-    margin-top: 35%;
-}
-.mb-4{
-    max-height: 9vh;
-}
+
 
 ul {
   list-style: none;
@@ -26,14 +22,24 @@ ul {
 
 @keyframes fadeOut {
   from {
-    opacity: 0; /* Começa com opacidade 1 (totalmente visível) */
+    opacity: 0;
   }
   to {
-    opacity: 1; /* Termina com opacidade 0 (totalmente transparente) */
+    opacity: 1;
   }
 }
 
-/* Aplica a animação à div */
+
 .error-box {
-  animation: fadeOut 1s ease; /* Usa a animação 'fadeOut' com duração de 0.5 segundos */
+  animation: fadeOut 1s ease;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-body {
+    padding: 5px !important;
+  }
+
+  .card-body{
+    height: 100vh !important;
+  }
 }

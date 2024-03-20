@@ -2,26 +2,26 @@
     <div class="container vh-100">
       <div class="row justify-content-center h-100">
         <div class="col-lg-6">
-          <div class="card">
+          <div class="card" style="padding-top: 15%">
             <div class="card-body p-4 bg-card" style="background-color: #FFFFFF;">
               <img class=" rounded mx-auto d-block" width="300px" height="125px" src="../../../assets/logo.svg" alt="Logo">
-  
-              <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="needs-validation px-5 py-2 d-flex flex-column gap-4 mt-5" style="max-width: 100%" novalidate>
-  
+
+              <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-5 py-2 d-flex flex-column gap-4 mt-5" style="max-width: 100%" novalidate>
+
                 <div>
-                  <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="e-mail" formControlName="email" [required]="signInForm.get('email')?.errors?.['required']">
+                  <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="e-mail" formControlName="email">
                 </div>
-  
+
                 <div>
-                  <input type="password" class="form-control form-control-lg form-carrocinha" id="senha" placeholder="senha" formControlName="senha" [required]="signInForm.get('senha')?.errors?.['required']">
+                  <input type="password" class="form-control form-control-lg form-carrocinha" id="senha" placeholder="senha" formControlName="senha">
                 </div>
-  
+
                 <div class="d-grid mt-4">
                   <button type="submit" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #EEB336; color: #9D6A00;">ENTRAR</button>
-                  <p class="text-center text-muted mt-5 mb-0" style="color: #726C5E">Não possui uma conta? <a [routerLink]="['cadastro']" class="fw-bold text-body" ><u class="fw-semibold" style="color: #9D6A00;">Cadastre-se aqui</u></a></p>
+                  <p class="text-center text-muted mt-5 mb-0" style="color: #726C5E">não possui uma conta? <a [routerLink]="['/cadastro']" class="fw-bold text-body" ><u class="fw-semibold" style="color: #9D6A00;">cadastre-se aqui</u></a></p>
                 </div>
               </form>
-  
+
             </div>
           </div>
         </div>
