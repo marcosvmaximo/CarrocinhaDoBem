@@ -80,7 +80,6 @@ export class CadastroComponent {
   esconder(): void{
     const timer = of(null).pipe(delay(5000));
 
-    // Quando o atraso terminar, define mostrarDiv como false
     timer.subscribe(() => {
       this.listaErros = [];
     });
