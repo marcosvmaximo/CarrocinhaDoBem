@@ -1,0 +1,50 @@
+<div class="mask d-flex align-items-center gradient-custom-3 w-auto bg-carrocinha">
+  <div class="container vh-100">
+    <div class="row justify-content-center h-100">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body p-4 bg-card" style="background-color: #FFFFFF;">
+            <img class=" rounded mx-auto d-block" width="300px" height="125px" src="../../../assets/logo.svg" alt="Logo">
+
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="needs-validation px-5 py-2 d-flex flex-column gap-4 mt-5" style="max-width: 100%" novalidate>
+
+              <div>
+                <input type="text" id="nome" placeholder="nome" class="form-control form-control-lg form-carrocinha" formControlName="nome" [required]="signupForm.get('nome')?.errors?.['required']">
+              </div>
+
+              <div>
+                <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="e-mail" formControlName="email" [required]="signupForm.get('email')?.errors?.['required']">
+              </div>
+
+              <div>
+                <input type="password" class="form-control form-control-lg form-carrocinha" id="senha" placeholder="senha" formControlName="senha" [required]="signupForm.get('senha')?.errors?.['required']">
+              </div>
+
+              <div>
+                <input type="password" class="form-control form-control-lg form-carrocinha" id="confirmarSenha" placeholder="confirmar senha" formControlName="confirmarSenha" [required]="signupForm.get('confirmarSenha')?.errors?.['required']">
+              </div>
+
+
+              <div class="form-check d-flex gap-3 align-items-center">
+                <input class="form-check-input form-check-carrocinha" type="checkbox" id="concordatermos" formControlName="concordatermos" required>
+                <label class="form-check-label mt-1" for="concordatermos" style="color: #726C5E;">
+                  concordo com os <a href="#" class="text-body"><u class="fw-semibold" style="color: #9D6A00;">termos e serviços</u></a>
+                </label>
+                <!--                    <div class="invalid-feedback">-->
+                <!--                      Você deve concordar com os termos de serviço.-->
+                <!--                    </div>-->
+              </div>
+
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #EEB336; color: #9D6A00;">CADASTRAR</button>
+                <p class="text-center text-muted mt-5 mb-0" style="color: #726C5E">Já possui uma conta? <a [routerLink]="['login']" class="fw-bold text-body" ><u class="fw-semibold" style="color: #9D6A00;">Login aqui</u></a></p>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
