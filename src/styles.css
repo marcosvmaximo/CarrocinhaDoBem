@@ -2,7 +2,7 @@
 
 body {
     height: 100%;
-   
+
   }
 
 body, html {
@@ -13,18 +13,19 @@ body, html {
 .form-carrocinha{
   border: none;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
   width: 100%;
   height: 20px;
-  padding: 1rem;
+  padding: 1.8rem 1.5rem;
   font-size: 16px;
   color: #726C5E;
-  margin-top: 20px;
   background: #FBFAFA;
 }
-
+.form-carrocinha::placeholder{
+  color: #726C5E;
+}
 .form-check-carrocinha {
   background: #FBFAFA;
+  padding: 10px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -38,4 +39,3 @@ body, html {
   box-shadow: 0 0 0 0.25rem rgba(214, 190, 6, 0.25);
 }
 
-  
