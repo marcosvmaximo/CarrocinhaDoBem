@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors} from '@angular/forms';
-import {delay, of} from "rxjs";
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { timer } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,20 +9,30 @@ import {delay, of} from "rxjs";
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
+  
   signupForm: FormGroup;
   listaErros: string[] = [];
 
   constructor(private formBuilder: FormBuilder) {
     this.signupForm = this.formBuilder.group({
-      nome: ['', Validators.required, Validators.maxLength(30), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")],
-      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
+      nome: ['', [Validators.required, Validators.maxLength(30), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")]],
+      email: ['', [Validators.required, Validators.email, Validators.maxLength(100), this.validarDominioCom]],
       senha: ['', [Validators.required, this.validarSenha, Validators.maxLength(100)]],
-      confirmarSenha: ['', Validators.required, this.validarSenha, Validators.maxLength(100), this.validarConfirmarSenha.bind(this)],
+      confirmarSenha: ['', [Validators.required, this.validarConfirmarSenha, Validators.maxLength(100)]],
       concordatermos: [false, Validators.requiredTrue]
+    }, {
+      validators: this.validarConfirmarSenha.bind(this)
     });
   }
+  validarDominioCom(control: AbstractControl): ValidationErrors | null {
+    const email = control.value;
+    if (email && !email.toLowerCase().endsWith('.com')) {
+      return { dominioInvalido: true };
+    }
+    return null;
+  }
 
-  validarSenha(control: AbstractControl): { [key: string]: boolean } | null {
+  validarSenha(control: AbstractControl): ValidationErrors | null {
     const senha = control.value;
     const possuiLetraMaiuscula = /[A-Z]/.test(senha);
     const possuiNumero = /[0-9]/.test(senha);
@@ -34,24 +45,32 @@ export class CadastroComponent {
   validarConfirmarSenha(control: AbstractControl): ValidationErrors | null {
     const senha = control.get('senha');
     const confirmarSenha = control.get('confirmarSenha');
-
-    if (senha && confirmarSenha && senha.value !== confirmarSenha.value) {
-      return { senhaDiferente: true };
+  
+    if (senha && confirmarSenha) {
+      if (senha.value !== confirmarSenha.value) {
+        confirmarSenha.setErrors({ senhaDiferente: true }); 
+        return { senhaDiferente: true };
+      } else {
+        confirmarSenha.setErrors(null);
+        return null;
+      }
     }
-
-    return null;
+  
+    return null; 
   }
+  
+
 
   onSubmit() {
     this.listaErros = [];
-
+  
     Object.keys(this.signupForm.controls).forEach(campo => {
       const control = this.signupForm.get(campo);
-
-      // @ts-ignore
-      if (control.invalid) {
-        // @ts-ignore
-        Object.keys(control.errors).forEach(erro => {
+  
+      if (control && control.invalid && control.touched) {
+        const errors = control.errors as ValidationErrors; // Convertendo para ValidationErrors
+  
+        Object.keys(errors).forEach(erro => {
           switch (erro) {
             case 'required':
               this.listaErros.push(`O campo ${campo} é obrigatório.`);
@@ -62,30 +81,33 @@ export class CadastroComponent {
             case 'email':
               this.listaErros.push(`O campo ${campo} deve ser um e-mail válido.`);
               break;
-            case 'senhaCurta':
-              this.listaErros.push(`A senha deve ter no mínimo 8 caracteres.`);
+            case 'senhaInvalida':
+              this.listaErros.push(`A senha deve conter letras maiúsculas e números.`);
               break;
-            case 'senhasDiferentes':
+            case 'senhaDiferente':
               this.listaErros.push(`As senhas não coincidem.`);
               break;
-            // Adicione outros casos de erro conforme necessário
+            default:
+              break;
           }
         });
       }
     });
+  
 
     this.esconder();
   }
 
-  esconder(): void{
-    const timer = of(null).pipe(delay(5000));
-
-    timer.subscribe(() => {
+  esconder(): void {
+    const timer$ = timer(5000);
+  
+    timer$.subscribe(() => {
       this.listaErros = [];
     });
   }
 
-  fecharModal(): void{
+  fecharModal(): void {
     this.listaErros = [];
   }
+  
 }

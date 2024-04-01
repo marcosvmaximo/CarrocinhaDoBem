@@ -3,39 +3,81 @@
     <div class="row justify-content-center h-100">
       <div class="col-lg-6">
         <div class="card">
-          <div class="card-body p-4 bg-card" style="background-color: #FFFFFF;">
-            <img class="logo rounded mx-auto d-block" width="300px" height="125px" src="../../../assets/logo.svg" alt="Logo">
+          <div class="card-body p-3 bg-card" style="background-color: #FFFFFF;">
+            <img class="logo rounded mx-auto d-block mb-3" width="270px" height="110px" src="../../../assets/logo.svg" alt="Logo">
 
-            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-5 py-2 d-flex flex-column gap-4 mt-5" style="max-width: 100%" novalidate>
-
-              <div>
-                <input type="text" id="nome" placeholder="nome" class="form-control form-control-lg form-carrocinha" formControlName="nome">
-              </div>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2 d-flex flex-column gap-3 mt-5" style="max-width: 100%" novalidate>
 
               <div>
-                <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="e-mail" formControlName="email">
+                Nome:
+                <input type="text" id="nome" placeholder="Nome" class="form-control form-control-lg form-carrocinha" formControlName="nome">
+                <div *ngIf="signupForm.get('nome')?.errors?.['required'] && signupForm.get('nome')?.touched" class="text-danger">
+                  O campo nome é obrigatório.
+                </div>
+                <div *ngIf="signupForm.get('nome')?.errors?.['maxlength']" class="text-danger">
+                  O campo nome excedeu o número máximo de caracteres permitidos.
+                </div>
+                <div *ngIf="signupForm.get('nome')?.errors?.['pattern']" class="text-danger">
+                  O campo nome deve conter apenas letras e espaços.
+                </div>
               </div>
-
+              
               <div>
-                <input type="password" class="form-control form-control-lg form-carrocinha" id="senha" placeholder="senha" formControlName="senha">
+                E-Mail:
+                <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="E-mail" formControlName="email">
+                <div *ngIf="signupForm.get('email')?.errors?.['required'] && signupForm.get('email')?.touched" class="text-danger">
+                  O campo e-mail é obrigatório.
+                </div>
+                <div *ngIf="signupForm.get('email')?.errors?.['email']" class="text-danger">
+                  O campo e-mail deve ser um e-mail válido.
+                </div>
+                <div *ngIf="signupForm.get('email')?.errors?.['maxlength']" class="text-danger">
+                  O campo e-mail excedeu o número máximo de caracteres permitidos.
+                </div>
               </div>
-
+              
               <div>
-                <input type="password" class="form-control form-control-lg form-carrocinha" id="confirmarSenha" placeholder="confirmar senha" formControlName="confirmarSenha" >
+                Senha:
+                <input type="password" class="form-control form-control-lg form-carrocinha" id="senha" placeholder="Senha" formControlName="senha">
+                <div *ngIf="signupForm.get('senha')?.errors?.['required'] && signupForm.get('senha')?.touched" class="text-danger">
+                  O campo senha é obrigatório.
+                </div>
+                <div *ngIf="signupForm.get('senha')?.errors?.['senhaInvalida']" class="text-danger">
+                  A senha deve conter letras maiúsculas e números.
+                </div>
+                <div *ngIf="signupForm.get('senha')?.errors?.['maxlength']" class="text-danger">
+                  O campo senha excedeu o número máximo de caracteres permitidos.
+                </div>
               </div>
-
-
+              
+              <div>
+                Confirme sua senha:
+                <input type="password" class="form-control form-control-lg form-carrocinha" id="confirmarSenha" placeholder="Confirmar senha" formControlName="confirmarSenha">
+                <div *ngIf="signupForm.get('confirmarSenha')?.errors?.['required'] && signupForm.get('confirmarSenha')?.touched" class="text-danger">
+                  O campo confirmar senha é obrigatório.
+                </div>
+                <div *ngIf="signupForm.get('confirmarSenha')?.errors?.['senhaDiferente']" class="text-danger">
+                  As senhas não coincidem.
+                </div>
+                <div *ngIf="signupForm.get('confirmarSenha')?.errors?.['maxlength']" class="text-danger">
+                  O campo confirmar senha excedeu o número máximo de caracteres permitidos.
+                </div>
+              </div>
+              
               <div class="form-check d-flex gap-3 align-items-center">
                 <input class="form-check-input form-check-carrocinha" type="checkbox" id="concordatermos" formControlName="concordatermos" required>
                 <label class="form-check-label mt-1" for="concordatermos" style="color: #726C5E;">
-                  concordo com os <a href="#" class="text-body"><u class="fw-semibold" style="color: #9D6A00;">termos e serviços</u></a>
+                  Concordo com os <a href="#" class="text-body"><u class="fw-semibold" style="color: #9D6A00;">termos e serviços</u></a>
                 </label>
+                <div *ngIf="signupForm.get('concordatermos')?.errors?.['required'] && signupForm.get('concordatermos')?.touched" class="text-danger">
+                  Você deve concordar com os termos e serviços.
+                </div>
               </div>
+              
 
-
-              <div class="d-grid mt-4">
+              <div class="d-grid mt-3">
                 <button type="submit" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #EEB336; color: #9D6A00;">CADASTRAR</button>
-                <p class="text-center text-muted mt-5 mb-0" style="color: #726C5E">já possui uma conta? <a [routerLink]="['/login']" class="fw-bold text-body" ><u class="fw-semibold" style="color: #9D6A00;">entre aqui</u></a></p>
+                <p class="text-center text-muted mt-4 mb-0" style="color: #726C5E">Já possui uma conta? <a [routerLink]="['/login']" class="fw-bold text-body" ><u class="fw-semibold" style="color: #9D6A00;">Entre aqui</u></a></p>
               </div>
             </form>
 

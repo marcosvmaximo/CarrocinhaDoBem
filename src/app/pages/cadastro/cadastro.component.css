@@ -1,13 +1,19 @@
 .bg-carrocinha {
-    background-image: url('../../../assets/front-view-beautiful-dog-with-copy-space.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+  background-image: url('../../../assets/front-view-beautiful-dog-with-copy-space.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%; /* Adicionado para garantir que a largura da imagem de fundo cubra toda a largura da viewport */
 }
-body {
-    height: 100vh;
-    overflow: hidden;
+
+.mask {
+  overflow: hidden; /* Adicionado para evitar que o conteúdo vaze para fora da div */
+}
+
+body, html {
+  height: 100%;
+  margin: 0; /* Adicionado para remover margens padrão do body e html */
 }
 .bg-card {
     max-height: 100vh;
@@ -50,3 +56,11 @@ ul {
         height: 100px !important;
     }
 }
+.btn i {
+  font-size: 1.2rem;
+}
+.form-body {
+  padding: 0.1% !important; /* Reduzindo em 10% o padding */
+  font-size: .8rem;
+}
+
