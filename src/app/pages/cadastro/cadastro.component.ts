@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { timer } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { delay, } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cadastro',
@@ -29,7 +29,7 @@ export class CadastroComponent {
     const senha = control.value;
     const possuiLetraMaiuscula = /[A-Z]/.test(senha);
     const possuiNumero = /[0-9]/.test(senha);
-    if (!possuiLetraMaiuscula || !possuiNumero) {
+    if (control.touched && (!possuiLetraMaiuscula || !possuiNumero)) {
       return { senhaInvalida: true };
     }
     return null;
@@ -39,8 +39,8 @@ export class CadastroComponent {
     const senha = control.get('senha');
     const confirmarSenha = control.get('confirmarSenha');
 
-    if (senha && confirmarSenha) {
-      if (senha.value !== confirmarSenha.value) {
+    if  (senha && confirmarSenha) {
+      if (control.touched && (senha.value !== confirmarSenha.value)) {
         confirmarSenha.setErrors({ senhaDiferente: true });
         return { senhaDiferente: true };
       } else {
@@ -61,7 +61,7 @@ export class CadastroComponent {
       const control = this.signupForm.get(campo);
 
       if (control && control.invalid && control.touched) {
-        const errors = control.errors as ValidationErrors; // Convertendo para ValidationErrors
+        const errors = control.errors as ValidationErrors; 
 
         Object.keys(errors).forEach(erro => {
           switch (erro) {
@@ -92,7 +92,7 @@ export class CadastroComponent {
   }
 
   esconder(): void {
-    const timer$ = timer(5000);
+    const timer$ = timer(0);
 
     timer$.subscribe(() => {
       this.listaErros = [];
