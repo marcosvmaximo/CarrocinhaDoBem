@@ -4,7 +4,7 @@
       <div class="col-lg-6">
         <div class="card py-3 px-5">
           <div class="card-body p-3 bg-card" style="background-color: #FFFFFF;">
-            <img class="logo rounded mx-auto d-block mb-3" width="270px" height="110px" src="../../../assets/logo.svg" alt="Logo">
+            <img class="logo rounded mx-auto d-block mb-3" width="270px" height="100px" src="../../../assets/logo.svg" alt="Logo">
 
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2 d-flex flex-column gap-3 mt-5" style="max-width: 100%" novalidate>
 
@@ -65,9 +65,7 @@
                 <label class="form-check-label mt-1" for="concordatermos" style="color: #726C5E;">
                   Concordo com os <a href="#" class="text-body"><u class="fw-semibold" style="color: #9D6A00;">termos e serviços</u></a>
                 </label>
-<!--                <div *ngIf="signupForm.get('concordatermos')?.errors?.['required'] && signupForm.get('concordatermos')?.touched" class="text-danger">-->
-<!--                  Você deve concordar com os termos e serviços.-->
-<!--                </div>-->
+
               </div>
 
 
