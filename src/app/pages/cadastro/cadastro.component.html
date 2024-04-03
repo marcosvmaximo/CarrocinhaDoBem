@@ -9,17 +9,21 @@
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2 d-flex flex-column gap-3 mt-5" style="max-width: 100%" novalidate>
 
               <div>
-                <input type="text" id="nome" placeholder="Nome" class="form-control form-control-lg form-carrocinha" formControlName="nome" aria-label="Nome">
+                <input type="text" id="nome" placeholder="Nome" class="form-control form-control-lg form-carrocinha border-danger" formControlName="nome" aria-label="Nome">
                 <div *ngIf="signupForm.get('nome')?.errors?.['required'] && signupForm.get('nome')?.touched" class="text-danger">
                   O campo nome é obrigatório.
                 </div>
                 <div *ngIf="signupForm.get('nome')?.errors?.['maxlength']" class="text-danger">
                   O campo nome excedeu o número máximo de caracteres permitidos.
                 </div>
+                <div *ngIf="signupForm.get('nome')?.errors?.['minlength']" class="text-danger">
+                  O campo nome deve ter no minimo 3 caracteres.
+                </div>
                 <div *ngIf="signupForm.get('nome')?.errors?.['pattern']" class="text-danger">
                   O campo nome deve conter apenas letras e espaços.
                 </div>
               </div>
+              
 
               <div>
                 <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="E-mail" formControlName="email" aria-label="Email">
@@ -31,6 +35,9 @@
                 </div>
                 <div *ngIf="signupForm.get('email')?.errors?.['maxlength']" class="text-danger">
                   O campo e-mail excedeu o número máximo de caracteres permitidos.
+                </div>
+                <div *ngIf="signupForm.get('email')?.errors?.['minlength']" class="text-danger">
+                  O campo e-mail deve ter no minimo 3 caracteres.
                 </div>
               </div>
 

@@ -71,6 +71,9 @@ export class CadastroComponent {
             case 'maxlength':
               this.listaErros.push(`O campo ${campo} excedeu o número máximo de caracteres permitidos.`);
               break;
+              case 'minlength':
+              this.listaErros.push(`O campo ${campo} deve ter no minimo 3 caracteres.`);
+              break;
             case 'email':
               this.listaErros.push(`O campo ${campo} deve ser um e-mail válido.`);
               break;
