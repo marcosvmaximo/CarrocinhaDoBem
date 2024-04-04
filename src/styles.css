@@ -60,3 +60,15 @@ body, html {
     font-size: .8rem;
   }
 }
+
+.text-danger {
+  display: block;
+  font-size: 14px;
+  color: red;
+  height: 20px; 
+  overflow: hidden; 
+}
+
+.error-container {
+  height: 30px;
+}

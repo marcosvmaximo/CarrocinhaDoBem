@@ -64,11 +64,3 @@ ul {
   padding: 0.1% !important; /* Reduzindo em 10% o padding */
   font-size: .8rem;
 }
-.text-danger {
-  display: block;
-  font-size: 14px;
-  color: red;
-  height: 20px; /* Tamanho fixo para o elemento de erro */
-  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse o tamanho definido */
-}
-

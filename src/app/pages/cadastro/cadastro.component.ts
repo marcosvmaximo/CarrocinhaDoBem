@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { timer } from 'rxjs';
-import { delay, } from 'rxjs/operators';
+import { delay, of, timer } from 'rxjs';
 
 @Component({
   selector: 'app-cadastro',
@@ -83,8 +82,7 @@ export class CadastroComponent {
             case 'senhaDiferente':
               this.listaErros.push(`As senhas não coincidem.`);
               break;
-            default:
-              break;
+              
           }
         });
       }
@@ -94,15 +92,15 @@ export class CadastroComponent {
     this.esconder();
   }
 
-  esconder(): void {
-    const timer$ = timer(0);
+  esconder(): void{
+    const timer = of(null).pipe(delay(5000));
 
-    timer$.subscribe(() => {
+    timer.subscribe(() => {
       this.listaErros = [];
     });
   }
 
-  fecharModal(): void {
+  fecharModal(): void{
     this.listaErros = [];
   }
 
