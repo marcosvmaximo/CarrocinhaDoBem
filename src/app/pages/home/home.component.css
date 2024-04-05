@@ -1,3 +1,19 @@
-html {
+html, body {
     background-color: #eeaf2b;
 }
+.altera-fontes {
+    font-style: normal; 
+    font-size: 6rem; 
+    font-family: "Rockwell"; 
+ 
+ }
+ .banner{
+    max-width: 100%;
+ }
+ .dogs{
+    width: 300px;
+    height: 200px;
+ }
+ .sobre{
+    font-size: 25px;
+ }
