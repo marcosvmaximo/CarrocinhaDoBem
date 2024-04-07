@@ -11,9 +11,33 @@ html, body {
     max-width: 100%;
  }
  .dogs{
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 300px;
  }
  .sobre{
     font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+ }
+ .linha {
+   height:2px;
+   width: 96%;
+   border: none;
+   background: #eeaf2b;
+   opacity: 100%;
+ }
+ .centraliza {
+   display: flex;
+   justify-content: center;
+ }
+ .albert {
+   font-size: 25px;
+   padding-left: 70px;
+   font-family: 'Courier New', Courier, monospace;
+ }
+ .back{
+   height:200px;
+   width: 100%;
+   border: none;
+   background: #eeaf2b;
+   opacity: 100%;
  }
