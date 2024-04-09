@@ -9,6 +9,7 @@ html, body {
  }
  .banner{
     max-width: 100%;
+    cursor: pointer;
  }
  .dogs{
     width: 400px;
