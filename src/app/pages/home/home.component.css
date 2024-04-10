@@ -1,12 +1,22 @@
 html, body {
-    background-color: #eeaf2b;
+  background-color: #eeaf2b;
+  box-sizing: border-box;
 }
+
 .altera-fontes {
-    font-style: normal; 
-    font-size: 6rem; 
-    font-family: "Rockwell"; 
- 
- }
+  font-style: normal;
+  font-size: 4rem;
+  font-family: "Rockwell", serif;
+}
+
+p {
+  font-family: "Montserrat", serif !important;
+  color: #EDE7E1;
+  letter-spacing: 1.5px;
+  line-height: 1.6rem;
+  font-size: 1.125rem;
+}
+
  .banner{
     max-width: 100%;
     cursor: pointer;
@@ -16,7 +26,6 @@ html, body {
     height: 300px;
  }
  .sobre{
-    font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
  }
  .linha {
@@ -41,4 +50,8 @@ html, body {
    border: none;
    background: #eeaf2b;
    opacity: 100%;
+ }
+
+ .yellow {
+   color: #eeaf2b;
  }
