@@ -64,4 +64,4 @@ ul {
   padding: 0.1% !important; /* Reduzindo em 10% o padding */
   font-size: .8rem;
 }
-
+.btn:hover{top:10px;box-shadow:1 2px 2px #716d6d}

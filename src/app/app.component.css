@@ -37,5 +37,6 @@ ul {
 .error-box {
     animation: fadeOut 1s ease; /* Usa a animação 'fadeOut' com duração de 0.5 segundos */
 }
+#button:hover{top:-2px;box-shadow:0 2px 2px #666}
 
 
