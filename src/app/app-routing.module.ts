@@ -13,8 +13,9 @@ const routes: Routes = [
   { path: 'pet', component: PetComponent},
   { path: 'pet-cadastro', component: PetCadastroComponent},
   { path: 'cadastro', component: CadastroComponent},
-  { path: 'login', component: LoginComponent }
+  {path: 'login', component: LoginComponent}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
