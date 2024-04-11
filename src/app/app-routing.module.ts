@@ -10,6 +10,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: '#', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
+  { path: 'pet', component: PetComponent},
+  { path: 'pet-cadastro', component: PetCadastroComponent},
   { path: 'cadastro', component: CadastroComponent},
   { path: 'login', component: LoginComponent }
 ];
