@@ -5,6 +5,7 @@ import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.componen
 import { PetComponent } from './pages/pet/pet.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PerfilEditComponent } from './pages/perfil-edit/perfil-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'pet', component: PetComponent},
   { path: 'pet-cadastro', component: PetCadastroComponent},
   { path: 'cadastro', component: CadastroComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'perfil-edit', component:PerfilEditComponent}
 ];
 
 
