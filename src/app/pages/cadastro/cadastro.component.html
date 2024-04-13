@@ -4,7 +4,9 @@
       <div class="col-lg-6">
         <div class="card py-3 px-5">
           <div class="card-body p-3 bg-card" style="background-color: #FFFFFF;">
-            <img class="logo rounded mx-auto d-block mb-3" width="270px" height="100px" src="../../../assets/logo.svg" alt="Logo">
+            <a [routerLink]="['']">
+              <img class="logo rounded mx-auto d-block mb-3" width="270px" height="100px" src="../../../assets/logo.svg" alt="Logo">
+            </a>
 
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2 d-flex flex-column gap-3 mt-5" style="max-width: 100%" novalidate>
 
@@ -23,11 +25,11 @@
                 </div>
 
               </div>
-              
+
 
               <div>
                 <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="E-mail" formControlName="email" aria-label="Email">
-  
+
                 <div class="error-container">
                   <div class="error-message">
                     <div *ngIf="signupForm.get('email')?.errors && signupForm.get('email')?.touched">
@@ -52,7 +54,7 @@
                   </div>
                 </div>
               </div>
-                
+
               <div>
                 <input type="password" class="form-control form-control-lg form-carrocinha" id="confirmarSenha" placeholder="Confirmar senha" formControlName="confirmarSenha" aria-label="Confirmar Senha">
                   <div class="error-container">
@@ -74,12 +76,12 @@
               </div>
 
 
-    
+
                 <div class="d-grid mt-3">
                   <button type="submit (ngSubmit)=onSubmit()" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #EEB336; color: #9D6A00;">CADASTRAR</button>
                 <p class="text-center text-muted mt-4 mb-0" style="color: #726C5E">Já possui uma conta? <a [routerLink]="['/login']" class="fw-bold text-body" ><u class="fw-semibold" style="color: #9D6A00;">Entre aqui</u></a></p>
               </div>
-              
+
             </form>
 
           </div>

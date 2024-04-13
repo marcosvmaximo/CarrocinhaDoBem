@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { delay, of, timer } from 'rxjs';
+import {setShow} from "../../services/guard/show";
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
-export class CadastroComponent {
+export class CadastroComponent implements OnInit{
 
   signupForm: FormGroup;
   listaErros: string[] = [];
@@ -32,6 +33,9 @@ export class CadastroComponent {
       return { senhaInvalida: true };
     }
     return null;
+  }
+  ngOnInit(): void {
+    setShow(false);
   }
 
   validarConfirmarSenha(control: AbstractControl): ValidationErrors | null {
@@ -60,7 +64,7 @@ export class CadastroComponent {
       const control = this.signupForm.get(campo);
 
       if (control && control.invalid && control.touched) {
-        const errors = control.errors as ValidationErrors; 
+        const errors = control.errors as ValidationErrors;
 
         Object.keys(errors).forEach(erro => {
           switch (erro) {
@@ -82,7 +86,7 @@ export class CadastroComponent {
             case 'senhaDiferente':
               this.listaErros.push(`As senhas não coincidem.`);
               break;
-              
+
           }
         });
       }
