@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg  "
+<nav class="navbar navbar-expand-lg px-2"
 style="background-color: #EEB336;">
     <div class="container-fluid ">
         <a class="navbar-brand " href="#">
@@ -9,44 +9,50 @@ style="background-color: #EEB336;">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 text">
+        <ul class="navbar-nav me-auto text d-flex gap-3">
           <li class="nav-item">
-            <a class="nav-link active  " aria-current="page" href="home">Pets</a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['pets']">Pets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active " href="pet-cadastro">Doações</a>
+            <a class="nav-link active" href="pet-cadastro" [routerLink]="['doacoes']">Doações</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active " href="pet">Contato</a>
+            <a class="nav-link active" [routerLink]="['contato']">Contato</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active " href="pet">Nossa missão</a>
+            <a class="nav-link active" [routerLink]="['nossa-missao']">Nossa missão</a>
           </li>
         </ul>
-          <div id="linha-vertical"></div>
-          <div class="dropdown" [class.show]="isDropdownOpen">
-            <a (click)="toggleDropdown(true)" class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="40" alt="Black and White Portrait of a Man" loading="lazy"/>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-              <li>
-                <a class="dropdown-item" href="#">My profile</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Settings</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Logout</a>
-              </li>
-            </ul>
-          </div>
-          <ul class="navbar-nav name mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active " href="pet">Nome</a>
-            </li>
-          </ul>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-outline-light btn-lg" [routerLink]="['login']">Entrar</button>
+          <button type="button" class="btn btn-light btn-lg" [routerLink]="['cadastro']">Cadastrar</button>
+        </div>
+<!--        <div class="logado">-->
+<!--          <div id="linha-vertical"></div>-->
+<!--          <div class="dropdown" [class.show]="isDropdownOpen">-->
+<!--            <a (click)="toggleDropdown(true)" class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">-->
+<!--              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="40" alt="Black and White Portrait of a Man" loading="lazy"/>-->
+<!--            </a>-->
+<!--            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">-->
+<!--              <li>-->
+<!--                <a class="dropdown-item" href="#">My profile</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a class="dropdown-item" href="#">Settings</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a class="dropdown-item" href="#">Logout</a>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--          <ul class="navbar-nav name mb-2 mb-lg-0">-->
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link active " href="pet">Nome</a>-->
+<!--            </li>-->
+<!--          </ul>-->
 
-     
+<!--        </div>-->
+
       </div>
     </div>
   </nav>

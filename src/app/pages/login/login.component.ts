@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { delay, of } from 'rxjs';
+import {setShow} from "../../services/guard/show";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   signInForm: FormGroup;
   listaErros: string[] = [];
 
-  
+
   constructor(private formBuilder: FormBuilder) {
     this.signInForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.minLength(3), Validators.email, Validators.maxLength(100)]],
@@ -20,7 +21,11 @@ export class LoginComponent {
     });
   }
 
- 
+  ngOnInit(): void {
+    setShow(false);
+  }
+
+
   validarSenha(control: AbstractControl): ValidationErrors | null {
     const senha = control.value;
     const possuiLetraMaiuscula = /[A-Z]/.test(senha);
@@ -38,7 +43,7 @@ export class LoginComponent {
       const control = this.signInForm.get(campo);
 
       if (control && control.invalid && control.touched) {
-        const errors = control.errors as ValidationErrors; 
+        const errors = control.errors as ValidationErrors;
            Object.keys(errors).forEach(erro => {
 
           switch (erro) {

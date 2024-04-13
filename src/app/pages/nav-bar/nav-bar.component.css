@@ -1,29 +1,41 @@
 .text{
-    display: flex;
-        width: 50vw;
-        justify-content: space-around;
+  display: flex;
+  width: 50vw;
+
+}
+ul li {
+  font-family: Poppins, "Montserrat", sans-serif !important;
 }
 #linha-vertical {
     height: 60px;
-    border-right: 2px solid rgb(0, 0, 0);
+    border-right: 2px solid #1F1B17;
     margin-right: 10px;
 }
 .dropdown {
     position: relative;
     margin-right: 10px;
   }
-  
+
   .dropdown-menu {
-    
+
     position: absolute;
     top: 100%;
     left: 0;
   }
-  
+
   .dropdown.show .dropdown-menu {
     display: block;
   }
-  .name{
-    margin-right: 50px;
-  }
-  
+
+.btn-outline-light{
+  color: #1F1B17 !important;
+  text-transform: uppercase;
+  border: 3px solid #1F1B17 !important;
+}
+.btn-light{
+  text-transform: uppercase;
+  color: #EDE7E1;
+  background: #1F1B17;
+  border-color: #1F1B17 !important;
+
+}
