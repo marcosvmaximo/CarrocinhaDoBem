@@ -12,7 +12,6 @@ import {PetsComponent} from "./pages/pets/pets.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  // { path: '#', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'cadastro', component: CadastroComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
@@ -21,6 +20,7 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [UsuarioNaoAutenticadoGuard] }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
