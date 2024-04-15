@@ -1,24 +1,41 @@
 <div class="profile-container">
+    <div class="avatar-container">
+        <button type="button" class="btn btn-danger">Excluir Perfil</button>
+    </div>
     <div class="edit-form">
-        <form class="form-body needs-validation px-4 py-2 d-flex flex-column gap-3 mt-5">
+        <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2 d-flex flex-column gap-3 mt-5">
             <h1>CONFIGURAÇÃO DE PERFIL</h1>
             <div>
                 <input type="text" id="username" placeholder="Nome" class="form-control form-carrocinha" formControlName="username" aria-label="Nome">
+                <div *ngIf="perfilForm.get('username')?.errors?.['minlength']" class="text-danger">O nome deve ter no mínimo 4 caracteres.</div>
+                <div *ngIf="perfilForm.get('username')?.errors?.['maxlength']" class="text-danger">O nome deve ter no máximo 100 caracteres.</div>
+                <div *ngIf="perfilForm.get('username')?.errors?.['pattern']" class="text-danger">O nome deve conter apenas letras e espaços.</div>
             </div>
             <div>
                 <input type="text" id="email" placeholder="Email" class="form-control form-carrocinha" formControlName="email" aria-label="Email">
+                <div *ngIf="perfilForm.get('email')?.errors?.['email']" class="text-danger">O campo e-mail deve ser um e-mail válido.</div>
+                <div *ngIf="perfilForm.get('email')?.errors?.['minlength']" class="text-danger">O e-mail deve ter no mínimo 10 caracteres.</div>
+                <div *ngIf="perfilForm.get('email')?.errors?.['maxlength']" class="text-danger">O campo e-mail excedeu o número máximo de caracteres permitidos.</div>
             </div>
             <div>
                 <input type="text" id="endereco" placeholder="Endereço" class="form-control form-carrocinha" formControlName="endereco" aria-label="Endereço">
+                <div *ngIf="perfilForm.get('email')?.errors?.['maxlength']" class="text-danger">O campo endereço excedeu o número máximo de caracteres permitidos.</div>
             </div>
             <div>
-                <input type="text" id="telefone" placeholder="Telefone" class="form-control form-carrocinha" formControlName="telefone" aria-label="Telefone">
+                <input type="text" id="telefone" placeholder="Telefone ex: xx xxxxx-xxxx" class="form-control form-carrocinha" formControlName="telefone" aria-label="Telefone">
+                <div *ngIf="perfilForm.get('telefone')?.errors?.['minlength']" class="text-danger">O telefone deve ter no mínimo 12 caracteres.</div>
+                <div *ngIf="perfilForm.get('telefone')?.errors?.['maxlength']" class="text-danger">O campo telefone excedeu o número máximo de caracteres permitidos.</div>
+                <div *ngIf="perfilForm.get('telefone')?.errors?.['pattern']" class="text-danger">O telefone deve seguir esse padrão xx xxxxx-xxxx.</div>
+
             </div>
             <div>
-                <input type="text" id="cpf" placeholder="CPF" class="form-control  form-carrocinha" fomrControlName="cpf" aria-label="CPF">
+                <input type="text" id="cpf" placeholder="CPF ex: xxx.xxx.xxx-xx" class="form-control  form-carrocinha" formControlName="cpf" aria-label="CPF">
+                <div *ngIf="perfilForm.get('cpf')?.errors?.['minlength']" class="text-danger">O cpf deve ter no mínimo 15 caracteres.</div>
+                <div *ngIf="perfilForm.get('cpf')?.errors?.['maxlength']" class="text-danger">O campo cpf excedeu o número máximo de caracteres permitidos.</div>
+                <div *ngIf="perfilForm.get('cpf')?.errors?.['pattern']" class="text-danger">O cpf deve seguir esse padrão xxx.xxx.xxx-xx.</div>
             </div>
 
-            
+            <button type="submit (click)=onSubmit()" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #EEB336; color: #9D6A00;">SALVAR </button>
         </form>
     </div>
 </div>
