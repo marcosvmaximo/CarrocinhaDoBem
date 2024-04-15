@@ -39,3 +39,37 @@ ul li {
   border-color: #1F1B17 !important;
 
 }
+
+
+.navbar-item {
+  text-transform: uppercase;
+  position: relative;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #1F1B17;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-item:hover {
+  color: #1F1B17;
+  background: #dca124;
+}
