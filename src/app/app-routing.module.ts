@@ -9,6 +9,7 @@ import {NossaMissaoComponent} from "./pages/nossa-missao/nossa-missao.component"
 import {ContatoComponent} from "./pages/contato/contato.component";
 import {DoacoesComponent} from "./pages/doacoes/doacoes.component";
 import {PetsComponent} from "./pages/pets/pets.component";
+import {PetCadastroComponent} from "./pages/pet-cadastro/pet-cadastro.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'pets', component: PetsComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
+  { path: 'pets-cadastro', component: PetCadastroComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'doacoes', component: DoacoesComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'contato', component: ContatoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [UsuarioNaoAutenticadoGuard] }

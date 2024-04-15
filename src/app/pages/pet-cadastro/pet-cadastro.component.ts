@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+  ReactiveFormsModule
+} from '@angular/forms';
 import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-pet-cadastro',
   templateUrl: './pet-cadastro.component.html',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule
+  ],
   styleUrls: ['./pet-cadastro.component.css']
 })
 
@@ -30,7 +41,7 @@ export class PetCadastroComponent {
     Object.keys(this.resgisterForm.controls).forEach(campo => {
       const control = this.resgisterForm.get(campo);
 
-      if (control) { 
+      if (control) {
         if (control.invalid && control.touched) {
           const errors = control.errors as ValidationErrors | null;
 
