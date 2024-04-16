@@ -1,18 +1,15 @@
 .profile{
-    display: flex;
     justify-content: space-evenly;
     align-items: baseline;
     background-color: #1F1B17;
-    height: 100vh;  
+    height: 100vh;
 }
-.avatar{
-    
-}
+/*
 .user-img{
     width: 150px;
     height: 150px;
     border-radius: 50%;
-}
+}*/
 .edit-form{
     flex-basis: 100%;
     display: block;
@@ -31,6 +28,7 @@ h1{
     text-align: center;
 
 }
+/*
 #picture{
     width: 350px;
     height: 350px;
@@ -49,7 +47,7 @@ h1{
 }
 :hover.uploadbtn{
     background-color: blue;
-}
+}*/
 
 .format{
     display: flex;

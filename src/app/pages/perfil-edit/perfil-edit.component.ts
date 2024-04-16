@@ -16,7 +16,7 @@ export class PerfilEditComponent {
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")]],
       email: ['', [Validators.required, Validators.minLength(10), Validators.email, Validators.maxLength(100)]],
       endereco: ['', [Validators.required, Validators.maxLength(100)]],
-      telefone: ['', [Validators.required, Validators.minLength(12), Validators.maxLength(100), Validators.pattern("/^(\d{2})\s(\d{5}|\d{4})-\d{4}$/")]],
+      telefone: ['', [Validators.required, Validators.minLength(12), Validators.maxLength(100), Validators.pattern("^[0-9]{2}\\s[0-9]{4,5}-[0-9]{4}$")]],
       dataNascimento: ['', [Validators.required, this.dataPassadaValidator]]
     });
   }
