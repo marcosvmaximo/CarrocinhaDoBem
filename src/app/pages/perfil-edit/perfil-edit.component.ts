@@ -17,8 +17,18 @@ export class PerfilEditComponent {
       email: ['', [Validators.required, Validators.minLength(10), Validators.email, Validators.maxLength(100)]],
       endereco: ['', [Validators.required, Validators.maxLength(100)]],
       telefone: ['', [Validators.required, Validators.minLength(12), Validators.maxLength(100), Validators.pattern("/^(\d{2})\s(\d{5}|\d{4})-\d{4}$/")]],
-      cpf: ['', [Validators.required, Validators.maxLength(100), Validators.pattern("/^\d{3}\.\d{3}\.\d{3}-\d{2}$/")]]
+      dataNascimento: ['', [Validators.required, this.dataPassadaValidator]]
     });
+  }
+
+  dataPassadaValidator(control: AbstractControl) {
+    const dataEscolhida = new Date(control.value);
+    const dataAtual = new Date();
+
+    if (dataEscolhida > dataAtual) {
+      return { dataFutura: true };
+    }
+    return null;
   }
 
   onSubmit() {
@@ -49,5 +59,17 @@ export class PerfilEditComponent {
         });
       }
     });
+  }
+
+  onFileSelected(files: FileList) {
+    const file = files.item(0);
+    if (file) {
+      this.uploadFile(file);
+    }
+  }
+
+  uploadFile(file: File) {
+    //Fazer a logica de envio da imagem com a api
+    console.log('Arquivo selecionado:', file);
   }
 }
