@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-perfil-edit',
@@ -11,7 +11,7 @@ export class PerfilEditComponent {
   perfilForm: FormGroup;
   listaErros: string[] = [];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.perfilForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")]],
       email: ['', [Validators.required, Validators.minLength(10), Validators.email, Validators.maxLength(100)]],
@@ -48,17 +48,34 @@ export class PerfilEditComponent {
             case 'maxlength':
               this.listaErros.push(`O campo ${campo} excedeu o número máximo de caracteres permitidos.`);
               break;
-              case 'minlength':
-              this.listaErros.push(`O campo ${campo} deve ter no minimo 4 caracteres.`);
+            case 'minlength':
+              this.listaErros.push(`O campo ${campo} deve ter no mínimo 4 caracteres.`);
               break;
             case 'email':
               this.listaErros.push(`O campo ${campo} deve ser um e-mail válido.`);
               break;
-              
           }
         });
       }
     });
+
+    this.validarFormulario(); 
+  }
+
+  validarFormulario() {
+    if (this.perfilForm.valid && this.listaErros.length === 0) {
+      const formData = this.perfilForm.value;
+      this.http.post('tem que por a url da api', formData).subscribe(
+        () => {
+          alert("Dados salvos com sucesso!");
+          this.perfilForm.reset();
+        },
+        (error) => {
+          console.error('Erro ao enviar dados:', error);
+          alert("Erro ao enviar dados para a API. Por favor, tente novamente mais tarde.");
+        }
+      );
+    }
   }
 
   onFileSelected(files: FileList) {
@@ -69,7 +86,7 @@ export class PerfilEditComponent {
   }
 
   uploadFile(file: File) {
-    //Fazer a logica de envio da imagem com a api
+    // Falta a lógica de envio da imagem com a API
     console.log('Arquivo selecionado:', file);
   }
 }
