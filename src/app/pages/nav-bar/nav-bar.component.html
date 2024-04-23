@@ -23,35 +23,35 @@ style="background-color: #EEB336;">
             <a class="nav-link active" [routerLink]="['nossa-missao']">Nossa missão</a>
           </li>
         </ul>
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 deslogado" *ngIf="!isLoggedIn">
           <button type="button" class="btn btn-outline-light btn-lg" [routerLink]="['login']">Entrar</button>
           <button type="button" class="btn btn-light btn-lg" [routerLink]="['cadastro']">Cadastrar</button>
         </div>
-<!--        <div class="logado">-->
-<!--          <div id="linha-vertical"></div>-->
-<!--          <div class="dropdown" [class.show]="isDropdownOpen">-->
-<!--            <a (click)="toggleDropdown(true)" class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">-->
-<!--              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="40" alt="Black and White Portrait of a Man" loading="lazy"/>-->
-<!--            </a>-->
-<!--            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">-->
-<!--              <li>-->
-<!--                <a class="dropdown-item" href="#">My profile</a>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <a class="dropdown-item" href="#">Settings</a>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <a class="dropdown-item" href="#">Logout</a>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--          <ul class="navbar-nav name mb-2 mb-lg-0">-->
-<!--            <li class="nav-item">-->
-<!--              <a class="nav-link active " href="pet">Nome</a>-->
-<!--            </li>-->
-<!--          </ul>-->
+        <div class="logado" *ngIf="isLoggedIn">
+         <div id="linha-vertical"></div>
+         <div class="dropdown" [class.show]="isDropdownOpen">
+           <a (click)="toggleDropdown(true)" class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
+             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="40" alt="Black and White Portrait of a Man" loading="lazy"/>
+           </a>
+           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+             <li>
+               <a class="dropdown-item" href="#">My profile</a>
+             </li>
+             <li>
+               <a class="dropdown-item" href="#">Settings</a>
+             </li>
+             <li>
+               <a class="dropdown-item" href="#">Logout</a>
+             </li>
+           </ul>
+         </div>
+         <ul class="navbar-nav name mb-2 mb-lg-0">
+           <li class="nav-item">
+             <a class="nav-link active " href="pet">Bem vindo, Nome!</a>
+           </li>
+         </ul>
 
-<!--        </div>-->
+       </div>
 
       </div>
     </div>

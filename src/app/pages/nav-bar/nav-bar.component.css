@@ -13,7 +13,7 @@ ul li {
 }
 .dropdown {
     position: relative;
-    margin-right: 10px;
+    margin-right: 20px;
   }
 
   .dropdown-menu {
@@ -72,4 +72,8 @@ ul li {
 .nav-item:hover {
   color: #1F1B17;
   background: #dca124;
+}
+
+.logado {
+  display: flex ;
 }
