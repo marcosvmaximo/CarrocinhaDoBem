@@ -79,16 +79,17 @@ export class LoginComponent implements OnInit{
       senha: senhaControl.value
     };
 
+    console.log("iniciado processo de autenticar")
     this.authService.login(credentials).subscribe(
       (response: any) => {
-      
+
         console.log('Usuário autenticado:', response);
-       
+
       },
       (error: any) => {
-      
+
         console.error('Erro ao autenticar usuário:', error);
-    
+
         this.listaErros.push('Erro ao autenticar. Verifique suas credenciais e tente novamente.');
       }
     );
@@ -106,6 +107,6 @@ export class LoginComponent implements OnInit{
   fecharModal(): void{
     this.listaErros = [];
   }
-  
+
 
 }
