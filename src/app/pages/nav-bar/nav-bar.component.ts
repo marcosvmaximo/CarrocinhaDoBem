@@ -26,5 +26,19 @@ export class NavBarComponent {
       this.toggleDropdown(false);
     }
   }
+  isLoggedIn: boolean = false;
+
+ 
+  login() {
+ 
+    this.isLoggedIn = true; 
+  }
+
+
+  logout() {
+
+    this.isLoggedIn = false;
+  }
+
 }
 

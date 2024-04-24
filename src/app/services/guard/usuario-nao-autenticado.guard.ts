@@ -10,7 +10,7 @@ export class UsuarioNaoAutenticadoGuard implements CanActivate{
     private authService: AuthService,
     private router: Router) { }
   canActivate(){
-    if (this.authService.logado) {
+    if (!this.authService.login) { 
       return true;
     }
     this.router.navigate(['login']);
