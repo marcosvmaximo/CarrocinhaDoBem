@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { getShow } from "./services/guard/show";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,11 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'demo';
-  name = new FormControl('');
+  showNavBar(): boolean {
+    return getShow();
+  }
+
+  showFooter(): boolean {
+    return getShow();
+  }
 }

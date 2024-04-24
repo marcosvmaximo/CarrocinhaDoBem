@@ -3,9 +3,10 @@
       <div class="row justify-content-center h-100">
         <div class="col-lg-6">
           <div class="card" style="padding-top: 15%">
-            <div class="card-body p-4 bg-card" style="background-color: #FFFFFF;">
-              <img class=" rounded mx-auto d-block" width="300px" height="125px" src="../../../assets/logo.svg" alt="Logo">
-
+            <div class="card-body p-4 bg-card" style="background-color: #ffffff;">
+              <a [routerLink]="['']">
+                <img class=" rounded mx-auto d-block" width="300px" height="125px" src="../../../assets/logo.svg" alt="Logo">
+              </a>
               <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-5 py-2 d-flex flex-column gap-4 mt-5" style="max-width: 100%" novalidate>
                 <div>
                   <input type="email" class="form-control form-control-lg form-carrocinha" id="email" aria-describedby="emailHelp" placeholder="E-mail" formControlName="email" aria-label="Email">
@@ -15,12 +16,12 @@
                   <div *ngIf="signInForm.get('email')?.errors?.['email']" class="text-danger">
                     O campo e-mail deve ser um e-mail válido.
                   </div>
-                </div>  
+                </div>
                 <div>
                     <input type="password" class="form-control form-control-lg form-carrocinha" id="senha" placeholder="Senha" formControlName="senha" aria-label="Senha">
                     <div *ngIf="signInForm.get('senha')?.errors?.['senhaInvalida']" class="text-danger">
                       Senha incorreta
-                    </div>  
+                    </div>
                </div>
 
                 <div class="d-grid mt-4">
