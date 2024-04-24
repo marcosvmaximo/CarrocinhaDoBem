@@ -8,13 +8,15 @@ import {
   ReactiveFormsModule
 } from '@angular/forms';
 import { timer } from 'rxjs';
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-pet-cadastro',
   templateUrl: './pet-cadastro.component.html',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   styleUrls: ['./pet-cadastro.component.css']
 })
