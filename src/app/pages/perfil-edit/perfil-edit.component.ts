@@ -38,7 +38,7 @@ export class PerfilEditComponent {
       const control = this.perfilForm.get(campo);
 
       if (control && control.invalid && control.touched) {
-        const errors = control.errors as ValidationErrors; 
+        const errors = control.errors as ValidationErrors;
 
         Object.keys(errors).forEach(erro => {
           switch (erro) {
@@ -59,7 +59,7 @@ export class PerfilEditComponent {
       }
     });
 
-    this.validarFormulario(); 
+    this.validarFormulario();
   }
 
   validarFormulario() {
