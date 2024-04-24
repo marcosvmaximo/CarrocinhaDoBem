@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PerfilEditComponent } from './pages/perfil-edit/perfil-edit.component';
+
 import { UsuarioNaoAutenticadoGuard } from './services/guard/usuario-nao-autenticado.guard';
 import { UsuarioAutenticadoGuard } from './services/guard/usuario-autenticado.guard';
 import {NossaMissaoComponent} from "./pages/nossa-missao/nossa-missao.component";
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'doacoes', component: DoacoesComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'contato', component: ContatoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [UsuarioNaoAutenticadoGuard] }
+  { path: 'perfil-edit', component:PerfilEditComponent }
 ];
 
 

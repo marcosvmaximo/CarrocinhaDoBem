@@ -10,6 +10,7 @@ import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PerfilEditComponent } from './pages/perfil-edit/perfil-edit.component';
 import { RouterModule } from "@angular/router";
 import { PetsComponent } from './pages/pets/pets.component';
 import { DoacoesComponent } from './pages/doacoes/doacoes.component';
@@ -24,6 +25,7 @@ import { NossaMissaoComponent } from './pages/nossa-missao/nossa-missao.componen
     FooterComponent,
     CadastroComponent,
     LoginComponent,
+    PerfilEditComponent,
     PetsComponent,
     DoacoesComponent,
     ContatoComponent,
