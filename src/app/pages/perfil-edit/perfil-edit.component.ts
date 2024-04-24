@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-edit',
@@ -11,7 +12,7 @@ export class PerfilEditComponent {
   perfilForm: FormGroup;
   listaErros: string[] = [];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
     this.perfilForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")]],
       email: ['', [Validators.required, Validators.minLength(10), Validators.email, Validators.maxLength(100)]],
@@ -73,6 +74,21 @@ export class PerfilEditComponent {
         (error) => {
           console.error('Erro ao enviar dados:', error);
           alert("Erro ao enviar dados para a API. Por favor, tente novamente mais tarde.");
+        }
+      );
+    }
+  }
+
+  deleteAccount() {
+    if (confirm("Tem certeza que deseja deletar sua conta?")) {
+      this.http.delete('/api/auth/deletar-conta').subscribe(
+        () => {
+          alert("Sua conta foi deletada com sucesso!");
+          this.router.navigate(['/']); 
+        },
+        (error) => {
+          console.error('Erro ao deletar conta:', error);
+          alert("Erro ao deletar conta. Por favor, tente novamente mais tarde.");
         }
       );
     }
