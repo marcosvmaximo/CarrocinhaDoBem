@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'pets-cadastro', component: PetCadastroComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'doacoes', component: DoacoesComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'contato', component: ContatoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [UsuarioNaoAutenticadoGuard] }
+  { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'perfil-edit', component:PerfilEditComponent }
 ];
 
