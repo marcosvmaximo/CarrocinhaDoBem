@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { UserUptadeService } from '../../services/user-uptade.service';
 
 @Component({
   selector: 'app-perfil-edit',
@@ -11,7 +12,7 @@ export class PerfilEditComponent {
   perfilForm: FormGroup;
   listaErros: string[] = [];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private usuarioService: UserUptadeService) {
     this.perfilForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")]],
       email: ['', [Validators.required, Validators.minLength(10), Validators.email, Validators.maxLength(100)]],
