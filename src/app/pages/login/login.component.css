@@ -14,6 +14,10 @@ body {
   min-height: 8vh; /* Defina uma altura mínima em relação à altura da viewport */
 }
 
+.card-body {
+  max-width: 600px;
+  border-radius: 5px;
+}
 
 ul {
   list-style: none;

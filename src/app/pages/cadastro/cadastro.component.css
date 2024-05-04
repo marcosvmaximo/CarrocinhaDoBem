@@ -4,7 +4,12 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  overflow-y: auto !important;
   width: 100%; /* Adicionado para garantir que a largura da imagem de fundo cubra toda a largura da viewport */
+}
+
+.card {
+  width: 600px;
 }
 
 .mask {
@@ -13,6 +18,7 @@
 
 body, html {
   height: 100%;
+  overflow-y: auto !important;
   margin: 0; /* Adicionado para remover margens padrão do body e html */
 }
 
@@ -43,19 +49,20 @@ ul {
 }
 
 @media only screen and (max-width: 768px) {
-    .form-body {
-        padding: 5px !important;
-        font-size: .8rem;
-    }
 
-    .card-body{
-        height: 100vh !important;
-    }
+    /*.form-body {*/
+    /*    padding: 5px !important;*/
+    /*    font-size: .8rem;*/
+    /*}*/
 
-    .logo {
-        width: 200px !important;
-        height: 100px !important;
-    }
+    /*.card-body{*/
+    /*    height: 100vh !important;*/
+    /*}*/
+
+    /*.logo {*/
+    /*    width: 200px !important;*/
+    /*    height: 100px !important;*/
+    /*}*/
 }
 .btn i {
   font-size: 1.2rem;

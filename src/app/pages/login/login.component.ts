@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors }
 import { delay, of } from 'rxjs';
 import {setShow} from "../../services/guard/show";
 import { AuthService } from '../../services/auth.service';
+import {HttpErrorResponse} from "@angular/common/http";
+import {Router} from "@angular/router";
+import {logado, setLogin} from "../../services/guard/logado";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +19,8 @@ export class LoginComponent implements OnInit{
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
     ) {
     this.signInForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.minLength(3), Validators.email, Validators.maxLength(100)]],
@@ -71,26 +75,33 @@ export class LoginComponent implements OnInit{
     this.esconder();
 
     const emailControl = this.signInForm.get('email');
-  const senhaControl = this.signInForm.get('senha');
+    const senhaControl = this.signInForm.get('senha');
 
   if (emailControl && senhaControl && emailControl.valid && senhaControl.valid) {
     const credentials = {
       email: emailControl.value,
-      senha: senhaControl.value
+      password: senhaControl.value
     };
 
-    console.log("iniciado processo de autenticar")
     this.authService.login(credentials).subscribe(
       (response: any) => {
-
         console.log('Usuário autenticado:', response);
+        setLogin();
 
+        this.router.navigate(['/home']);
       },
-      (error: any) => {
-
+      (error: HttpErrorResponse) => {
         console.error('Erro ao autenticar usuário:', error);
 
-        this.listaErros.push('Erro ao autenticar. Verifique suas credenciais e tente novamente.');
+        if (error.error) {
+          if (Array.isArray(error.error)) {
+            this.listaErros.push(...error.error);
+          } else {
+            this.listaErros.push(error.error.message || 'Erro ao autenticar. Verifique suas credenciais e tente novamente.');
+          }
+        } else {
+          this.listaErros.push('Erro ao autenticar. Verifique suas credenciais e tente novamente.');
+        }
       }
     );
   }

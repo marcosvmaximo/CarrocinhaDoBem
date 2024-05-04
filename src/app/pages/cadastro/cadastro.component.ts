@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { delay, of, timer } from 'rxjs';
 import {setShow} from "../../services/guard/show";
+import {AuthService} from "../../services/auth.service";
+import {HttpErrorResponse} from "@angular/common/http";
+import {IUser} from "../../interfaces/IUser";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cadastro',
@@ -13,7 +17,7 @@ export class CadastroComponent implements OnInit{
   signupForm: FormGroup;
   listaErros: string[] = [];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.signupForm = this.formBuilder.group({
       nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")]],
       email: ['', [Validators.required, Validators.minLength(3), Validators.email, Validators.maxLength(100)]],
@@ -92,7 +96,31 @@ export class CadastroComponent implements OnInit{
       }
     });
 
+    const formValue = this.signupForm.value;
+    this.authService.registrar(formValue.nome, formValue.email, formValue.senha, formValue.confirmarSenha).subscribe(
+      (response: any) => {
+        console.log('Usuário registrado com sucesso:', response);
+        this.router.navigate(['/login']);
+      },
+      (error: HttpErrorResponse) => {
+        console.error('Erro ao registrar usuário:', error);
 
+        if (error.error && Array.isArray(error.error)) {
+          error.error.forEach((item: any) => {
+            this.listaErros.push(`${item.code}: ${item.description}`);
+          });
+        } else if (error.error && typeof error.error === 'object') {
+          const errorObj = error.error;
+          const code = errorObj.code || 'Unknown';
+          const description = errorObj.description || 'Unknown description';
+          this.listaErros.push(`${code}: ${description}`);
+        } else {
+          this.listaErros.push(error.message || 'Erro ao registrar usuário. Por favor, tente novamente.');
+        }
+
+        this.esconder();
+      }
+    );
     this.esconder();
   }
 

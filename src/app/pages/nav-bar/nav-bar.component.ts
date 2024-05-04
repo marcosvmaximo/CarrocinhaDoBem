@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import {AuthService} from "../../services/auth.service";
+import {GetLogin, logado} from "../../services/guard/logado";
 
 
 
@@ -8,8 +10,10 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
-
   isDropdownOpen = false;
+
+  constructor(private authService: AuthService) {
+  }
 
   toggleDropdown(force?: boolean) {
     if (typeof force !== 'undefined') {
@@ -26,14 +30,13 @@ export class NavBarComponent {
       this.toggleDropdown(false);
     }
   }
-  isLoggedIn: boolean = false;
 
- 
+  isLoggedIn: boolean = GetLogin();
+
   login() {
- 
-    this.isLoggedIn = true; 
-  }
 
+    this.isLoggedIn = true;
+  }
 
   logout() {
 
