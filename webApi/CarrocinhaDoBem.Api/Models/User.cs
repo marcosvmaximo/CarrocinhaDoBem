@@ -58,3 +58,29 @@ public class UserRequest
     [StringLength(50, ErrorMessage = "A confirmação de senha não pode ter mais de 50 caracteres.")]
     public string ConfirmPassword { get; set; }
 }
+
+public class UserLogin
+{
+    public string Email { get; set; }
+    public string Password { get; set; }
+}
+
+public class UserUpdate
+{
+    [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres.")]
+    public string Nome { get; set; }
+
+    [EmailAddress(ErrorMessage = "O e-mail não está em um formato válido.")]
+    [StringLength(100, ErrorMessage = "O e-mail não pode ter mais de 100 caracteres.")]
+    public string Email { get; set; }
+
+    [StringLength(100, ErrorMessage = "O endereço não pode ter mais de 100 caracteres.")]
+    public string Endereco { get; set; }
+
+    [Phone(ErrorMessage = "O telefone não está em um formato válido.")]
+    [StringLength(14, ErrorMessage = "O telefone não pode ter mais de 14 caracteres.")]
+    public string Telefone { get; set; }
+
+    [DataType(DataType.Date)]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    public DateTime DataNascimento { get; set; }}
