@@ -1,0 +1,7 @@
+C:\Users\A498901\OneDrive - Grupo Marista\CarrocinhaDoBem\webApi\obj\Debug\net6.0\webApi.csproj.AssemblyReference.cache
+C:\Users\A498901\OneDrive - Grupo Marista\CarrocinhaDoBem\webApi\obj\Debug\net6.0\webApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\A498901\OneDrive - Grupo Marista\CarrocinhaDoBem\webApi\obj\Debug\net6.0\webApi.AssemblyInfoInputs.cache
+C:\Users\A498901\OneDrive - Grupo Marista\CarrocinhaDoBem\webApi\obj\Debug\net6.0\webApi.AssemblyInfo.cs
+C:\Users\A498901\OneDrive - Grupo Marista\CarrocinhaDoBem\webApi\obj\Debug\net6.0\webApi.csproj.CoreCompileInputs.cache
+C:\Users\A498901\OneDrive - Grupo Marista\CarrocinhaDoBem\webApi\obj\Debug\net6.0\webApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\A498901\OneDrive - Grupo Marista\CarrocinhaDoBem\webApi\obj\Debug\net6.0\webApi.MvcApplicationPartsAssemblyInfo.cache
