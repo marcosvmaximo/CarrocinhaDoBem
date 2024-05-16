@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vini0\\Downloads\\cdb2\\demo-angular\\WebApi\\CarrocinhaDoBem.Api\\CarrocinhaDoBem.Api.csproj": {}
+    "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/WebApi/CarrocinhaDoBem.Api/CarrocinhaDoBem.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vini0\\Downloads\\cdb2\\demo-angular\\WebApi\\CarrocinhaDoBem.Api\\CarrocinhaDoBem.Api.csproj": {
+    "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/WebApi/CarrocinhaDoBem.Api/CarrocinhaDoBem.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vini0\\Downloads\\cdb2\\demo-angular\\WebApi\\CarrocinhaDoBem.Api\\CarrocinhaDoBem.Api.csproj",
+        "projectUniqueName": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/WebApi/CarrocinhaDoBem.Api/CarrocinhaDoBem.Api.csproj",
         "projectName": "CarrocinhaDoBem.Api",
-        "projectPath": "C:\\Users\\vini0\\Downloads\\cdb2\\demo-angular\\WebApi\\CarrocinhaDoBem.Api\\CarrocinhaDoBem.Api.csproj",
-        "packagesPath": "C:\\Users\\vini0\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vini0\\Downloads\\cdb2\\demo-angular\\WebApi\\CarrocinhaDoBem.Api\\obj\\",
+        "projectPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/WebApi/CarrocinhaDoBem.Api/CarrocinhaDoBem.Api.csproj",
+        "packagesPath": "/Users/marcosmaximo/.nuget/packages/",
+        "outputPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/WebApi/CarrocinhaDoBem.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vini0\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/marcosmaximo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -93,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

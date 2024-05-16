@@ -31,7 +31,7 @@ export class NavBarComponent {
     }
   }
 
-  isLoggedIn: boolean = GetLogin();
+  isLoggedIn: boolean = false;
 
   login() {
 

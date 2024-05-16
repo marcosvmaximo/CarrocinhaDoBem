@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import {ProfileService} from "../../services/profile.service";
 
 @Component({
   selector: 'app-perfil-edit',
@@ -11,7 +12,7 @@ export class PerfilEditComponent {
   perfilForm: FormGroup;
   listaErros: string[] = [];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private service: ProfileService) {
     this.perfilForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")]],
       email: ['', [Validators.required, Validators.minLength(10), Validators.email, Validators.maxLength(100)]],
@@ -38,7 +39,7 @@ export class PerfilEditComponent {
       const control = this.perfilForm.get(campo);
 
       if (control && control.invalid && control.touched) {
-        const errors = control.errors as ValidationErrors; 
+        const errors = control.errors as ValidationErrors;
 
         Object.keys(errors).forEach(erro => {
           switch (erro) {
@@ -59,7 +60,7 @@ export class PerfilEditComponent {
       }
     });
 
-    this.validarFormulario(); 
+    this.validarFormulario();
   }
 
   validarFormulario() {
@@ -88,5 +89,18 @@ export class PerfilEditComponent {
   uploadFile(file: File) {
     // Falta a lógica de envio da imagem com a API
     console.log('Arquivo selecionado:', file);
+  }
+
+  deleteUser() {
+    // let email = this.perfilForm.get('email');
+    // if(email?.invalid){
+    //   this.listaErros.push(`É necessário preencher pelo menos o email para deletar o usuário.`);
+    // }
+    //
+    // this.service.deleteProfile(email);
+  }
+
+  updateUser() {
+    // this.service.updateProfile()
   }
 }

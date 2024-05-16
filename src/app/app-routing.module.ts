@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'doacoes', component: DoacoesComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'contato', component: ContatoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
   { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'perfil-edit', component:PerfilEditComponent, canActivate: [UsuarioAutenticadoGuard] }
+  { path: 'perfil-edit', component:PerfilEditComponent, canActivate: [UsuarioNaoAutenticadoGuard] }
 ];
 
 
