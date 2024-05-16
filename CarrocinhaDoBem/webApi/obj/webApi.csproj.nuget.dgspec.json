@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj": {}
+    "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj": {
+    "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj",
+        "projectUniqueName": "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj",
         "projectName": "webApi",
-        "projectPath": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj",
-        "packagesPath": "C:\\Users\\A498901\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\obj\\",
+        "projectPath": "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj",
+        "packagesPath": "C:\\Users\\Play\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\A498901\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Play\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -47,21 +42,27 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[12.0.1, )"
+              "version": "[6.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools.DotNet": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.0.3, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[6.0.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             },
             "Serilog": {
               "target": "Package",
@@ -73,7 +74,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[6.6.1, )"
             }
           },
           "imports": [
@@ -87,6 +88,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.29, 6.0.29]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -95,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
