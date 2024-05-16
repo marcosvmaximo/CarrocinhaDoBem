@@ -10,11 +10,11 @@ public class Sponsorship : ModelBase
     public int UserId{ get; set; }
 
     [Required(ErrorMessage = "O ID do animal é obrigatório ")]
-    public int Animal{ get; set; }
+    public int AnimalId{ get; set; }
 
     [Required(ErrorMessage = "A data inicial da patrocínio é obrigatória.")]
     [DataType(DataType.Date)] 
-    [DisplayFormat(DateFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     public DateTime InitialDate { get; set; }
 
     [Required(ErrorMessage = "A data final da patrocínio é obrigatória.")]
@@ -34,5 +34,4 @@ public class Sponsorship : ModelBase
 
     // Relacionamento com a tabela User
     public virtual User User { get; set; }
-
 }
