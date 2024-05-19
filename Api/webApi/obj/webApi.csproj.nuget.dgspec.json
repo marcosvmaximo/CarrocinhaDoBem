@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\55419\\esteganografia\\exemplos\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\55419\\esteganografia\\exemplos\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\55419\\esteganografia\\exemplos\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
-        "projectName": "webApi",
-        "projectPath": "C:\\Users\\55419\\esteganografia\\exemplos\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
-        "packagesPath": "C:\\Users\\55419\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\55419\\esteganografia\\exemplos\\CarrocinhaDoBem\\Api\\webApi\\obj\\",
-=======
     "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj": {}
   },
   "projects": {
@@ -25,10 +12,9 @@
         "projectPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj",
         "packagesPath": "/Users/marcosmaximo/.nuget/packages/",
         "outputPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/",
->>>>>>> d29711f9922d296e49cedbced20045d6da2c98f9
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\55419\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/marcosmaximo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -102,6 +88,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -110,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.422\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

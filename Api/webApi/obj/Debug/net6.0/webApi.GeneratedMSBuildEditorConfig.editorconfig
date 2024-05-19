@@ -5,16 +5,10 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = webApi
 build_property.RootNamespace = webApi
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\55419\esteganografia\exemplos\CarrocinhaDoBem\Api\webApi\
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\55419\esteganografia\exemplos\CarrocinhaDoBem\Api\webApi
-=======
 build_property.ProjectDir = /Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
@@ -22,5 +16,4 @@ build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi
->>>>>>> d29711f9922d296e49cedbced20045d6da2c98f9
 build_property._RazorSourceGeneratorDebug = 
