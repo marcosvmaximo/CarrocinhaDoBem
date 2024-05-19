@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Iy3dhTR/TpRm3St+fQWI0HdjWskmOZeQbDT9NlutEj7aIdxfFfMqxgWuUcW1ZERM6OkPhx0IhxCVjQNR+CI0Xw==",
+  "dgSpecHash": "bKk6l1Mu196wrPvvAk1Sk3Va2WN+h3GqF8LlT0Jc3vgXpwjMfCAV0yeOsvHk0PNcjgPW4GfbIFVmehfxa6xITg==",
   "success": true,
-  "projectFilePath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/webApi.csproj",
+  "projectFilePath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj",
   "expectedPackageFiles": [
     "/Users/marcosmaximo/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/marcosmaximo/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",

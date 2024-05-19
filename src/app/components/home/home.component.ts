@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {setShow} from "../../services/guard/show";
 
 @Component({
   selector: 'app-home',
@@ -8,6 +7,5 @@ import {setShow} from "../../services/guard/show";
 })
 export class HomeComponent implements OnInit{
     ngOnInit(): void {
-        setShow(true);
     }
 }

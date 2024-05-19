@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { delay, of, timer } from 'rxjs';
-import {setShow} from "../../services/guard/show";
 import {AuthService} from "../../services/auth.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {IUser} from "../../interfaces/IUser";
@@ -12,7 +11,7 @@ import {Router} from "@angular/router";
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
-export class CadastroComponent implements OnInit{
+export class CadastroComponent implements OnInit {
 
   signupForm: FormGroup;
   listaErros: string[] = [];
@@ -39,7 +38,6 @@ export class CadastroComponent implements OnInit{
     return null;
   }
   ngOnInit(): void {
-    setShow(false);
   }
 
   validarConfirmarSenha(control: AbstractControl): ValidationErrors | null {

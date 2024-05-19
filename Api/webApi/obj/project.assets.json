@@ -3021,11 +3021,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/webApi.csproj",
+      "projectUniqueName": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj",
       "projectName": "webApi",
-      "projectPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/webApi.csproj",
+      "projectPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj",
       "packagesPath": "/Users/marcosmaximo/.nuget/packages/",
-      "outputPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/",
+      "outputPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/marcosmaximo/.nuget/NuGet/NuGet.Config"

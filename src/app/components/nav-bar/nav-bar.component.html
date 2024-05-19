@@ -11,10 +11,10 @@ style="background-color: #EEB336;">
       <div class="collapse navbar-collapse text" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto text d-flex gap-4">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['pets']">Pets</a>
+            <a class="nav-link active" [routerLink]="['pets']">Pets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="pet-cadastro" [routerLink]="['doacoes']">Doações</a>
+            <a class="nav-link active" [routerLink]="['doacoes']">Doações</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" [routerLink]="['contato']">Contato</a>
@@ -23,11 +23,11 @@ style="background-color: #EEB336;">
             <a class="nav-link active" [routerLink]="['nossa-missao']">Nossa missão</a>
           </li>
         </ul>
-        <div class="d-flex gap-2 deslogado" *ngIf="!isLoggedIn">
-          <button type="button" class="btn btn-outline-light btn-lg" [routerLink]="['login']">Entrar</button>
-          <button type="button" class="btn btn-light btn-lg" [routerLink]="['cadastro']">Cadastrar</button>
+        <div class="d-flex gap-2 deslogado">
+          <button type="button" class="btn btn-outline-light btn-lg" (click)="goToLogin()">Entrar</button>
+          <button type="button" class="btn btn-light btn-lg" (click)="goToRegister()">Cadastrar</button>
         </div>
-        <div class="logado" *ngIf="isLoggedIn">
+        <div class="logado">
          <div id="linha-vertical"></div>
          <div class="dropdown" [class.show]="isDropdownOpen">
            <a (click)="toggleDropdown(true)" class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">

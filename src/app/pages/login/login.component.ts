@@ -1,18 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { delay, of } from 'rxjs';
-import {setShow} from "../../services/guard/show";
 import { AuthService } from '../../services/auth.service';
 import {HttpErrorResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {logado, setLogin} from "../../services/guard/logado";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent{
   signInForm: FormGroup;
   listaErros: string[] = [];
 
@@ -28,11 +26,6 @@ export class LoginComponent implements OnInit{
 
     });
   }
-
-  ngOnInit(): void {
-    setShow(false);
-  }
-
 
   validarSenha(control: AbstractControl): ValidationErrors | null {
     const senha = control.value;
@@ -86,8 +79,6 @@ export class LoginComponent implements OnInit{
     this.authService.login(credentials).subscribe(
       (response: any) => {
         console.log('Usuário autenticado:', response);
-        setLogin();
-
         this.router.navigate(['/home']);
       },
       (error: HttpErrorResponse) => {
@@ -118,6 +109,4 @@ export class LoginComponent implements OnInit{
   fecharModal(): void{
     this.listaErros = [];
   }
-
-
 }
