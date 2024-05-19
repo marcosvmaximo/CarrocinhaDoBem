@@ -12,7 +12,7 @@ export class AuthService {
 
   // @ts-ignore
   login(credentials: { email: string, password: string }): Observable<any> {
-    return this.http.post<any>(`${apiUrl}/login`, credentials);
+    return this.http.post<any>(`${apiUrl}/auth/login`, credentials);
   }
 
   registrar(nome: string, email: string, password: string, confirmPassword: string): Observable<any> {
@@ -22,7 +22,7 @@ export class AuthService {
       password: password,
       confirmPassword: confirmPassword
     };
-    return this.http.post<any>(`${apiUrl}/registrar`, user);
+    return this.http.post<any>(`${apiUrl}/auth/register`, user);
   }
 
   estaLogado() : boolean{
