@@ -78,10 +78,13 @@ export class LoginComponent{
 
     this.authService.login(credentials).subscribe(
       (response: any) => {
-        console.log('Usuário autenticado:', response);
+        sessionStorage.setItem('logado', 'true');
+        localStorage.setItem('logado', 'true');
+
         this.router.navigate(['/home']);
       },
       (error: HttpErrorResponse) => {
+        console.log("deu erro")
         console.error('Erro ao autenticar usuário:', error);
 
         if (error.error) {

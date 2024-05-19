@@ -97,8 +97,9 @@ export class CadastroComponent implements OnInit {
     const formValue = this.signupForm.value;
     this.authService.registrar(formValue.nome, formValue.email, formValue.senha, formValue.confirmarSenha).subscribe(
       (response: any) => {
-        console.log('Usuário registrado com sucesso:', response);
-        this.router.navigate(['/login']);
+        sessionStorage.setItem('logado', 'true');
+        localStorage.setItem('logado', 'true');
+        this.router.navigate(['/home']);
       },
       (error: HttpErrorResponse) => {
         console.error('Erro ao registrar usuário:', error);

@@ -48,6 +48,6 @@ public class AuthController : ControllerBase
 
     var isPasswordValid = _service.VerifyPassword(user, request.Password);
 
-    return isPasswordValid ? Ok("Login realizado com sucesso.") : BadRequest("Email ou senha inválidos.");
+    return isPasswordValid ? Ok(new {sucess = true, message = "Login realizado com sucesso."}) : BadRequest("Email ou senha inválidos.");
   }
 }
