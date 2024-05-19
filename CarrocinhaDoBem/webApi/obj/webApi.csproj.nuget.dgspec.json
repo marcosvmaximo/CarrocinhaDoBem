@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj": {}
+    "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj": {
+    "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj",
+        "projectUniqueName": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/webApi.csproj",
         "projectName": "webApi",
-        "projectPath": "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\webApi.csproj",
-        "packagesPath": "C:\\Users\\Play\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Play\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\webApi\\obj\\",
+        "projectPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/webApi.csproj",
+        "packagesPath": "/Users/marcosmaximo/.nuget/packages/",
+        "outputPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Play\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/marcosmaximo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -91,19 +91,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
+              "version": "[6.0.26, 6.0.26]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.29, 6.0.29]"
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[6.0.26, 6.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
+              "version": "[6.0.26, 6.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -114,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

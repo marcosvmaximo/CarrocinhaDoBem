@@ -1,8 +1,6 @@
 using CarrocinhaDoBem.Api.Context;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using webApi.Context;
-using webApi.Models;
+using webApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,22 +22,14 @@ builder.Services.AddCors(options =>
     });
 });
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new ArgumentNullException("builder.Configuration.GetConnectionString(\"DefaultConnection\")");
 builder.Services.AddDbContext<DataContext>(options =>
-{
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-});
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
 builder.Services.AddScoped<DataContext>();
-
-builder.Services.AddIdentity<User, IdentityRole<int>>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
+builder.Services.AddTransient<IPasswordService, PasswordService>();
 
 var app = builder.Build();
 

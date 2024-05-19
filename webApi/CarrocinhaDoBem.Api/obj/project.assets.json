@@ -2891,11 +2891,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/marcosmaximo/RiderProjects/demo-angular/WebApi/CarrocinhaDoBem.Api/CarrocinhaDoBem.Api.csproj",
+      "projectUniqueName": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/WebApi/CarrocinhaDoBem.Api/CarrocinhaDoBem.Api.csproj",
       "projectName": "CarrocinhaDoBem.Api",
-      "projectPath": "/Users/marcosmaximo/RiderProjects/demo-angular/WebApi/CarrocinhaDoBem.Api/CarrocinhaDoBem.Api.csproj",
+      "projectPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/WebApi/CarrocinhaDoBem.Api/CarrocinhaDoBem.Api.csproj",
       "packagesPath": "/Users/marcosmaximo/.nuget/packages/",
-      "outputPath": "/Users/marcosmaximo/RiderProjects/demo-angular/WebApi/CarrocinhaDoBem.Api/obj/",
+      "outputPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/WebApi/CarrocinhaDoBem.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/marcosmaximo/.nuget/NuGet/NuGet.Config"
