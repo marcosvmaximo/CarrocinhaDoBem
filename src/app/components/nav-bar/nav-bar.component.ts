@@ -15,6 +15,15 @@ export class NavBarComponent {
   constructor(private router: Router, private authService: AuthService) {
   }
 
+  estaLogado(): boolean {
+    return this.authService.estaLogado();
+  }
+
+  logout(){
+    sessionStorage.setItem('logado', '');
+    localStorage.setItem('logado', '');
+  }
+
   toggleDropdown(force?: boolean) {
     if (typeof force !== 'undefined') {
       this.isDropdownOpen = force;

@@ -23,11 +23,11 @@ style="background-color: #EEB336;">
             <a class="nav-link active" [routerLink]="['nossa-missao']">Nossa missão</a>
           </li>
         </ul>
-        <div class="d-flex gap-2 deslogado">
+        <div class="d-flex gap-2 deslogado" *ngIf="!estaLogado()">
           <button type="button" class="btn btn-outline-light btn-lg" (click)="goToLogin()">Entrar</button>
           <button type="button" class="btn btn-light btn-lg" (click)="goToRegister()">Cadastrar</button>
         </div>
-        <div class="logado">
+        <div class="logado" *ngIf="estaLogado()">
          <div id="linha-vertical"></div>
          <div class="dropdown" [class.show]="isDropdownOpen">
            <a (click)="toggleDropdown(true)" class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
@@ -35,13 +35,13 @@ style="background-color: #EEB336;">
            </a>
            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
              <li>
-               <a class="dropdown-item" href="#">My profile</a>
+               <a class="dropdown-item" [routerLink]="['perfil-edit']">My profile</a>
              </li>
              <li>
                <a class="dropdown-item" href="#">Settings</a>
              </li>
              <li>
-               <a class="dropdown-item" href="#">Logout</a>
+               <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
              </li>
            </ul>
          </div>

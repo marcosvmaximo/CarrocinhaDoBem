@@ -26,7 +26,6 @@ export class AuthService {
   }
 
   estaLogado() : boolean{
-    console.log("teste")
-    return false;
+    return sessionStorage.getItem('logado') === 'true';
   }
 }
