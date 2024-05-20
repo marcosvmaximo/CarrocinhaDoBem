@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { getShow } from "./services/guard/show";
 
 @Component({
   selector: 'app-root',
@@ -7,11 +6,4 @@ import { getShow } from "./services/guard/show";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  showNavBar(): boolean {
-    return getShow();
-  }
-
-  showFooter(): boolean {
-    return getShow();
-  }
 }

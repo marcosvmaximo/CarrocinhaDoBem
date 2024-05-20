@@ -5,17 +5,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
-import { FooterComponent } from './pages/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PerfilEditComponent } from './pages/perfil-edit/perfil-edit.component';
 import { RouterModule } from "@angular/router";
-import { PetsComponent } from './pages/pets/pets.component';
 import { DoacoesComponent } from './pages/doacoes/doacoes.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { NossaMissaoComponent } from './pages/nossa-missao/nossa-missao.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +26,10 @@ import { NossaMissaoComponent } from './pages/nossa-missao/nossa-missao.componen
     CadastroComponent,
     LoginComponent,
     PerfilEditComponent,
-    PetsComponent,
     DoacoesComponent,
     ContatoComponent,
-    NossaMissaoComponent
+    NossaMissaoComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

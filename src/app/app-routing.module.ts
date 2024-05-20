@@ -1,29 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PerfilEditComponent } from './pages/perfil-edit/perfil-edit.component';
-
-import { UsuarioNaoAutenticadoGuard } from './services/guard/usuario-nao-autenticado.guard';
-import { UsuarioAutenticadoGuard } from './services/guard/usuario-autenticado.guard';
 import {NossaMissaoComponent} from "./pages/nossa-missao/nossa-missao.component";
 import {ContatoComponent} from "./pages/contato/contato.component";
 import {DoacoesComponent} from "./pages/doacoes/doacoes.component";
-import {PetsComponent} from "./pages/pets/pets.component";
 import {PetCadastroComponent} from "./pages/pet-cadastro/pet-cadastro.component";
+import {PetComponent} from "./pages/pet/pet.component";
+import {autorizadoGuard} from "./services/guard/autorizado.guard";
+import {HomePageComponent} from "./pages/home-page/home-page.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'cadastro', component: CadastroComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'pets', component: PetsComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'pets-cadastro', component: PetCadastroComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'doacoes', component: DoacoesComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'contato', component: ContatoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-  { path: 'perfil-edit', component:PerfilEditComponent, canActivate: [UsuarioAutenticadoGuard] }
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [
+      { path: '', component: HomePageComponent },
+      { path: 'pets', component: PetComponent, canActivate: [autorizadoGuard]  },
+      { path: 'pets-cadastro', component: PetCadastroComponent, canActivate: [autorizadoGuard]  },
+      { path: 'doacoes', component: DoacoesComponent, canActivate: [autorizadoGuard] },
+      { path: 'contato', component: ContatoComponent, canActivate: [autorizadoGuard] },
+      { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [autorizadoGuard] },
+      { path: 'perfil-edit', component: PerfilEditComponent, canActivate: [autorizadoGuard] }
+    ]
+  },
+  { path: 'cadastrar', component: CadastroComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 

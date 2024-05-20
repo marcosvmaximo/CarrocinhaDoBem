@@ -1,0 +1,207 @@
+C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.csproj.AssemblyReference.cache
+C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.AssemblyInfoInputs.cache
+C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.AssemblyInfo.cs
+C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.csproj.CoreCompileInputs.cache
+C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.csproj.AssemblyReference.cache
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.AssemblyInfoInputs.cache
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.AssemblyInfo.cs
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.csproj.CoreCompileInputs.cache
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/appsettings.Development.json
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/appsettings.json
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.exe
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.deps.json
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.runtimeconfig.json
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.pdb
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/AutoMapper.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Binder.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Hosting.Abstractions.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.OpenApi.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/MySqlConnector.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.AspNetCore.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Extensions.Hosting.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Extensions.Logging.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Formatting.Compact.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Settings.Configuration.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Sinks.Console.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Sinks.Debug.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Sinks.File.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/System.Text.Json.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets.build.json
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets.development.json
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets/msbuild.webApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets/msbuild.build.webApi.props
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.webApi.props
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.webApi.props
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets.pack.json
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/scopedcss/bundle/webApi.styles.css
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.csproj.CopyComplete
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/refint/webApi.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.pdb
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.genruntimeconfig.cache
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/obj/Debug/net6.0/ref/webApi.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Humanizer.dll
+C:/Users/Play/OneDrive - Grupo Marista/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/appsettings.Development.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/appsettings.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.deps.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.runtimeconfig.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/webApi.pdb
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/AutoMapper.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Humanizer.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/MySqlConnector.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.AspNetCore.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Extensions.Hosting.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Extensions.Logging.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Formatting.Compact.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Settings.Configuration.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Sinks.Console.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Sinks.Debug.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Serilog.Sinks.File.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/System.Text.Json.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.csproj.AssemblyReference.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.AssemblyInfoInputs.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.AssemblyInfo.cs
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.csproj.CoreCompileInputs.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.sourcelink.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets.build.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets.development.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets/msbuild.webApi.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets/msbuild.build.webApi.props
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.webApi.props
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.webApi.props
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/scopedcss/bundle/webApi.styles.css
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.csproj.CopyComplete
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/refint/webApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.pdb
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/webApi.genruntimeconfig.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/CarrocinhaDoBem/webApi/obj/Debug/net6.0/ref/webApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/appsettings.Development.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/appsettings.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/webApi
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/webApi.deps.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/webApi.runtimeconfig.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/webApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/webApi.pdb
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/AutoMapper.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Humanizer.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/MySqlConnector.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.AspNetCore.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.Extensions.Hosting.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.Extensions.Logging.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.Formatting.Compact.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.Settings.Configuration.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.Sinks.Console.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.Sinks.Debug.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Serilog.Sinks.File.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/System.Text.Json.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.csproj.AssemblyReference.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.AssemblyInfoInputs.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.AssemblyInfo.cs
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.csproj.CoreCompileInputs.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.sourcelink.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/staticwebassets.build.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/staticwebassets.development.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/staticwebassets/msbuild.webApi.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/staticwebassets/msbuild.build.webApi.props
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.webApi.props
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.webApi.props
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/scopedcss/bundle/webApi.styles.css
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.csproj.CopyComplete
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/refint/webApi.dll
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.pdb
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.genruntimeconfig.cache
+/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/ref/webApi.dll
