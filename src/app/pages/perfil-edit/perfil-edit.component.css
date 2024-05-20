@@ -1,7 +1,6 @@
 .profile{
     justify-content: space-evenly;
     align-items: baseline;
-    background-color: #1F1B17;
     height: 100vh;
 }
 /*
@@ -15,18 +14,17 @@
     display: block;
     flex-direction: column;
     align-items: center;
-    margin-left: 50%;
 }
+
 .form-body{
     width: 100%;
     max-width: 600px;
-    
+    color: black !important;
 }
+
 h1{
-    color: white;
     font-size: 24px;
     text-align: center;
-
 }
 /*
 #picture{
@@ -49,10 +47,22 @@ h1{
     background-color: blue;
 }*/
 
-.format{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-    background-color: #1F1B17;
+.circle {
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 5px solid #EEB336;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white; /* Para garantir que o fundo seja branco */
 }
-  
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
