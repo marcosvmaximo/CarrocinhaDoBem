@@ -29,6 +29,7 @@ const routes: Routes = [
   },
   { path: 'cadastrar', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 
