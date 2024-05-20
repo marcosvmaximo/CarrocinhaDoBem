@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "oGzmoSoEdsAtMiB7TUjIYvgjqBZFfD7hFxmcIPBV0S41KN+M22O6EwCPn+EEMdN369W0mjB9Uhw27bW7e2msMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\55419\\esteganografia\\exemplos\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
+=======
+  "dgSpecHash": "bKk6l1Mu196wrPvvAk1Sk3Va2WN+h3GqF8LlT0Jc3vgXpwjMfCAV0yeOsvHk0PNcjgPW4GfbIFVmehfxa6xITg==",
+  "success": true,
+  "projectFilePath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj",
+>>>>>>> d29711f9922d296e49cedbced20045d6da2c98f9
   "expectedPackageFiles": [
     "C:\\Users\\55419\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\55419\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

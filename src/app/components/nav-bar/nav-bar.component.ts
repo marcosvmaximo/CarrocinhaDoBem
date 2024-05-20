@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
-import {GetLogin, logado} from "../../services/guard/logado";
+import {Router} from "@angular/router";
 
 
 
@@ -12,7 +12,7 @@ import {GetLogin, logado} from "../../services/guard/logado";
 export class NavBarComponent {
   isDropdownOpen = false;
 
-  constructor(private authService: AuthService) {
+  constructor(private router: Router, private authService: AuthService) {
   }
 
   toggleDropdown(force?: boolean) {
@@ -31,17 +31,12 @@ export class NavBarComponent {
     }
   }
 
-  isLoggedIn: boolean = GetLogin();
-
-  login() {
-
-    this.isLoggedIn = true;
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 
-  logout() {
-
-    this.isLoggedIn = false;
+  goToRegister(){
+    this.router.navigate(['/cadastrar']);
   }
-
 }
 
