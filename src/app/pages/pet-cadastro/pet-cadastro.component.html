@@ -7,80 +7,88 @@
     <h1 class="text-center mt-4" style="color: #EEB336;">Cadastro de animais</h1>
     <p class="text-center text-muted" style="color: #726C5E; text-decoration: underline;">Preencha o formulário abaixo</p>
 
-    <form [formGroup]="resgisterForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2" style="max-width: 100%;" novalidate>
-      <div class="form-group" [class.has-error]="resgisterForm.get('especie')!.invalid && resgisterForm.get('especie')!.touched">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2" style="max-width: 100%;" enctype="multipart/form-data" novalidate>
+      <div class="form-group" [class.has-error]="registerForm.get('especie')!.invalid && registerForm.get('especie')!.touched">
         <label for="especie">Espécie</label>
         <select class="form-control form-control-lg form-carrocinha" id="especie" formControlName="especie">
           <option>Cachorro</option>
           <option>Gato</option>
           <option>Outro</option>
         </select>
-        <div *ngIf="resgisterForm.get('especie')!.invalid && resgisterForm.get('especie')!.touched" class="text-danger">
+        <div *ngIf="registerForm.get('especie')!.invalid && registerForm.get('especie')!.touched" class="text-danger">
           Espécie é obrigatória.
         </div>
       </div>
 
-      <div class="form-group" [class.has-error]="resgisterForm.get('raca')!.invalid && resgisterForm.get('raca')!.touched">
+      <div class="form-group" [class.has-error]="registerForm.get('raca')!.invalid && registerForm.get('raca')!.touched">
         <label for="raca">Raça</label>
         <select class="form-control form-control-lg form-carrocinha" id="raca" formControlName="raca">
           <option>Raça 1</option>
           <option>Raça 2</option>
           <option>Raça 3</option>
         </select>
-        <div *ngIf="resgisterForm.get('raca')!.invalid && resgisterForm.get('raca')!.touched" class="text-danger">
+        <div *ngIf="registerForm.get('raca')!.invalid && registerForm.get('raca')!.touched" class="text-danger">
           Raça é obrigatória.
         </div>
       </div>
 
-      <div class="form-group" [class.has-error]="resgisterForm.get('cor')!.invalid && resgisterForm.get('cor')!.touched">
+      <div class="form-group" [class.has-error]="registerForm.get('cor')!.invalid && registerForm.get('cor')!.touched">
         <label for="cor">Cor</label>
         <select class="form-control form-control-lg form-carrocinha" id="cor" formControlName="cor">
           <option>Cor 1</option>
           <option>Cor 2</option>
           <option>Cor 3</option>
         </select>
-        <div *ngIf="resgisterForm.get('cor')!.invalid && resgisterForm.get('cor')!.touched" class="text-danger">
+        <div *ngIf="registerForm.get('cor')!.invalid && registerForm.get('cor')!.touched" class="text-danger">
           Cor é obrigatória.
         </div>
       </div>
 
-      <div class="form-group" [class.has-error]="resgisterForm.get('porte')!.invalid && resgisterForm.get('porte')!.touched">
+      <div class="form-group" [class.has-error]="registerForm.get('porte')!.invalid && registerForm.get('porte')!.touched">
         <label for="porte">Porte</label>
         <select class="form-control form-control-lg form-carrocinha" id="porte" formControlName="porte">
           <option>Pequeno</option>
           <option>Médio</option>
           <option>Grande</option>
         </select>
-        <div *ngIf="resgisterForm.get('porte')!.invalid && resgisterForm.get('porte')!.touched" class="text-danger">
+        <div *ngIf="registerForm.get('porte')!.invalid && registerForm.get('porte')!.touched" class="text-danger">
           Porte é obrigatório.
         </div>
       </div>
 
-      <div class="form-group" [class.has-error]="resgisterForm.get('dataResgate')!.invalid && resgisterForm.get('dataResgate')!.touched">
+      <div class="form-group" [class.has-error]="registerForm.get('dataResgate')!.invalid && registerForm.get('dataResgate')!.touched">
         <label for="data-resgate">Data de resgate</label>
         <input type="date" class="form-control form-control-lg form-carrocinha" id="data-resgate" formControlName="dataResgate">
-        <div *ngIf="resgisterForm.get('dataResgate')!.invalid && resgisterForm.get('dataResgate')!.touched" class="text-danger">
+        <div *ngIf="registerForm.get('dataResgate')!.invalid && registerForm.get('dataResgate')!.touched" class="text-danger">
           Data de resgate é obrigatória.
         </div>
       </div>
 
-      <div class="form-group" [class.has-error]="resgisterForm.get('dataNascimento')!.invalid && resgisterForm.get('dataNascimento')!.touched">
+      <div class="form-group" [class.has-error]="registerForm.get('dataNascimento')!.invalid && registerForm.get('dataNascimento')!.touched">
         <label for="data-nascimento">Data de nascimento</label>
         <input type="date" class="form-control form-control-lg form-carrocinha" id="data-nascimento" formControlName="dataNascimento">
-        <div *ngIf="resgisterForm.get('dataNascimento')!.invalid && resgisterForm.get('dataNascimento')!.touched" class="text-danger">
+        <div *ngIf="registerForm.get('dataNascimento')!.invalid && registerForm.get('dataNascimento')!.touched" class="text-danger">
           Data de nascimento é obrigatória.
         </div>
       </div>
 
-      <div class="form-group" [class.has-error]="resgisterForm.get('nome')!.invalid && resgisterForm.get('nome')!.touched">
+      <div class="form-group" [class.has-error]="registerForm.get('nome')!.invalid && registerForm.get('nome')!.touched">
         <label for="nome">Nome</label>
         <input type="text" class="form-control form-control-lg form-carrocinha" id="nome" formControlName="nome">
-        <div *ngIf="resgisterForm.get('nome')!.invalid && resgisterForm.get('nome')!.touched" class="text-danger">
+        <div *ngIf="registerForm.get('nome')!.invalid && registerForm.get('nome')!.touched" class="text-danger">
           Nome é obrigatório e deve conter entre 3 e 100 caracteres.
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-lg border-0 p-3 text-capitalize fw-semibold mt-4" [disabled]="resgisterForm.invalid" style="background-color: #EEB336; color: #9D6A00;">CADASTRAR</button>
+      <div class="form-group" [class.has-error]="registerForm.get('animalPic')!.invalid && registerForm.get('animalPic')!.touched">
+        <label for="animal-pic">Foto do Animal</label>
+        <input type="file" class="form-control form-control-lg form-carrocinha" id="animal-pic" (change)="onFileSelected($event)">
+        <div *ngIf="registerForm.get('animalPic')!.invalid && registerForm.get('animalPic')!.touched" class="text-danger">
+          A foto do animal é obrigatória.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg border-0 p-3 text-capitalize fw-semibold mt-4" [disabled]="registerForm.invalid" style="background-color: #EEB336; color: #9D6A00;">CADASTRAR</button>
     </form>
   </div>
 </div>

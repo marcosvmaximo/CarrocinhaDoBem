@@ -1,11 +1,11 @@
-using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using webApi.Models;
 using CarrocinhaDoBem.Api.Context;
 using Microsoft.Extensions.Logging;
-
 
 namespace webApi.Controllers
 {
@@ -42,11 +42,20 @@ namespace webApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Animal animal)
+        public async Task<IActionResult> Create([FromForm] Animal animal, IFormFile animalPic)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+
+            if (animalPic != null)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    await animalPic.CopyToAsync(ms);
+                    animal.AnimalPic = ms.ToArray();
+                }
             }
 
             _context.Animals.Add(animal);
@@ -56,7 +65,7 @@ namespace webApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Animal updatedAnimal)
+        public async Task<IActionResult> Update(int id, [FromForm] Animal updatedAnimal, IFormFile animalPic)
         {
             if (!ModelState.IsValid)
             {
@@ -77,6 +86,15 @@ namespace webApi.Controllers
             animal.Breed = updatedAnimal.Breed;
             animal.Color = updatedAnimal.Color;
             animal.AnimalType = updatedAnimal.AnimalType;
+
+            if (animalPic != null)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    await animalPic.CopyToAsync(ms);
+                    animal.AnimalPic = ms.ToArray();
+                }
+            }
 
             _context.Animals.Update(animal);
             await _context.SaveChangesAsync();

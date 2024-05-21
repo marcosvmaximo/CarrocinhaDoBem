@@ -62,9 +62,9 @@ namespace webApi.Controllers
             }
 
             _context.Donations.Remove(donation);
-            await _context.SaveChangesAsync("Doação deletada com sucesso");
+            await _context.SaveChangesAsync();
 
-            return NoContent("Doação nao encontrada"); 
+            return NotFound("Doação nao encontrada");
         }
 
         private bool DonationExists(int id)
