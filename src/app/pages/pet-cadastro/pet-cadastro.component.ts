@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { timer } from 'rxjs';
 import { CommonModule } from "@angular/common";
+import { AuthService } from '../../services/auth.service'; 
 
 @Component({
   selector: 'app-pet-cadastro',
@@ -22,8 +23,9 @@ import { CommonModule } from "@angular/common";
 export class PetCadastroComponent {
   registerForm: FormGroup;
   listaErros: string[] = [];
+  isLoggedIn: boolean;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
     this.registerForm = this.formBuilder.group({
       especie: ['', Validators.required],
       raca: ['', Validators.required],
@@ -34,6 +36,15 @@ export class PetCadastroComponent {
       nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
       animalPic: [null, Validators.required]
     });
+
+    // Verifique se o usuário está logado
+    this.isLoggedIn = this.authService.estaLogado();
+
+    // Se desejar redirecionar ou mostrar uma mensagem se não estiver logado
+    if (!this.isLoggedIn) {
+      // Redirecionar ou mostrar uma mensagem de alerta
+      console.log('Usuário não está logado');
+    }
   }
 
   onFileSelected(event: any): void {
@@ -55,6 +66,11 @@ export class PetCadastroComponent {
   }
 
   onSubmit() {
+    if (!this.isLoggedIn) {
+      this.listaErros = ['Você precisa estar logado para cadastrar um pet.'];
+      return;
+    }
+
     this.listaErros = [];
 
     Object.keys(this.registerForm.controls).forEach(campo => {

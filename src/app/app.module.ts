@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,7 +40,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })

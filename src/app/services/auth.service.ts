@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {IUser} from "../interfaces/IUser";
-import {apiUrl} from "../api";
+import { IUser } from "../interfaces/IUser";
+import { apiUrl } from "../api";
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: any // Inject PLATFORM_ID to check platform
+  ) {}
 
-  // @ts-ignore
   login(credentials: { email: string, password: string }): Observable<any> {
     return this.http.post<any>(`${apiUrl}/auth/login`, credentials);
   }
@@ -25,7 +28,11 @@ export class AuthService {
     return this.http.post<any>(`${apiUrl}/auth/register`, user);
   }
 
-  estaLogado() : boolean{
-    return sessionStorage.getItem('logado') === 'true';
+  estaLogado(): boolean {
+    if (isPlatformBrowser(this.platformId)) {
+      // Code to access sessionStorage only runs in the browser
+      return sessionStorage.getItem('logado') === 'true';
+    }
+    return false; // Default to false on the server side
   }
 }
