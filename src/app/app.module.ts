@@ -16,6 +16,7 @@ import { DoacoesComponent } from './pages/doacoes/doacoes.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { NossaMissaoComponent } from './pages/nossa-missao/nossa-missao.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     DoacoesComponent,
     ContatoComponent,
     NossaMissaoComponent,
-    HomePageComponent
+    HomePageComponent,
+    PetCadastroComponent
   ],
   imports: [
     BrowserModule,

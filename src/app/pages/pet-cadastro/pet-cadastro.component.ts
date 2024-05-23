@@ -1,29 +1,28 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  ValidationErrors,
-  ReactiveFormsModule
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { timer } from 'rxjs';
-import { CommonModule } from "@angular/common";
-import { AuthService } from '../../services/auth.service'; 
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-pet-cadastro',
   templateUrl: './pet-cadastro.component.html',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    CommonModule
-  ],
   styleUrls: ['./pet-cadastro.component.css']
 })
 export class PetCadastroComponent {
   registerForm: FormGroup;
   listaErros: string[] = [];
   isLoggedIn: boolean;
+
+  formFields = [
+    { controlName: 'especie', label: 'Espécie', type: 'text', placeholder: 'Digite a espécie do animal', errorMsg: 'Espécie é obrigatória.' },
+    { controlName: 'raca', label: 'Raça', type: 'text', placeholder: 'Digite a raça do animal', errorMsg: 'Raça é obrigatória.' },
+    { controlName: 'cor', label: 'Cor', type: 'text', placeholder: 'Digite a cor do animal', errorMsg: 'Cor é obrigatória.' },
+    { controlName: 'porte', label: 'Porte', type: 'text', placeholder: 'Digite o porte do animal', errorMsg: 'Porte é obrigatório.' },
+    { controlName: 'dataResgate', label: 'Data de resgate', type: 'date', errorMsg: 'Data de resgate é obrigatória.' },
+    { controlName: 'dataNascimento', label: 'Data de nascimento', type: 'date', errorMsg: 'Data de nascimento é obrigatória.' },
+    { controlName: 'nome', label: 'Nome', type: 'text', placeholder: 'Digite o nome do animal', errorMsg: 'Nome é obrigatório e deve conter entre 3 e 100 caracteres.' },
+    { controlName: 'animalPic', label: 'Foto do Animal', type: 'file', errorMsg: 'A foto do animal é obrigatória.' }
+  ];
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService) {
     this.registerForm = this.formBuilder.group({
@@ -37,26 +36,15 @@ export class PetCadastroComponent {
       animalPic: [null, Validators.required]
     });
 
-    // Verifique se o usuário está logado
     this.isLoggedIn = this.authService.estaLogado();
-
-    // Se desejar redirecionar ou mostrar uma mensagem se não estiver logado
-    if (!this.isLoggedIn) {
-      // Redirecionar ou mostrar uma mensagem de alerta
-      console.log('Usuário não está logado');
-    }
   }
 
   onFileSelected(event: any): void {
     const file: File = event.target.files[0];
     if (file) {
-      this.registerForm.patchValue({ animalPic: file });
-      this.registerForm.get('animalPic')!.updateValueAndValidity();
-
-      // Preview da imagem (opcional)
       const reader = new FileReader();
       reader.onload = () => {
-        const preview: any = document.getElementById('pet-image-preview');
+        const preview: HTMLImageElement | null = document.getElementById('pet-image-preview') as HTMLImageElement;
         if (preview) {
           preview.src = reader.result as string;
         }
@@ -77,22 +65,22 @@ export class PetCadastroComponent {
       const control = this.registerForm.get(campo);
 
       if (control && control.invalid && (control.touched || control.dirty)) {
-        const errors = control.errors as ValidationErrors | null;
+        const errors = control.errors;
 
         if (errors) {
           Object.keys(errors).forEach(erro => {
             switch (erro) {
               case 'required':
-                this.listaErros.push(`O campo ${campo} é obrigatório.`);
+                this.listaErros.push(`O campo ${this.getCampoNome(campo)} é obrigatório.`);
                 break;
               case 'minlength':
                 if (errors['minlength']) {
-                  this.listaErros.push(`O campo ${campo} deve conter no mínimo ${errors['minlength'].requiredLength} caracteres.`);
+                  this.listaErros.push(`O campo ${this.getCampoNome(campo)} deve conter no mínimo ${errors['minlength'].requiredLength} caracteres.`);
                 }
                 break;
               case 'maxlength':
                 if (errors['maxlength']) {
-                  this.listaErros.push(`O campo ${campo} excedeu o número máximo de caracteres permitidos.`);
+                  this.listaErros.push(`O campo ${this.getCampoNome(campo)} excedeu o número máximo de caracteres permitidos.`);
                 }
                 break;
               default:
@@ -112,15 +100,25 @@ export class PetCadastroComponent {
       formData.append(key, this.registerForm.get(key)!.value);
     });
 
-    // Aqui você faria a submissão do formulário usando o formData
-    // Exemplo:
-    // this.http.post('/api/animals', formData).subscribe(response => { ... });
-
     this.esconder();
   }
 
+  getCampoNome(campo: string): string {
+    const campos: { [key: string]: string } = {
+      especie: 'Espécie',
+      raca: 'Raça',
+      cor: 'Cor',
+      porte: 'Porte',
+      dataResgate: 'Data de Resgate',
+      dataNascimento: 'Data de Nascimento',
+      nome: 'Nome',
+      animalPic: 'Foto do Animal'
+    };
+    return campos[campo] || campo;
+  }
+
   esconder(): void {
-    const timer$ = timer(0);
+    const timer$ = timer(3000);
     timer$.subscribe(() => {
       this.listaErros = [];
     });

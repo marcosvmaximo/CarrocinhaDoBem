@@ -1,101 +1,47 @@
-<div class="d-flex justify-content-center" style="background-color: #ffffff;">
-  <div style="flex: 1;">
-    <img src="../../../assets/Gato.svg" class="" alt="Imagem do Pet">
+<div class="d-flex justify-content-center bg-white">
+  <!-- Imagem do Pet -->
+  <div class="flex-shrink-1">
+    <img src="assets/Gato.svg" alt="Imagem do Pet">
   </div>
 
-  <div style="flex: 2;">
-    <h1 class="text-center mt-4" style="color: #EEB336;">Cadastro de animais</h1>
-    <p class="text-center text-muted" style="color: #726C5E; text-decoration: underline;">Preencha o formulário abaixo</p>
+  <!-- Formulário de Cadastro -->
+  <div class="flex-grow-1 mx-3">
+    <!-- Título e Subtítulo -->
+    <h1 class="text-center mt-4" style="color: #EEB336;">Cadastro de Animais</h1>
+    <p class="text-center text-muted" style="text-decoration: underline;">Preencha o formulário abaixo</p>
 
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2" style="max-width: 100%;" enctype="multipart/form-data" novalidate>
-      <div class="form-group" [class.has-error]="registerForm.get('especie')!.invalid && registerForm.get('especie')!.touched">
-        <label for="especie">Espécie</label>
-        <select class="form-control form-control-lg form-carrocinha" id="especie" formControlName="especie">
-          <option>Cachorro</option>
-          <option>Gato</option>
-          <option>Outro</option>
-        </select>
-        <div *ngIf="registerForm.get('especie')!.invalid && registerForm.get('especie')!.touched" class="text-danger">
-          Espécie é obrigatória.
+    <!-- Formulário -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2" enctype="multipart/form-data" novalidate>
+      <!-- Campos do Formulário -->
+      <div class="form-group mb-3" *ngFor="let field of formFields" [class.has-error]="registerForm.get(field.controlName)?.invalid && registerForm.get(field.controlName)?.touched">
+        <!-- Rótulo do Campo -->
+        <label [for]="field.controlName" class="mb-1">{{field.label}}</label>
+        <!-- Campo de Entrada de Texto -->
+        <input *ngIf="field.type === 'text'" [type]="field.type" class="form-control form-control-lg form-carrocinha mt-2" [id]="field.controlName" [formControlName]="field.controlName" (change)="onFileSelected($event)" [placeholder]="field.placeholder">
+        <!-- Campo de Data -->
+        <input *ngIf="field.type === 'date'" [type]="field.type" class="form-control form-control-lg form-carrocinha mt-2" [id]="field.controlName" [formControlName]="field.controlName" [placeholder]="field.placeholder">
+        <!-- Campo de Envio de Arquivo -->
+        <input *ngIf="field.type === 'file'" [type]="field.type" class="form-control form-control-lg form-carrocinha mt-2" [id]="field.controlName" [formControlName]="field.controlName" (change)="onFileSelected($event)" [placeholder]="field.placeholder">
+        <!-- Pré-visualização da Imagem -->
+        <img *ngIf="field.type === 'file' && registerForm.get(field.controlName)?.value" id="pet-image-preview" class="img-thumbnail mt-2" alt="Pré-visualização da Imagem">
+        <!-- Mensagem de Erro -->
+        <div *ngIf="registerForm.get(field.controlName)?.invalid && registerForm.get(field.controlName)?.touched" class="text-danger mt-1">
+          {{field.errorMsg}}
         </div>
       </div>
 
-      <div class="form-group" [class.has-error]="registerForm.get('raca')!.invalid && registerForm.get('raca')!.touched">
-        <label for="raca">Raça</label>
-        <select class="form-control form-control-lg form-carrocinha" id="raca" formControlName="raca">
-          <option>Raça 1</option>
-          <option>Raça 2</option>
-          <option>Raça 3</option>
-        </select>
-        <div *ngIf="registerForm.get('raca')!.invalid && registerForm.get('raca')!.touched" class="text-danger">
-          Raça é obrigatória.
-        </div>
-      </div>
-
-      <div class="form-group" [class.has-error]="registerForm.get('cor')!.invalid && registerForm.get('cor')!.touched">
-        <label for="cor">Cor</label>
-        <select class="form-control form-control-lg form-carrocinha" id="cor" formControlName="cor">
-          <option>Cor 1</option>
-          <option>Cor 2</option>
-          <option>Cor 3</option>
-        </select>
-        <div *ngIf="registerForm.get('cor')!.invalid && registerForm.get('cor')!.touched" class="text-danger">
-          Cor é obrigatória.
-        </div>
-      </div>
-
-      <div class="form-group" [class.has-error]="registerForm.get('porte')!.invalid && registerForm.get('porte')!.touched">
-        <label for="porte">Porte</label>
-        <select class="form-control form-control-lg form-carrocinha" id="porte" formControlName="porte">
-          <option>Pequeno</option>
-          <option>Médio</option>
-          <option>Grande</option>
-        </select>
-        <div *ngIf="registerForm.get('porte')!.invalid && registerForm.get('porte')!.touched" class="text-danger">
-          Porte é obrigatório.
-        </div>
-      </div>
-
-      <div class="form-group" [class.has-error]="registerForm.get('dataResgate')!.invalid && registerForm.get('dataResgate')!.touched">
-        <label for="data-resgate">Data de resgate</label>
-        <input type="date" class="form-control form-control-lg form-carrocinha" id="data-resgate" formControlName="dataResgate">
-        <div *ngIf="registerForm.get('dataResgate')!.invalid && registerForm.get('dataResgate')!.touched" class="text-danger">
-          Data de resgate é obrigatória.
-        </div>
-      </div>
-
-      <div class="form-group" [class.has-error]="registerForm.get('dataNascimento')!.invalid && registerForm.get('dataNascimento')!.touched">
-        <label for="data-nascimento">Data de nascimento</label>
-        <input type="date" class="form-control form-control-lg form-carrocinha" id="data-nascimento" formControlName="dataNascimento">
-        <div *ngIf="registerForm.get('dataNascimento')!.invalid && registerForm.get('dataNascimento')!.touched" class="text-danger">
-          Data de nascimento é obrigatória.
-        </div>
-      </div>
-
-      <div class="form-group" [class.has-error]="registerForm.get('nome')!.invalid && registerForm.get('nome')!.touched">
-        <label for="nome">Nome</label>
-        <input type="text" class="form-control form-control-lg form-carrocinha" id="nome" formControlName="nome">
-        <div *ngIf="registerForm.get('nome')!.invalid && registerForm.get('nome')!.touched" class="text-danger">
-          Nome é obrigatório e deve conter entre 3 e 100 caracteres.
-        </div>
-      </div>
-
-      <div class="form-group" [class.has-error]="registerForm.get('animalPic')!.invalid && registerForm.get('animalPic')!.touched">
-        <label for="animal-pic">Foto do Animal</label>
-        <input type="file" class="form-control form-control-lg form-carrocinha" id="animal-pic" (change)="onFileSelected($event)">
-        <div *ngIf="registerForm.get('animalPic')!.invalid && registerForm.get('animalPic')!.touched" class="text-danger">
-          A foto do animal é obrigatória.
-        </div>
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-lg border-0 p-3 text-capitalize fw-semibold mt-4" [disabled]="registerForm.invalid" style="background-color: #EEB336; color: #9D6A00;">CADASTRAR</button>
+      <!-- Botão de Cadastro -->
+      <button type="submit" class="btn btn-primary btn-lg border-0 p-3 text-capitalize fw-semibold" [disabled]="registerForm.invalid" style="background-color: #EEB336; color: #9D6A00;">Cadastrar</button>
     </form>
   </div>
 </div>
 
+<!-- Exibição de Erros -->
 <div *ngIf="listaErros.length > 0" class="d-flex flex-column alert alert-danger position-absolute top-50 start-50 translate-middle error-box" role="alert">
   <ul class="px-4 d-flex flex-column gap-2">
+    <!-- Lista de Erros -->
     <li *ngFor="let erro of listaErros">{{ erro }}</li>
   </ul>
-  <button (click)="fecharModal()" type="button" class="btn btn-danger mx-auto px-3 py-2">OK</button>
+  <!-- Botão de Fechar Modal -->
+  <button (click)="fecharModal()" type="button" class="btn btn-danger mx-auto px-3 py-2 mt-3">OK</button>
 </div>
