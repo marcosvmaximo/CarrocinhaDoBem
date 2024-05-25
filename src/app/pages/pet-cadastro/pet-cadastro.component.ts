@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { timer } from 'rxjs';
+import { AnimalService } from '../../services/animal.service';
+import { Animal } from '../../../models/animal';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class PetCadastroComponent {
   registerForm: FormGroup;
   listaErros: string[] = [];
   isLoggedIn: boolean;
+  animalPicUrl!: string; // Variável para armazenar a URL da imagem do animal
 
   formFields = [
     { controlName: 'especie', label: 'Espécie', type: 'text', placeholder: 'Digite a espécie do animal', errorMsg: 'Espécie é obrigatória.' },
@@ -24,7 +26,7 @@ export class PetCadastroComponent {
     { controlName: 'animalPic', label: 'Foto do Animal', type: 'file', errorMsg: 'A foto do animal é obrigatória.' }
   ];
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
+  constructor(private formBuilder: FormBuilder, private animalService: AnimalService, private authService: AuthService) {
     this.registerForm = this.formBuilder.group({
       especie: ['', Validators.required],
       raca: ['', Validators.required],
@@ -40,7 +42,12 @@ export class PetCadastroComponent {
   }
 
   onFileSelected(event: any): void {
-    const file: File = event.target.files[0];
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) {
+      return; // Se não houver arquivos selecionados, simplesmente retorne
+    }
+
+    const file: File = input.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -61,67 +68,44 @@ export class PetCadastroComponent {
 
     this.listaErros = [];
 
-    Object.keys(this.registerForm.controls).forEach(campo => {
-      const control = this.registerForm.get(campo);
-
-      if (control && control.invalid && (control.touched || control.dirty)) {
-        const errors = control.errors;
-
-        if (errors) {
-          Object.keys(errors).forEach(erro => {
-            switch (erro) {
-              case 'required':
-                this.listaErros.push(`O campo ${this.getCampoNome(campo)} é obrigatório.`);
-                break;
-              case 'minlength':
-                if (errors['minlength']) {
-                  this.listaErros.push(`O campo ${this.getCampoNome(campo)} deve conter no mínimo ${errors['minlength'].requiredLength} caracteres.`);
-                }
-                break;
-              case 'maxlength':
-                if (errors['maxlength']) {
-                  this.listaErros.push(`O campo ${this.getCampoNome(campo)} excedeu o número máximo de caracteres permitidos.`);
-                }
-                break;
-              default:
-                break;
-            }
-          });
-        }
-      }
-    });
-
     if (this.registerForm.invalid) {
+      this.registerForm.markAllAsTouched();
       return;
     }
 
-    const formData = new FormData();
-    Object.keys(this.registerForm.controls).forEach(key => {
-      formData.append(key, this.registerForm.get(key)!.value);
-    });
-
-    this.esconder();
-  }
-
-  getCampoNome(campo: string): string {
-    const campos: { [key: string]: string } = {
-      especie: 'Espécie',
-      raca: 'Raça',
-      cor: 'Cor',
-      porte: 'Porte',
-      dataResgate: 'Data de Resgate',
-      dataNascimento: 'Data de Nascimento',
-      nome: 'Nome',
-      animalPic: 'Foto do Animal'
+    const formValue = this.registerForm.value;
+    const animal: Animal = {
+      institutionId: 1, // Suponha que você obtenha isso de algum lugar
+      petSize: formValue.porte,
+      animalAge: formValue.dataNascimento,
+      rescueDate: formValue.dataResgate,
+      animalName: formValue.nome,
+      breed: formValue.raca,
+      color: formValue.cor,
+      animalType: formValue.especie,
     };
-    return campos[campo] || campo;
+
+    const inputElement = document.querySelector('#animalPic') as HTMLInputElement;
+    const animalPic: File = inputElement.files![0];
+
+    this.animalService.createAnimal(animal, animalPic).subscribe(
+      response => {
+        console.log('Animal cadastrado com sucesso:', response);
+        // Adicione lógica para redirecionar ou mostrar uma mensagem de sucesso
+      },
+      error => {
+        console.error('Erro ao cadastrar animal:', error);
+        // Adicione lógica para mostrar mensagens de erro
+        this.listaErros.push('Erro ao cadastrar animal: ' + error.message);
+      }
+    );
   }
 
-  esconder(): void {
-    const timer$ = timer(3000);
-    timer$.subscribe(() => {
-      this.listaErros = [];
-    });
+  // Método para carregar a imagem do animal com base no ID
+  loadAnimalPic(animalId: number | undefined): void {
+    if (animalId !== undefined) {
+      this.animalPicUrl = this.animalService.getAnimalImageUrl(animalId);
+    }
   }
 
   fecharModal(): void {

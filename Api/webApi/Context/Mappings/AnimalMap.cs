@@ -60,7 +60,7 @@ public class AnimalMap : IEntityTypeConfiguration<Animal>
             .IsRequired();
 
         builder.Property(a => a.AnimalPic)
-            .HasColumnType("blob")
+            .HasColumnType("longblob")
             .HasColumnName("AnimalPic");
 
         // Define o relacionamento com a tabela Institution

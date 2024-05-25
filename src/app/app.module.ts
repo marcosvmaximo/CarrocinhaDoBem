@@ -17,6 +17,8 @@ import { ContatoComponent } from './pages/contato/contato.component';
 import { NossaMissaoComponent } from './pages/nossa-missao/nossa-missao.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.component';
+import { PetComponent } from './pages/pet/pet.component';
+import { AnimalService } from './services/animal.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.componen
     ContatoComponent,
     NossaMissaoComponent,
     HomePageComponent,
-    PetCadastroComponent
+    PetCadastroComponent,
+    PetComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.componen
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    AnimalService
   ],
   bootstrap: [AppComponent]
 })

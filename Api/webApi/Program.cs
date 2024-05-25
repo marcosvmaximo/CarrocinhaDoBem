@@ -49,3 +49,19 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// Middleware global para tratamento de erros
+app.Use(async (context, next) =>
+{
+    try
+    {
+        await next();
+    }
+    catch (Exception ex)
+    {
+        context.Response.StatusCode = 500;
+        context.Response.ContentType = "application/json";
+        var response = new { message = ex.Message };
+        await context.Response.WriteAsJsonAsync(response);
+    }
+});

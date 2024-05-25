@@ -116,5 +116,18 @@ namespace webApi.Controllers
 
             return Ok("Animal deletado com sucesso.");
         }
+
+        [HttpGet("{id}/image")]
+        public async Task<IActionResult> GetAnimalImage(int id)
+        {
+            var animal = await _context.Animals.FindAsync(id);
+            if (animal == null || animal.AnimalPic == null || animal.AnimalPic.Length == 0)
+            {
+                return NotFound("Imagem não encontrada para o animal.");
+            }
+
+            // Defina o Content-Type do retorno para indicar que é uma imagem
+            return File(animal.AnimalPic, "image/jpeg"); // Altere para o tipo de imagem correto, se necessário
+        }
     }
 }
