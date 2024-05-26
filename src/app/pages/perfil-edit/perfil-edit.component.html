@@ -1,58 +1,53 @@
-    <div class="format">
-        <div class="profile container">
-        <div class="avatar mt-5">
-            <div class="user-img">
-                <!--<img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" id="picture">
-                <input type="file" id="file">
-                <label for="file" id="uploadbtn"><i class="bi bi-camera uploadbtn "></i></label>
-            </div>
-            <button type="button" class="btn btn-danger">Excluir Perfil</button>
-        </div>-->
-        <div class="edit-form">
-            <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2 d-flex flex-column gap-3 mt-5">
-                <h1>CONFIGURAÇÃO DE PERFIL</h1>
-                <div>
-                    <label for="username" class="text-light">Nome</label>
-                    <input type="text" id="username" class="form-control form-carrocinha" formControlName="username" aria-label="Nome">
-                    <div *ngIf="perfilForm.get('username')?.errors?.['minlength']" class="text-danger">O nome deve ter no mínimo 4 caracteres.</div>
-                    <div *ngIf="perfilForm.get('username')?.errors?.['maxlength']" class="text-danger">O nome deve ter no máximo 100 caracteres.</div>
-                    <div *ngIf="perfilForm.get('username')?.errors?.['pattern']" class="text-danger">O nome deve conter apenas letras e espaços.</div>
-                </div>
-                <div>
-                    <label for="email" class="text-light">Email</label>
-                    <input type="text" id="email" class="form-control form-carrocinha" formControlName="email" aria-label="Email">
-                    <div *ngIf="perfilForm.get('email')?.errors?.['email']" class="text-danger">O campo e-mail deve ser um e-mail válido.</div>
-                    <div *ngIf="perfilForm.get('email')?.errors?.['minlength']" class="text-danger">O e-mail deve ter no mínimo 10 caracteres.</div>
-                    <div *ngIf="perfilForm.get('email')?.errors?.['maxlength']" class="text-danger">O campo e-mail excedeu o número máximo de caracteres permitidos.</div>
-                </div>
-                <div>
-                    <label for="endereco" class="text-light">Endereço</label>
-                    <input type="text" id="endereco" class="form-control form-carrocinha" formControlName="endereco" aria-label="Endereço">
-                    <div *ngIf="perfilForm.get('email')?.errors?.['maxlength']" class="text-danger">O campo endereço excedeu o número máximo de caracteres permitidos.</div>
-                </div>
-                <div>
-                    <label for="telefone" class="text-light">Telefone</label>
-                    <input type="text" id="telefone" placeholder="Exemplo: xx xxxxx-xxxx" class="form-control form-carrocinha" formControlName="telefone" aria-label="Telefone">
-                    <div *ngIf="perfilForm.get('telefone')?.errors?.['minlength']" class="text-danger">O telefone deve ter no mínimo 12 caracteres.</div>
-                    <div *ngIf="perfilForm.get('telefone')?.errors?.['maxlength']" class="text-danger">O campo telefone excedeu o número máximo de caracteres permitidos.</div>
-                    <div *ngIf="perfilForm.get('telefone')?.errors?.['pattern']" class="text-danger">O telefone deve seguir esse padrão xx xxxxx-xxxx.</div>
+<section class="m-auto mb-5">
+  <div class="d-flex gap-5 justify-content-center mx-5 px-5">
+    <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()" class="form-body needs-validation px-4 py-2 d-flex flex-column gap-3 mt-5">
+      <h1>CONFIGURAÇÃO DE PERFIL</h1>
+      <div>
+        <label for="username" class="">Nome</label>
+        <input type="text" id="username" class="form-control form-carrocinha" formControlName="username" aria-label="Nome">
+        <div *ngIf="perfilForm.get('username')?.errors?.['minlength']" class="text-danger">O nome deve ter no mínimo 4 caracteres.</div>
+        <div *ngIf="perfilForm.get('username')?.errors?.['maxlength']" class="text-danger">O nome deve ter no máximo 100 caracteres.</div>
+        <div *ngIf="perfilForm.get('username')?.errors?.['pattern']" class="text-danger">O nome deve conter apenas letras e espaços.</div>
+      </div>
+      <div>
+        <label for="email" class="">Email</label>
+        <input type="text" id="email" class="form-control form-carrocinha" formControlName="email" aria-label="Email">
+        <div *ngIf="perfilForm.get('email')?.errors?.['email']" class="text-danger">O campo e-mail deve ser um e-mail válido.</div>
+        <div *ngIf="perfilForm.get('email')?.errors?.['minlength']" class="text-danger">O e-mail deve ter no mínimo 10 caracteres.</div>
+        <div *ngIf="perfilForm.get('email')?.errors?.['maxlength']" class="text-danger">O campo e-mail excedeu o número máximo de caracteres permitidos.</div>
+      </div>
+      <div>
+        <label for="endereco" class="">Endereço</label>
+        <input type="text" id="endereco" class="form-control form-carrocinha" formControlName="endereco" aria-label="Endereço">
+        <div *ngIf="perfilForm.get('email')?.errors?.['maxlength']" class="text-danger">O campo endereço excedeu o número máximo de caracteres permitidos.</div>
+      </div>
+      <div>
+        <label for="telefone" class="">Telefone</label>
+        <input type="text" id="telefone" placeholder="Exemplo: xx xxxxx-xxxx" class="form-control form-carrocinha" formControlName="telefone" aria-label="Telefone">
+        <div *ngIf="perfilForm.get('telefone')?.errors?.['minlength']" class="text-danger">O telefone deve ter no mínimo 12 caracteres.</div>
+        <div *ngIf="perfilForm.get('telefone')?.errors?.['maxlength']" class="text-danger">O campo telefone excedeu o número máximo de caracteres permitidos.</div>
+        <div *ngIf="perfilForm.get('telefone')?.errors?.['pattern']" class="text-danger">O telefone deve seguir esse padrão xx xxxxx-xxxx.</div>
 
-                </div>
-                <div>
-                    <label for="dataNascimento" class="text-light">Data de Nascimento</label>
-                    <input type="date" id="dataNascimento" placeholder="Data de Nascimento" class="form-control  form-carrocinha" formControlName="dataNascimento" aria-label="Data de Nascimento">
-                    <div *ngIf="perfilForm.get('dataNascimento') as dataNascimentoControl">
-                        <div *ngIf="dataNascimentoControl.errors?.['dataFutura']" class="text-danger">
-                            A data não pode ser no futuro
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit (click)=onSubmit()" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #EEB336; color: #9D6A00;">SALVAR </button>
-            </form>
-            <div class="deletAccount">
-                <button type="submit (click)=onSubmit()" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #ee3636; color: #ffffff;">DELETAR CONTA </button>
-            </div>
+      </div>
+      <div>
+        <label for="dataNascimento" class="">Data de Nascimento</label>
+        <input type="date" id="dataNascimento" placeholder="Data de Nascimento" class="form-control  form-carrocinha" formControlName="dataNascimento" aria-label="Data de Nascimento">
+        <div *ngIf="perfilForm.get('dataNascimento') as dataNascimentoControl">
+          <div *ngIf="dataNascimentoControl.errors?.['dataFutura']" class="text-danger">
+            A data não pode ser no futuro
+          </div>
         </div>
+      </div>
+
+      <button type="submit (click)=onSubmit()" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #EEB336; color: #9D6A00;">SALVAR </button>
+    </form>
+    <!--            <div class="deletAccount">-->
+    <!--                <button type="submit (click)=onSubmit()" class="btn btn-primary border-0 p-3 text-capitalize fw-semibold" style="background-color: #ee3636; color: #ffffff;">DELETAR CONTA </button>-->
+    <!--            </div>-->
+    <div class="container d-flex align-content-center align-items-lg-center">
+      <button class="circle mx-auto">
+        <img src="./assets/front-view-beautiful-dog-with-copy-space.jpg" alt="Imagem no meio do círculo">
+      </button>
     </div>
-</div>
+  </div>
+</section>
