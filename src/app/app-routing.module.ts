@@ -11,6 +11,7 @@ import {PetCadastroComponent} from "./pages/pet-cadastro/pet-cadastro.component"
 import {PetComponent} from "./pages/pet/pet.component";
 import {autorizadoGuard} from "./services/guard/autorizado.guard";
 import {HomePageComponent} from "./pages/home-page/home-page.component";
+import {ApadrinhadosComponent} from "./pages/apadrinhados/apadrinhados.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
       { path: 'doacoes', component: DoacoesComponent, canActivate: [autorizadoGuard] },
       { path: 'contato', component: ContatoComponent, canActivate: [autorizadoGuard] },
       { path: 'nossa-missao', component: NossaMissaoComponent, canActivate: [autorizadoGuard] },
-      { path: 'perfil-edit', component: PerfilEditComponent, canActivate: [autorizadoGuard] }
+      { path: 'perfil-edit', component: PerfilEditComponent, canActivate: [autorizadoGuard] },
+      { path: 'apadrinhados', component: ApadrinhadosComponent, canActivate: [autorizadoGuard] }
     ]
   },
   { path: 'cadastrar', component: CadastroComponent },

@@ -19,6 +19,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.component';
 import { PetComponent } from './pages/pet/pet.component';
 import { AnimalService } from './services/animal.service';
+import { SponsorshipService } from './services/sponsorship.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,13 +45,17 @@ import { AnimalService } from './services/animal.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [
     provideClientHydration(),
     provideHttpClient(withFetch()),
-    AnimalService
+    AnimalService,
+    SponsorshipService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

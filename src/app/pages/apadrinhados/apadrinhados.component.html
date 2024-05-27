@@ -1,0 +1,36 @@
+<div class="banner-container">
+    <div class="banner-overlay">
+      <div class="banner-text">
+        <h1>Pets Apadrinhados</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+
+    <div class="row">
+      <div class="col-md-4" *ngFor="let animal of animals">
+        <div class="card mb-4">
+          <!-- Exibir a imagem do pet -->
+          <img [src]="animalPicUrl" (click)="loadAnimalPic(animal.id)" class="card-img-top" alt="{{animal.animalName}}">
+          <div class="card-body">
+            <!-- Informações do pet apadrinhado -->
+            <h5 class="card-title">{{ animal.animalName }}</h5>
+            <p class="card-text"><strong>Tipo:</strong> {{ animal.animalType }}</p>
+            <p class="card-text"><strong>Raça:</strong> {{ animal.breed }}</p>
+            <p class="card-text"><strong>Cor:</strong> {{ animal.color }}</p>
+            <p class="card-text"><strong>Data de Nascimento:</strong> {{ formatDate(animal.animalAge) }}</p>
+            <p class="card-text"><strong>Data de Resgate:</strong> {{ formatDate(animal.rescueDate) }}</p>
+            <p class="card-text"><strong>Patrocínio:</strong></p>
+            <ul>
+              <li *ngFor="let sponsorship of sponsorships | async">
+                <p class="card-text">Data de Início: {{ formatDate(sponsorship.initialDate) }}</p>
+                <p class="card-text">Data de Término: {{ formatDate(sponsorship.endDate) }}</p>
+                <p class="card-text">Valor: {{ formatCurrency(sponsorship.sponsorshipValue) }}</p>
+                <p class="card-text">Tipo de Patrocínio: {{ sponsorship.sponsorshipType }}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
