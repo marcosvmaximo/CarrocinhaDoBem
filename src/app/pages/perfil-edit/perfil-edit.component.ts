@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-edit',
   templateUrl: './perfil-edit.component.html',
   styleUrls: ['./perfil-edit.component.css']
 })
-export class PerfilEditComponent {
+export class PerfilEditComponent implements OnInit {
   perfilForm: FormGroup;
   listaErros: string[] = [];
+  private apiUrl = 'https://localhost:7240;http://localhost:5174'; 
+  userId: number | undefined;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private route: ActivatedRoute
+  ) {
     this.perfilForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ']+(\\s[a-zA-ZÀ-ÖØ-öø-ÿ']+)*$")]],
       email: ['', [Validators.required, Validators.minLength(10), Validators.email, Validators.maxLength(100)]],
@@ -21,25 +28,42 @@ export class PerfilEditComponent {
     });
   }
 
+  ngOnInit() {
+    this.userId = parseInt(this.route.snapshot.paramMap.get('id') || '', 10);
+    if (this.userId) {
+      this.loadProfile();
+    } else {
+      console.error('ID do usuário não encontrado.');
+    }
+  }
+
   dataPassadaValidator(control: AbstractControl) {
     const dataEscolhida = new Date(control.value);
     const dataAtual = new Date();
-
     if (dataEscolhida > dataAtual) {
       return { dataFutura: true };
     }
     return null;
   }
 
+  loadProfile() {
+    this.http.get(`${this.apiUrl}/${this.userId}`).subscribe(
+      (data: any) => {
+        this.perfilForm.patchValue(data);
+      },
+      (error) => {
+        console.error('Erro ao carregar perfil:', error);
+        alert('Erro ao carregar perfil. Por favor, tente novamente mais tarde.');
+      }
+    );
+  }
+
   onSubmit() {
     this.listaErros = [];
-
     Object.keys(this.perfilForm.controls).forEach(campo => {
       const control = this.perfilForm.get(campo);
-
       if (control && control.invalid && control.touched) {
-        const errors = control.errors as ValidationErrors; 
-
+        const errors = control.errors as ValidationErrors;
         Object.keys(errors).forEach(erro => {
           switch (erro) {
             case 'required':
@@ -59,15 +83,15 @@ export class PerfilEditComponent {
       }
     });
 
-    this.validarFormulario(); 
+    this.validarFormulario();
   }
 
   validarFormulario() {
-    if (this.perfilForm.valid && this.listaErros.length === 0) {
+    if (this.perfilForm.valid && this.listaErros.length === 0 && this.userId !== undefined) {
       const formData = this.perfilForm.value;
-      this.http.post('tem que por a url da api', formData).subscribe(
+      this.http.put(`${this.apiUrl}/${this.userId}`, formData).subscribe(
         () => {
-          alert("Dados salvos com sucesso!");
+          alert("Dados atualizados com sucesso!");
           this.perfilForm.reset();
         },
         (error) => {
@@ -75,6 +99,23 @@ export class PerfilEditComponent {
           alert("Erro ao enviar dados para a API. Por favor, tente novamente mais tarde.");
         }
       );
+    }
+  }
+
+  deleteProfile() {
+    if (this.userId !== undefined) {
+      this.http.delete(`${this.apiUrl}/${this.userId}`).subscribe(
+        () => {
+          alert("Perfil deletado com sucesso!");
+          this.perfilForm.reset();
+        },
+        (error) => {
+          console.error('Erro ao deletar o perfil:', error);
+          alert("Erro ao deletar o perfil. Por favor, tente novamente mais tarde.");
+        }
+      );
+    } else {
+      alert("ID do perfil não encontrado.");
     }
   }
 
@@ -86,7 +127,6 @@ export class PerfilEditComponent {
   }
 
   uploadFile(file: File) {
-    // Falta a lógica de envio da imagem com a API
     console.log('Arquivo selecionado:', file);
   }
 }

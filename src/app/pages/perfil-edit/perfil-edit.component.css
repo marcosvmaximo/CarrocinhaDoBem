@@ -3,12 +3,7 @@
     align-items: baseline;
     height: 100vh;
 }
-/*
-.user-img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}*/
+
 .edit-form{
     flex-basis: 100%;
     display: block;
@@ -26,26 +21,6 @@ h1{
     font-size: 24px;
     text-align: center;
 }
-/*
-#picture{
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-}
-#file{
-    display: none;
-}
-.uploadbtn{
-    position: absolute;
-    height: 300px;
-    width: 300px;
-    padding: 6px 6px;
-    border-radius: 50%;
-    color: #fff;
-}
-:hover.uploadbtn{
-    background-color: blue;
-}*/
 
 .circle {
   margin: 0;

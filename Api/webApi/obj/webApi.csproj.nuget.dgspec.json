@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj": {}
+    "C:\\Users\\vini0\\Downloads\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj": {
+    "C:\\Users\\vini0\\Downloads\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
+        "projectUniqueName": "C:\\Users\\vini0\\Downloads\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
         "projectName": "webApi",
-        "projectPath": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
-        "packagesPath": "C:\\Users\\A498901\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\obj\\",
+        "projectPath": "C:\\Users\\vini0\\Downloads\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
+        "packagesPath": "C:\\Users\\vini0\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vini0\\Downloads\\CarrocinhaDoBem\\Api\\webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\A498901\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\vini0\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -101,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.422\\RuntimeIdentifierGraph.json"
         }
       }
     }
