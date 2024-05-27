@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +16,9 @@ import { DoacoesComponent } from './pages/doacoes/doacoes.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { NossaMissaoComponent } from './pages/nossa-missao/nossa-missao.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.component';
+import { PetComponent } from './pages/pet/pet.component';
+import { AnimalService } from './services/animal.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     DoacoesComponent,
     ContatoComponent,
     NossaMissaoComponent,
-    HomePageComponent
+    HomePageComponent,
+    PetCadastroComponent,
+    PetComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
+    AnimalService
   ],
   bootstrap: [AppComponent]
 })

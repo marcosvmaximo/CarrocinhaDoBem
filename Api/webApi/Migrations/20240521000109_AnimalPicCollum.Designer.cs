@@ -3,6 +3,7 @@ using System;
 using CarrocinhaDoBem.Api.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace webApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240521000109_AnimalPicCollum")]
+    partial class AnimalPicCollum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,7 +71,7 @@ namespace webApi.Migrations
                         .HasColumnName("AnimalName");
 
                     b.Property<byte[]>("AnimalPic")
-                        .HasColumnType("longblob")
+                        .HasColumnType("blob")
                         .HasColumnName("AnimalPic");
 
                     b.Property<string>("AnimalType")

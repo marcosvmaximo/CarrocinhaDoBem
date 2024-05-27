@@ -1,11 +1,11 @@
-using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using webApi.Models;
 using CarrocinhaDoBem.Api.Context;
 using Microsoft.Extensions.Logging;
-
 
 namespace webApi.Controllers
 {
@@ -42,11 +42,20 @@ namespace webApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Animal animal)
+        public async Task<IActionResult> Create([FromForm] Animal animal, IFormFile animalPic)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+
+            if (animalPic != null)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    await animalPic.CopyToAsync(ms);
+                    animal.AnimalPic = ms.ToArray();
+                }
             }
 
             _context.Animals.Add(animal);
@@ -56,7 +65,7 @@ namespace webApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Animal updatedAnimal)
+        public async Task<IActionResult> Update(int id, [FromForm] Animal updatedAnimal, IFormFile animalPic)
         {
             if (!ModelState.IsValid)
             {
@@ -78,6 +87,15 @@ namespace webApi.Controllers
             animal.Color = updatedAnimal.Color;
             animal.AnimalType = updatedAnimal.AnimalType;
 
+            if (animalPic != null)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    await animalPic.CopyToAsync(ms);
+                    animal.AnimalPic = ms.ToArray();
+                }
+            }
+
             _context.Animals.Update(animal);
             await _context.SaveChangesAsync();
 
@@ -97,6 +115,19 @@ namespace webApi.Controllers
             await _context.SaveChangesAsync();
 
             return Ok("Animal deletado com sucesso.");
+        }
+
+        [HttpGet("{id}/image")]
+        public async Task<IActionResult> GetAnimalImage(int id)
+        {
+            var animal = await _context.Animals.FindAsync(id);
+            if (animal == null || animal.AnimalPic == null || animal.AnimalPic.Length == 0)
+            {
+                return NotFound("Imagem não encontrada para o animal.");
+            }
+
+            // Defina o Content-Type do retorno para indicar que é uma imagem
+            return File(animal.AnimalPic, "image/jpeg"); // Altere para o tipo de imagem correto, se necessário
         }
     }
 }

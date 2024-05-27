@@ -35,6 +35,7 @@ public class Animal : ModelBase
     [Required(ErrorMessage = "O tipo de animal é obrigatório.")]
     [StringLength(50, ErrorMessage = "O tipo de animal não pode ter mais de 50 caracteres.")]
     public string AnimalType { get; set; }
-    
+    public byte[]? AnimalPic { get; set; }
+
     public virtual Institution Institution { get; set; }
 }

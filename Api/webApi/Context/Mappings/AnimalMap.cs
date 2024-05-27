@@ -28,7 +28,7 @@ public class AnimalMap : IEntityTypeConfiguration<Animal>
             .HasColumnType("FLOAT")
             .HasMaxLength(100)
             .IsRequired();
-        
+
         builder.Property(a =>a.AnimalAge)
             .HasColumnName("AnimalAge")
             .HasColumnType("DATE")
@@ -58,6 +58,10 @@ public class AnimalMap : IEntityTypeConfiguration<Animal>
             .HasColumnName("AnimalType")
             .HasColumnType("VARCHAR(200)")
             .IsRequired();
+
+        builder.Property(a => a.AnimalPic)
+            .HasColumnType("longblob")
+            .HasColumnName("AnimalPic");
 
         // Define o relacionamento com a tabela Institution
         builder.HasOne(a => a.Institution)
