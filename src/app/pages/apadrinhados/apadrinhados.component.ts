@@ -22,8 +22,9 @@ export class ApadrinhadosComponent implements OnInit {
     private animalService: AnimalService,
     private currencyPipe: CurrencyPipe,
     private datePipe: DatePipe,
-    private sponsorships: Sponsorship
-  ) { }
+  ) { 
+    this.sponsorships = new Observable<Sponsorship[]>(/* inicialize aqui */);
+   }
 
   ngOnInit(): void {
     this.loadAnimals();
