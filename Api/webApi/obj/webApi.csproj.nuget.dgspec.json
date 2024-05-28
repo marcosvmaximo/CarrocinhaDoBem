@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj": {}
+    "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj": {
+    "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
+        "projectUniqueName": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj",
         "projectName": "webApi",
-        "projectPath": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\webApi.csproj",
-        "packagesPath": "C:\\Users\\A498901\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A498901\\OneDrive - Grupo Marista\\CarrocinhaDoBem\\Api\\webApi\\obj\\",
+        "projectPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/webApi.csproj",
+        "packagesPath": "/Users/marcosmaximo/.nuget/packages/",
+        "outputPath": "/Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\A498901\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/marcosmaximo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -93,6 +88,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -101,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

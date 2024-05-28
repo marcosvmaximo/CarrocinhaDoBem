@@ -31,7 +31,7 @@ export class AuthService {
   estaLogado(): boolean {
     if (isPlatformBrowser(this.platformId)) {
       // Code to access sessionStorage only runs in the browser
-      return sessionStorage.getItem('logado') === 'true';
+      return localStorage.getItem('logado') === 'true';
     }
     return false; // Default to false on the server side
   }

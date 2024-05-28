@@ -13,7 +13,10 @@ style="background-color: #EEB336;">
           <li class="nav-item">
             <a class="nav-link active" [routerLink]="['pets']">Pets</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="ehAdmin()">
+            <a class="nav-link active" [routerLink]="['pets-cadastro']">Cadastrar Pet</a>
+          </li>
+          <li class="nav-item" *ngIf="ehAdmin()">
             <a class="nav-link active" [routerLink]="['doacoes']">Doações</a>
           </li>
           <li class="nav-item">
@@ -45,7 +48,7 @@ style="background-color: #EEB336;">
              </li>
            </ul>
          </div>
-          <a class="nav-link active " [routerLink]="['perfil-edit']">Bem vindo, Nome!</a>
+          <a class="nav-link active " [routerLink]="['perfil-edit']">Bem vindo!</a>
        </div>
 
       </div>

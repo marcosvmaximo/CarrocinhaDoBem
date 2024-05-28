@@ -78,8 +78,13 @@ export class LoginComponent{
 
     this.authService.login(credentials).subscribe(
       (response: any) => {
-        sessionStorage.setItem('logado', 'true');
         localStorage.setItem('logado', 'true');
+
+        localStorage.setItem('nome', senhaControl.value);
+
+        if(emailControl.value === "admin@admin.com" && senhaControl.value === "admin123"){
+          localStorage.setItem('admin', 'true');
+        }
 
         this.router.navigate(['/home']);
       },

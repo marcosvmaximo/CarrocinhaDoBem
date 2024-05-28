@@ -3,6 +3,10 @@
     align-items: baseline;
     height: 100vh;
 }
+
+input{
+  height: 10px !important;
+}
 /*
 .user-img{
     width: 150px;

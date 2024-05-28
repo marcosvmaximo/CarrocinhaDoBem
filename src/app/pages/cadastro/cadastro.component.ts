@@ -97,8 +97,9 @@ export class CadastroComponent implements OnInit {
     const formValue = this.signupForm.value;
     this.authService.registrar(formValue.nome, formValue.email, formValue.senha, formValue.confirmarSenha).subscribe(
       (response: any) => {
-        sessionStorage.setItem('logado', 'true');
         localStorage.setItem('logado', 'true');
+        localStorage.setItem('nome', formValue.nome);
+
         this.router.navigate(['/home']);
       },
       (error: HttpErrorResponse) => {

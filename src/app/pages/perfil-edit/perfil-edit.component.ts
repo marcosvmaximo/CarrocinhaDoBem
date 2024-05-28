@@ -38,7 +38,7 @@ export class PerfilEditComponent {
       const control = this.perfilForm.get(campo);
 
       if (control && control.invalid && control.touched) {
-        const errors = control.errors as ValidationErrors; 
+        const errors = control.errors as ValidationErrors;
 
         Object.keys(errors).forEach(erro => {
           switch (erro) {
@@ -59,7 +59,10 @@ export class PerfilEditComponent {
       }
     });
 
-    this.validarFormulario(); 
+    this.validarFormulario();
+    if (this.listaErros.length === 0) {
+      this.atualizarUsuario();
+    }
   }
 
   validarFormulario() {
@@ -88,5 +91,21 @@ export class PerfilEditComponent {
   uploadFile(file: File) {
     // Falta a lógica de envio da imagem com a API
     console.log('Arquivo selecionado:', file);
+  }
+
+  atualizarUsuario(){
+    if (this.perfilForm.valid) {
+      const formData = this.perfilForm.value;
+      this.http.post('https://localhost:7240/', formData).subscribe(
+        () => {
+          alert("Dados salvos com sucesso!");
+          this.perfilForm.reset();
+        },
+        (error) => {
+          console.error('Erro ao enviar dados:', error);
+          alert("Erro ao enviar dados para a API. Por favor, tente novamente mais tarde.");
+        }
+      );
+    }
   }
 }

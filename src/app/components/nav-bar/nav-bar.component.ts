@@ -19,9 +19,14 @@ export class NavBarComponent {
     return this.authService.estaLogado();
   }
 
+  ehAdmin(){
+    return localStorage.getItem("admin") == "true";
+  }
+
   logout(){
-    sessionStorage.setItem('logado', '');
     localStorage.setItem('logado', '');
+    localStorage.setItem('admin', '');
+    localStorage.setItem('nome', '');
   }
 
   toggleDropdown(force?: boolean) {
