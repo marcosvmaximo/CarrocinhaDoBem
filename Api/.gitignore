@@ -1,0 +1,92 @@
+# Ignorar arquivos de build do Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln
+
+# Ignorar arquivos de build do Visual Studio Code
+.vscode/
+
+# Ignorar dependências de pacotes
+node_modules/
+wwwroot/lib/
+
+# Ignorar pastas de build
+dist/
+build/
+out/
+
+# Ignorar logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Ignorar arquivos temporários
+*.tmp
+*.temp
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de configuração do ambiente
+.env
+.env.*.local
+
+# Ignorar arquivos de saída do TypeScript
+*.tsbuildinfo
+
+# Ignorar arquivos e diretórios da aplicação Angular
+.angular/cache/
+.angular/*
+/dist/*
+/build/*
+
+# Ignorar arquivos de configuração de publicação do Visual Studio
+publish/
+appsettings.Development.json
+
+# Ignorar arquivos de build do .NET
+bin/
+obj/
+*.pdb
+*.exe
+*.dll
+
+# Ignorar arquivos de lock do .NET
+project.lock.json
+project.fragment.lock.json
+
+# Ignorar arquivos de configuração de pacotes do .NET
+project.json
+project.fragment.json
+
+# Ignorar arquivos de teste do .NET
+TestResults/
+*.TestResults/
+*.trx
+
+# Ignorar arquivos de configuração de pacotes do NuGet
+*.nupkg
+packages/
+*.nuget
+
+# Ignorar cache do NuGet
+.nuget/
+
+# Ignorar arquivos de lock do Yarn
+yarn.lock
+
+# Ignorar arquivos de lock do npm
+package-lock.json
+
+# Ignorar arquivos de build da aplicação Angular
+dist/
+tmp/
+temp/
+logs/
