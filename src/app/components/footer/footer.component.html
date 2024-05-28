@@ -1,129 +1,52 @@
-<div class="footer">
-  <footer class="text-center text-lg-start text-white">
-    <div class="container p-1 pt-5">
-      <div class="row my-4">
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+<footer class="footer text-center text-lg-start text-white bg-dark">
+    <div class="container pt-5">
+        <div class="row my-4">
+            <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                <div class="d-flex align-items-center justify-content-center mb-4">
+                    <img src="../../../assets/logo-amarelo.svg" height="150" alt="Carrocinha Do Bem" loading="lazy" class="rounded-circle">
+                </div>
+                <p class="text-center">ONG para adoção de animais</p>
+                <ul class="list-unstyled d-flex justify-content-center">
+                    <li class="me-3">
+                        <a class="text-white" href="#!">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="me-3">
+                        <a class="text-white" href="#!">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-white" href="#!">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-          <div class=" bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 140px; height: 140px;">
-            <img src="../../../assets/logo-amarelo.svg" height="150" alt="" loading="lazy" />
-          </div>
-
-          <p class="text-center">Shelter for homeless animals.</p>
-
-          <ul class="list-unstyled d-flex flex-row justify-content-center">
-            <li>
-              <a class="text-white px-2" href="#!">
-                <i class="fab fa-facebook-square"></i>
-              </a>
-            </li>
-            <li>
-              <a class="text-white px-2" href="#!">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a class="text-white ps-2" href="#!">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </li>
-          </ul>
-
+            <div class="col-lg-3 col-md-6 ">
+                <h5 class="text-uppercase mb-4">Páginas</h5>
+                <ul class="list-unstyled" style="list-style-type: disc;">
+                  <li style="margin-bottom: 10px;"><a href="#!" class="text-white" [routerLink]="['HOME']">Tela inicial</a></li>
+                  <li style="margin-bottom: 10px;"><a href="#!" class="text-white" [routerLink]="['pets']">Pets para adoção</a></li>
+                  <li style="margin-bottom: 10px;"><a href="#!" class="text-white" [routerLink]="['contato']">Contatos</a></li>
+                  <li style="margin-bottom: 10px;"><a href="#!" class="text-white" [routerLink]="['nossa-missao']">Nossa missão</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Contato e Endereço</h5>
+                <ul class="list-unstyled">
+                    <li><p><b>Endereço:</b> R. Imac. Conceição, 1155 - Prado Velho | Curitiba - PR, 80215-901</p></li>
+                    <li><p><b>Telefone:</b> <a href="tel:+5541985321225" class="text-white"> +55 (41) 9 8532-1225</a></p></li>
+                    <li><p><b>WhatsApp:</b> <a href="tel:+5541985321225" class="text-white">+55 (41) 9 8532-1225</a></p></li>
+                    <li><p><b>SAC:</b> <a href="tel:+5541985321225" class="text-white"> +55 (41) 9 8532-1225</a></p></li>
+                    <li><p><b>E-mail:</b> <a href="mailto:suporte@carrocinha.com.br" class="text-white"> suporte&#64;carrocinha.com.br</a></p></li>
+                </ul>
+            </div>
         </div>
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Páginas</h5>
-
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>When your pet is missing</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Recently found</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>How to adopt?</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Pets for adoption</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Material gifts</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Help with walks</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Volunteer activities</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Animals</h5>
-
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw"></i>General information</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>About the shelter</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Statistic data</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Job</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Tenders</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw
-"></i>Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Contato e Endereço</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <p><b>Endereço:</b> R. Imac. Conceição, 1155 - Prado Velho | Curitiba - PR, 80215-901</p>
-            </li>
-            <li>
-              <p><b>Telefone:</b><a href="tel:+5541985321225"> +55 (41) 9 8532-1225</a></p>
-            </li>
-            <li>
-              <p><b>WhatsApp:</b><a href="tel:+5541985321225">+55 (41) 9 8532-1225</a></p>
-            </li>
-            <li>
-              <p><b>SAC:</b><a href="tel:+5541985321225"> +55 (41) 9 8532-1225</a></p>
-            </li>
-            <li>
-              <p><b>E-mail:</b><a href="mailto:suporte@carrocinha.com.br"> suporte&#64;carrocinha.com.br</a></p>
-            </li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-
-    <div class="text-center p-3 footer" style="background-color: rgba(0, 0, 0, 0.2)">
-      <p>
-        Copyright © 2024 Carrocinha do Bem. Todos os direitos reservados.
-      </p>
+    <div class="text-center py-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <p class="mb-0">Copyright © 2024 Carrocinha do Bem. Todos os direitos reservados.</p>
     </div>
-  </footer>
-
-</div>
+</footer>

@@ -41,3 +41,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Additional files to ignore
+.dll
+.exe
+.pdb
+.cache
