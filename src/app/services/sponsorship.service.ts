@@ -16,7 +16,7 @@ export class SponsorshipService {
   // Método para obter apenas os patrocínios ativos
   getActiveSponsorships(): Observable<Sponsorship[]> {
     // Aqui você pode adicionar lógica para filtrar apenas os patrocínios ativos
-    return this.http.get<Sponsorship[]>(`${this.apiUrl}/active`).pipe(
+    return this.http.get<Sponsorship[]>(`${this.apiUrl}`).pipe(
       catchError(this.handleError)
     );
   }

@@ -22,7 +22,7 @@ import { AnimalService } from './services/animal.service';
 import { SponsorshipService } from './services/sponsorship.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { ApadrinhadosComponent } from './pages/apadrinhados/apadrinhados.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     NossaMissaoComponent,
     HomePageComponent,
     PetCadastroComponent,
-    PetComponent
+    PetComponent,
+    ApadrinhadosComponent
   ],
   imports: [
     BrowserModule,
