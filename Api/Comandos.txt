@@ -69,3 +69,19 @@ dotnet ef database update
 
 //Iniciar API
 dotnet run
+
+//ERRO PC PUC
+
+Criar o arquivo dotnet-tools.json
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "dotnet-ef": {
+      "version": "6.0.0",  // Substitua pela versão correta
+      "commands": ["dotnet-ef"]
+    }
+  }
+}
+dotnet tool restore
+dotnet ef database update
