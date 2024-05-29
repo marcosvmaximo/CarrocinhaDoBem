@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,10 +20,12 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.component';
 import { PetComponent } from './pages/pet/pet.component';
 import { AnimalService } from './services/animal.service';
+import { PetManageComponent } from './pages/pet-manage/pet-manage/pet-manage.component';
 import { SponsorshipService } from './services/sponsorship.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApadrinhadosComponent } from './pages/apadrinhados/apadrinhados.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,7 @@ import { ApadrinhadosComponent } from './pages/apadrinhados/apadrinhados.compone
     HomePageComponent,
     PetCadastroComponent,
     PetComponent,
+    PetManageComponent,
     ApadrinhadosComponent
   ],
   imports: [
@@ -47,6 +51,7 @@ import { ApadrinhadosComponent } from './pages/apadrinhados/apadrinhados.compone
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
+    FormsModule,
     FormsModule,
     CommonModule
   ],
