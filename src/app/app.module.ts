@@ -23,7 +23,6 @@ import { AnimalService } from './services/animal.service';
 import { PetManageComponent } from './pages/pet-manage/pet-manage/pet-manage.component';
 import { SponsorshipService } from './services/sponsorship.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { ApadrinhadosComponent } from './pages/apadrinhados/apadrinhados.component';
 
 @NgModule({
@@ -51,7 +50,6 @@ import { ApadrinhadosComponent } from './pages/apadrinhados/apadrinhados.compone
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
-    FormsModule,
     FormsModule,
     CommonModule
   ],

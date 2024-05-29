@@ -73,3 +73,23 @@ ul li {
   color: #1F1B17;
   background: #dca124;
 }
+
+@media (max-width: 768px) {
+  #navbarSupportedContent{
+     display: block !important;
+  }
+
+  .logado {
+    margin-top: 2rem;
+  }
+
+  .linha-vertical {
+    visibility: hidden;
+    display: none;
+  }
+
+  ul {
+    text-align: center;
+    margin: 0 auto;
+  }
+}

@@ -61,3 +61,47 @@ main {
   background: #fff !important;
 
 }
+
+@media (max-width: 768px) {
+  .img-cachorro{
+
+    visibility: hidden;
+  }
+
+  h1, h2{
+    font-size: 2rem !important;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.25rem !important;
+  }
+
+  .back-preto{
+    padding-bottom: 3rem;
+  }
+
+  .retirar-flex {
+    display: block !important;
+  }
+
+  .sobre{
+    justify-content: center;
+  }
+
+  .nossa-missao {
+    flex-direction: column;
+  }
+
+  .nossa-missao img {
+    max-width: 100%;
+  }
+  .nossa-missao p {
+    font-size: 0.85rem;
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 2rem !important;
+  }
+}
