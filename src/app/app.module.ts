@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.component';
 import { PetComponent } from './pages/pet/pet.component';
 import { AnimalService } from './services/animal.service';
+import { PetManageComponent } from './pages/pet-manage/pet-manage/pet-manage.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { AnimalService } from './services/animal.service';
     NossaMissaoComponent,
     HomePageComponent,
     PetCadastroComponent,
-    PetComponent
+    PetComponent,
+    PetManageComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { AnimalService } from './services/animal.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(),
