@@ -21,6 +21,10 @@ import { PetCadastroComponent } from './pages/pet-cadastro/pet-cadastro.componen
 import { PetComponent } from './pages/pet/pet.component';
 import { AnimalService } from './services/animal.service';
 import { PetManageComponent } from './pages/pet-manage/pet-manage/pet-manage.component';
+import { SponsorshipService } from './services/sponsorship.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ApadrinhadosComponent } from './pages/apadrinhados/apadrinhados.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,8 @@ import { PetManageComponent } from './pages/pet-manage/pet-manage/pet-manage.com
     HomePageComponent,
     PetCadastroComponent,
     PetComponent,
-    PetManageComponent
+    PetManageComponent,
+    ApadrinhadosComponent
   ],
   imports: [
     BrowserModule,
@@ -46,13 +51,17 @@ import { PetManageComponent } from './pages/pet-manage/pet-manage/pet-manage.com
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [
     provideClientHydration(),
     provideHttpClient(withFetch()),
-    AnimalService
+    AnimalService,
+    SponsorshipService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
