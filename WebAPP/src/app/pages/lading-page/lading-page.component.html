@@ -1,0 +1,105 @@
+<div class="surface-0 flex justify-content-center">
+  <div id="home" class="landing-wrapper overflow-hidden">
+    <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static mb-3">
+      <a class="flex align-items-center" href="#">
+        <img src="assets/favicon.svg" class="w-7" alt="mockup mobile">
+      </a>
+      <a pRipple class="cursor-pointer block lg:hidden text-700" pStyleClass="@next" enterClass="hidden" leaveToClass="hidden" [hideOnOutsideClick]="true">
+        <i class="pi pi-bars text-4xl"></i>
+      </a>
+      <div class="align-items-center surface-0 flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:80px">
+        <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
+          <li>
+            <a (click)="router.navigate([''])" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li *ngIf="logado()">
+            <a (click)="router.navigate(['/dashboard'])" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="router.navigate(['/inicio/pets'])" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+              <span>Ver pets</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="router.navigate(['/inicio/sobre'])" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+              <span>Sobre</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="router.navigate(['/inicio/nossa-missao'])" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+              <span>Nossa missão</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="router.navigate(['/inicio/contato'])" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+              <span>Contato</span>
+            </a>
+          </li>
+        </ul>
+        <div *ngIf="!logado()" class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+          <button pButton pRipple (click)="router.navigate(['/entrar'])" label="Entrar" class="p-button-text p-button-rounded border-none font-light line-height-2 text-primary"></button>
+          <button pButton pRipple (click)="router.navigate(['/registrar'])" label="Cadastrar" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-primary text-white"></button>
+        </div>
+        <div *ngIf="logado()">
+          <div class="layout-topbar-menu flex justify-content-end gap-6">
+            <p-menubar [model]="tieredItems">
+            </p-menubar>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="w-screen">
+      <router-outlet></router-outlet>
+    </main>
+
+    <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
+      <div class="grid justify-content-between">
+        <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
+          <a (click)="router.navigate([''], {fragment: ''})" class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer">
+            <h4 class="font-medium text-3xl text-900">CARROCINHA DO BEM</h4>
+          </a>
+        </div>
+
+        <div class="col-12 md:col-10 lg:col-7">
+          <div class="grid text-center md:text-left">
+            <div class="col-12 md:col-3">
+              <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Company</h4>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">About Us</a>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">News</a>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Investor Relations</a>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Careers</a>
+              <a class="line-height-3 text-xl block cursor-pointer text-700">Media Kit</a>
+            </div>
+
+            <div class="col-12 md:col-3 mt-4 md:mt-0">
+              <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Resources</h4>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Get Started</a>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Learn</a>
+              <a class="line-height-3 text-xl block cursor-pointer text-700">Case Studies</a>
+            </div>
+
+            <div class="col-12 md:col-3 mt-4 md:mt-0">
+              <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Community</h4>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Discord</a>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Events<img src="assets/demo/images/landing/new-badge.svg" class="ml-2"/></a>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">FAQ</a>
+              <a class="line-height-3 text-xl block cursor-pointer text-700">Blog</a>
+            </div>
+
+            <div class="col-12 md:col-3 mt-4 md:mt-0">
+              <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Legal</h4>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Brand Policy</a>
+              <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Privacy Policy</a>
+              <a class="line-height-3 text-xl block cursor-pointer text-700">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

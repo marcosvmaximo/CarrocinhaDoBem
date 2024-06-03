@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/layout/styles/layout/layout.css";
+
+@import "primeng/resources/themes/tailwind-light/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+@import "primeflex/primeflex.css";
+
+@import 'primeng/resources/themes/tailwind-light/theme.css';
+@import 'tippy.js/dist/tippy.css';
+
+:root {
+  --primary-color: #EEB336;
+  --highlight-text-color: #9D6A00;
+  --focus-ring: 0 0 0 1px #ffc853;
+}

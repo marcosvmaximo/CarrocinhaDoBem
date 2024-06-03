@@ -1,0 +1,31 @@
+.bg-carrocinha {
+  background-image: url('../../../../assets/dog-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+:host ::ng-deep .pi-eye,
+:host ::ng-deep .pi-eye-slash {
+  transform: scale(1.6);
+  margin-right: 1rem;
+  color: var(--primary-color) !important;
+}
+
+div {
+  display: inline-block;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#senha-help {
+  display: block;
+  word-wrap: break-word; /* Permite a quebra de palavras longas */
+  overflow-wrap: break-word; /* Para compatibilidade com navegadores mais recentes */
+  white-space: normal; /* Permite a quebra de linhas */
+}
+
+.invisible {
+  visibility: hidden;
+}

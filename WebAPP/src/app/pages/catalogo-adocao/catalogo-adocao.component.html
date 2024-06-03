@@ -1,0 +1,77 @@
+
+<div class="grid">
+  <div class="col-12">
+    <div class="card">
+  <h5>Amiguinhos que estão à adoção</h5>
+  <p-dataView #dv [value]="animals" [paginator]="true" [rows]="9" filterBy="name" [sortField]="sortField"
+              [sortOrder]="sortOrder" layout="grid">
+    <ng-template pTemplate="header">
+      <div class="flex flex-column md:flex-row md:justify-content-between gap-2">
+        <p-dropdown [options]="sortOptions" placeholder="Escolha seu filtro" (onChange)="onSortChange($event)" class="w-2"></p-dropdown>
+        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input type="search" pInputText placeholder="Busca por nome" (input)="onFilter(dv, $event)">
+                        </span>
+        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="listItem" let-animals>
+      <div class="col-12" *ngFor="let animal of animals">
+        <div class="flex flex-column md:flex-row align-items-center p-3 w-full">
+          <img [src]="carregarImagem(animal.animalPic)" [alt]="animal.name"
+               class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
+          <div class="flex-1 flex flex-column align-items-center text-center md:text-left">
+            <div class="font-bold text-2xl">{{ animal.name }}</div>
+            <div class="mb-2">{{ animal.description }}</div>
+            <div class="text-400 bg-primary p-2 border-round" ngxTippy="Raça">{{ animal["breed"] }}</div>
+            <div class="flex align-items-center mt-2" ngxTippy="Porte">
+              <i class="pi pi-info-circle mr-2"></i>
+              <span class="font-semibold">{{ animal["petSize"] }}</span>
+            </div>
+          </div>
+          <div
+            class="flex flex-row md:flex-column justify-content-center w-full md:w-auto align-items-center md:align-items-center mt-5 md:mt-0">
+            <span class="text-2xl font-semibold mb-2 align-self-center md:align-self-center">{{ calcularIdade(animal["birthDate"]) }}</span>
+            <p-button icon="pi pi-arrow-right" label="Adotar" styleClass="mb-2 p-button-sm" ngxTippy="Ir para adoção"></p-button>
+            <div>
+              <i class="mr-1" [class]="animal.sex === 'Fêmea' ? 'pi pi-venus' : 'pi pi-mars'"></i>
+              <span>{{animal["sex"]}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="gridItem" let-animals>
+      <div class="grid grid-nogutter">
+        <div class="col-12 md:col-4" *ngFor="let animal of animals">
+          <div class="card m-3 border-1 surface-border ">
+            <div class="flex flex-wrap gap-2 align-items-center justify-content-between mb-5">
+              <div class="flex align-items-center" ngxTippy="Porte">
+                <i class="pi pi-info-circle mr-2"></i>
+                <span class="font-semibold">{{ animal["petSize"] }}</span>
+              </div>
+              <div>
+                <i class="mr-1" [class]="animal['sex'] === 'Fêmea' ? 'pi pi-venus' : 'pi pi-mars'" [ngxTippy]="animal['sex'] === 'Fêmea' ? 'Fêmea' : 'Macho'"></i>
+              </div>
+            </div>
+            <div class="flex flex-column align-items-center text-center mb-5">
+              <img [src]="carregarImagem(animal['animalPic'])" height="200px" [alt]="animal.name"
+                   class="w-9 shadow-2 my-3 mx-0"/>
+              <div class="text-2xl font-bold">{{ animal.name }}</div>
+              <div class="mb-3 card-animal">{{ animal.description }}</div>
+              <div class="text-400 bg-primary p-2 border-round" ngxTippy="Raça">{{ animal["breed"] }}</div>
+            </div>
+            <div class="flex align-items-center justify-content-between">
+              <span class="text-2xl font-semibold">{{ calcularIdade(animal["birthDate"]) }}</span>
+              <p-button icon="pi pi-arrow-right" label="Adotar" [disabled]="!animals" ngxTippy="Ir para adoção"></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+    </div>
+  </div>
+</div>

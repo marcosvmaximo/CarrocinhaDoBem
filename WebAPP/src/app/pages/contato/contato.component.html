@@ -1,0 +1,54 @@
+<div class="card">
+  <form [formGroup]="form" class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8">
+    <p-toast key="tst"></p-toast>
+    <h3>Entre em contato conosco</h3>
+    <p>Nos envie mensagens, feedbacks, sugestões e criticas através do formulário abaixo:</p>
+    <div class="flex flex-column p-fluid mt-3 py-5 px-2 gap-3">
+      <div class="field w-20rem">
+            <span class="p-float-label">
+                <input
+                  type="text"
+                  id="inputtext"
+                  pInputText
+                  [(ngModel)]="nome"
+                  formControlName="nome"
+                  pattern="[a-zA-Z]+"
+                  [class]="{ 'ng-dirty ng-invalid': f['nome'].invalid && (f['nome'].dirty || f['nome'].touched) }"
+                />
+                <label for="inputtext">Nome</label>
+            </span>
+      </div>
+      <div class="field w-20rem">
+            <span class="p-float-label">
+                <input
+                  type="email"
+                  id="inputtext"
+                  pInputText
+                  [(ngModel)]="email"
+                  formControlName="email"
+                  [class]="{ 'ng-dirty ng-invalid': f['email'].invalid && (f['email'].dirty || f['email'].touched) }"
+                />
+                <label for="inputtext">E-mail</label>
+            </span>
+      </div>
+      <div class="field w-full">
+            <span class="p-float-label">
+                <textarea
+                  inputId="textarea"
+                  rows="3"
+                  cols="30"
+                  [(ngModel)]="mensagem"
+                  pInputTextarea
+                  formControlName="mensagem"
+                  [class]="{ 'ng-dirty ng-invalid': f['mensagem'].invalid && (f['mensagem'].dirty || f['mensagem'].touched) }"
+                ></textarea>
+                <label for="textarea">Mensagem</label>
+            </span>
+      </div>
+    </div>
+
+    <div class="px-2">
+      <button pButton pRipple label="Enviar" (click)="onSubmit()" [disabled]="form.valid"></button>
+    </div>
+  </form>
+</div>

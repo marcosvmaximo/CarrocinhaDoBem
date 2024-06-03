@@ -1,0 +1,14 @@
+.dog-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.responsive-background {
+  width: 100%;
+  height: 100vh; /* ou uma altura específica */
+  background-image: url('../../../assets/dog-banner.jpg');
+  background-size: cover; /* ou cover */
+  background-position: start;
+  background-repeat: no-repeat;
+}

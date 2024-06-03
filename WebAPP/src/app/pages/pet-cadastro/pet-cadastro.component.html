@@ -1,0 +1,131 @@
+
+<div class="card">
+  <form [formGroup]="form">
+    <p-toast key="tst"></p-toast>
+    <h5>Cadastre um novo Pet para adoção ;)</h5>
+    <p>
+      O cadastro só é permitido para membros da organização
+      (
+      <mark>Administradores, gerentes, colaboradores</mark>
+      ).
+    </p>
+    <div class="flex flex-column p-fluid mt-3 py-5 px-2 gap-3">
+      <div class="field w-full">
+            <span class="p-float-label">
+                <input
+                  type="text"
+                  id="inputtext"
+                  pInputText
+                  [(ngModel)]="name"
+                  formControlName="name"
+                  pattern="[a-zA-Z]+"
+                  [class]="{ 'ng-dirty ng-invalid': f['name'].invalid && (f['name'].dirty || f['name'].touched) }"
+                />
+                <label for="inputtext">Nome</label>
+            </span>
+      </div>
+      <div class="flex gap-3">
+        <div class="field w-full">
+            <span class="p-float-label">
+                <p-dropdown
+                  inputId="dropdown"
+                  [autoDisplayFirst]="false"
+                  [options]="especies"
+                  [(ngModel)]="especie"
+                  optionLabel="name"
+                  formControlName="especie"
+                  [class]="{ 'ng-dirty ng-invalid': f['especie'].invalid && (f['name'].dirty || f['name'].touched) }"
+                ></p-dropdown>
+                <label for="dropdown">Espécie</label>
+            </span>
+        </div>
+        <div class="field w-full">
+            <span class="p-float-label">
+                <p-autoComplete
+                  inputId="autocomplete"
+                  [(ngModel)]="raca"
+                  [suggestions]="racasAux"
+                  (completeMethod)="buscarRacas($event)"
+                  field="name"
+                  formControlName="raca"
+                  [class]="{ 'ng-dirty ng-invalid': f['raca'].invalid && (f['name'].dirty || f['name'].touched) }"
+                ></p-autoComplete>
+                <label for="autocomplete">Raça</label>
+            </span>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="field w-full">
+            <span class="p-float-label">
+                <p-dropdown
+                  inputId="dropdown"
+                  [autoDisplayFirst]="false"
+                  [options]="sexos"
+                  [(ngModel)]="sexo"
+                  optionLabel="name"
+                  formControlName="sexo"
+                  [class]="{ 'ng-dirty ng-invalid': f['sexo'].invalid && (f['name'].dirty || f['name'].touched) }"
+                ></p-dropdown>
+                <label for="dropdown">Sexo</label>
+            </span>
+        </div>
+        <div class="field w-full">
+            <span class="p-float-label">
+                <p-dropdown
+                  [class]="false"
+                  inputId="dropdown"
+                  [autoDisplayFirst]="false"
+                  [options]="portes"
+                  [(ngModel)]="porte"
+                  optionLabel="name"
+                  formControlName="porte"
+                  [class]="{ 'ng-dirty ng-invalid': f['porte'].invalid && (f['name'].dirty || f['name'].touched) }"
+                ></p-dropdown>
+                <label for="dropdown">Porte</label>
+            </span>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="field w-full">
+            <span class="p-float-label">
+                <p-calendar
+                  inputId="calendar"
+                  [(ngModel)]="dataNascimento"
+                  formControlName="dataNascimento"
+                  [class]="{ 'ng-dirty ng-invalid': f['dataNascimento'].invalid && (f['name'].dirty || f['name'].touched) }"
+                ></p-calendar>
+                <label for="calendar">Data Nascimento</label>
+            </span>
+        </div>
+        <div class="field w-full">
+            <span class="p-float-label">
+                <p-calendar
+                  inputId="calendar"
+                  [(ngModel)]="dataResgate"
+                  formControlName="dataResgate"
+                  [class]="{ 'ng-dirty ng-invalid': f['dataResgate'].invalid && (f['name'].dirty || f['name'].touched) }"
+                ></p-calendar>
+                <label for="calendar">Data Resgate</label>
+            </span>
+        </div>
+      </div>
+      <div class="field w-full">
+            <span class="p-float-label">
+                <textarea
+                  inputId="textarea"
+                  rows="3"
+                  cols="30"
+                  [(ngModel)]="descricao"
+                  pInputTextarea
+                  formControlName="descricao"
+                  [class]="{ 'ng-dirty ng-invalid': f['descricao'].invalid && (f['descricao'].dirty || f['descricao'].touched) }"
+                ></textarea>
+                <label for="textarea">Descrição</label>
+            </span>
+      </div>
+    </div>
+    <div class="px-2">
+      <button pButton pRipple label="Cadastrar" (click)="onSubmit()"></button>
+    </div>
+  </form>
+</div>

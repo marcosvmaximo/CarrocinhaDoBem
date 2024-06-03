@@ -1,0 +1,95 @@
+{
+  "data": [
+
+    {
+      "nome": "Luna",
+      "especie": "Cachorro",
+      "raca": "Labrador Retriever",
+      "idade": "3 anos",
+      "sexo": "Fêmea",
+      "tamanho": "Médio",
+      "descricao": "Luna é uma cachorrinha muito carinhosa e brincalhona. Adora passear e se dá bem com crianças e outros animais."
+    },
+    {
+      "nome": "Bobby",
+      "especie": "Cachorro",
+      "raca": "Beagle",
+      "idade": "2 anos",
+      "sexo": "Macho",
+      "tamanho": "Pequeno",
+      "descricao": "Bobby é um beagle enérgico e curioso. Adora explorar novos lugares e brincar com outros cães."
+    },
+    {
+      "nome": "Mimi",
+      "especie": "Gato",
+      "raca": "Siamês",
+      "idade": "4 anos",
+      "sexo": "Fêmea",
+      "tamanho": "Pequeno",
+      "descricao": "Mimi é uma gata tranquila e afetuosa. Gosta de passar o tempo em lugares altos observando o ambiente."
+    },
+    {
+      "nome": "Rex",
+      "especie": "Cachorro",
+      "raca": "Pastor Alemão",
+      "idade": "5 anos",
+      "sexo": "Macho",
+      "tamanho": "Grande",
+      "descricao": "Rex é um pastor alemão protetor e leal. Ideal para quem busca um cão de guarda confiável."
+    },
+    {
+      "nome": "Lola",
+      "especie": "Gato",
+      "raca": "Persa",
+      "idade": "3 anos",
+      "sexo": "Fêmea",
+      "tamanho": "Pequeno",
+      "descricao": "Lola é uma gata persa de pelo longo, muito dócil e carinhosa. Adora ser escovada e mimada."
+    },
+    {
+      "nome": "Max",
+      "especie": "Cachorro",
+      "raca": "Bulldog Francês",
+      "idade": "1 ano",
+      "sexo": "Macho",
+      "tamanho": "Pequeno",
+      "descricao": "Max é um bulldog francês divertido e amigável. Se dá bem com crianças e adora brincar."
+    },
+    {
+      "nome": "Bella",
+      "especie": "Gato",
+      "raca": "Maine Coon",
+      "idade": "2 anos",
+      "sexo": "Fêmea",
+      "tamanho": "Grande",
+      "descricao": "Bella é uma gata Maine Coon, conhecida por sua personalidade amigável e sociável. Ideal para famílias."
+    },
+    {
+      "nome": "Thor",
+      "especie": "Cachorro",
+      "raca": "Husky Siberiano",
+      "idade": "3 anos",
+      "sexo": "Macho",
+      "tamanho": "Grande",
+      "descricao": "Thor é um husky siberiano enérgico e independente. Precisa de muito exercício e adora o frio."
+    },
+    {
+      "nome": "Nina",
+      "especie": "Gato",
+      "raca": "Bengal",
+      "idade": "1 ano",
+      "sexo": "Fêmea",
+      "tamanho": "Pequeno",
+      "descricao": "Nina é uma gata Bengal ativa e curiosa. Tem um padrão de pelagem único e adora brincar."
+    },
+    {
+      "nome": "Buddy",
+      "especie": "Cachorro",
+      "raca": "Golden Retriever",
+      "idade": "4 anos",
+      "sexo": "Macho",
+      "tamanho": "Grande",
+      "descricao": "Buddy é um golden retriever amoroso e leal. Perfeito para famílias com crianças."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<div class="card">
+  <h5>Suas Doações</h5>
+  <p-table [value]="padrinhamentos" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Código</th>
+        <th pSortableColumn="name">Animal</th>
+        <th pSortableColumn="name">Data Realização <p-sortIcon field="name"></p-sortIcon></th>
+        <th pSortableColumn="price">Valor Mensal <p-sortIcon field="price"></p-sortIcon></th>
+        <th pSortableColumn="price">Valor Acumulado <p-sortIcon field="price"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-padrinhamento>
+      <tr>
+        <td style="width: 20%; min-width: 2rem;">
+          {{ padrinhamento.codigo }}
+        </td>
+        <td style="width: 25%; min-width: 5rem;">
+          {{ padrinhamento.animal }}
+        </td>
+        <td style="width: 25%; min-width: 5rem;">
+          {{ padrinhamento.dataRealizacao }}
+        </td>
+        <td style="width: 25%;">
+          {{ padrinhamento.valorMensal }}
+        </td>
+        <td style="width: 35%; min-width: 7rem;">
+          {{ padrinhamento.valorAcumulado }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
