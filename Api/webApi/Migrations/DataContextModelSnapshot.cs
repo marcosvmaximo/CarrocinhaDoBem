@@ -57,26 +57,13 @@ namespace webApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("AnimalAge")
-                        .HasMaxLength(100)
-                        .HasColumnType("DATE")
-                        .HasColumnName("AnimalAge");
-
-                    b.Property<string>("AnimalName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("VARCHAR(100)")
-                        .HasColumnName("AnimalName");
-
                     b.Property<byte[]>("AnimalPic")
-                        .HasColumnType("longblob")
+                        .HasColumnType("LONGBLOB")
                         .HasColumnName("AnimalPic");
 
-                    b.Property<string>("AnimalType")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnName("AnimalType");
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("DATE")
+                        .HasColumnName("BirthDate");
 
                     b.Property<string>("Breed")
                         .IsRequired()
@@ -84,24 +71,37 @@ namespace webApi.Migrations
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnName("Breed");
 
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("VARCHAR(20)")
-                        .HasColumnName("Color");
+                    b.Property<string>("Description")
+                        .HasMaxLength(100)
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnName("Description");
 
                     b.Property<int>("InstitutionId")
                         .HasColumnType("int")
                         .HasColumnName("InstitutionID");
 
-                    b.Property<float>("PetSize")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("FLOAT")
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnName("AnimalName");
+
+                    b.Property<int>("PetSize")
+                        .HasColumnType("INT")
                         .HasColumnName("PetSize");
 
                     b.Property<DateTime>("RescueDate")
                         .HasColumnType("DATE")
                         .HasColumnName("RescueDate");
+
+                    b.Property<int>("Sex")
+                        .HasColumnType("INT")
+                        .HasColumnName("Sex");
+
+                    b.Property<int>("Species")
+                        .HasMaxLength(50)
+                        .HasColumnType("INT")
+                        .HasColumnName("Species");
 
                     b.HasKey("Id")
                         .HasName("AnimalID");

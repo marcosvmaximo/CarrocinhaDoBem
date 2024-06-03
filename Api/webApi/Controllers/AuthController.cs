@@ -37,7 +37,9 @@ public class AuthController : ControllerBase
 
     _context.Users.Add(user);
     await _context.SaveChangesAsync();
-    return Created("", null);
+
+    user.PasswordHash = null;
+    return Created("", user);
   }
 
   [HttpPost("login")]
@@ -49,6 +51,7 @@ public class AuthController : ControllerBase
 
     var isPasswordValid = _service.VerifyPassword(user, request.Password);
 
-    return isPasswordValid ? Ok(new {sucess = true, message = "Login realizado com sucesso."}) : BadRequest("Email ou senha inválidos.");
+    user.PasswordHash = null;
+    return isPasswordValid ? Ok(new {sucess = true, message = "Login realizado com sucesso.", data = user}) : BadRequest("Email ou senha inválidos.");
   }
 }
