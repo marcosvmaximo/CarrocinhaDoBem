@@ -1,3 +1,23 @@
 <div class="card">
-
-</div>
+    <h5>Seu perfil</h5>
+    <p-table [value]="user" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Código</th>
+          <th pSortableColumn="UserName">nome</th>
+          <th pSortableColumn="email">email <p-sortIcon field="email"></p-sortIcon></th>
+          <th pSortableColumn="Instagram">Instagram <p-sortIcon field="Instagram"></p-sortIcon></th>
+         
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr >
+          <td>{{ user.id }}</td>
+          <td>{{ user.userName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.instagram }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  

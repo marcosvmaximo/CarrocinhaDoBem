@@ -40,6 +40,7 @@ export class CadastroComponent{
     this.form = fb.group({
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]],
       email: ['', [Validators.required, Validators.email, Validators.minLength(4), Validators.maxLength(50)]],
+      Instagram: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]],
       senha: ['', [Validators.required, this.passwordValidator, Validators.minLength(6)]],
       confirmarSenha: ['', [Validators.required]]
     }, { validators: this.passwordMatchValidator });
@@ -50,6 +51,7 @@ export class CadastroComponent{
   private fieldNames: any = {
     username: "Nome",
     email: "E-mail",
+    Instagram: "Instagram",
     senha: "Senha",
     confirmarSenha: "Confirmar Senha"
   };
@@ -62,6 +64,7 @@ export class CadastroComponent{
 
     const username = this.f['username'].value;
     const email = this.f['email'].value;
+    const Instagram = this.f['Instagram'].value;
     const senha = this.f['senha'].value;
     const confirmarSenha = this.f['confirmarSenha'].value;
 
@@ -70,7 +73,7 @@ export class CadastroComponent{
       return;
     }
 
-    this.service.registrar(username, email, senha, confirmarSenha)
+    this.service.registrar(username, email, Instagram, senha, confirmarSenha)
       .subscribe((response)=> {
         this.msgService.add({ key: 'tst', severity: 'success', summary: 'Successo', detail: 'Registro realizado com sucesso' });
 

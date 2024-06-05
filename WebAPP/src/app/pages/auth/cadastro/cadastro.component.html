@@ -20,6 +20,11 @@
             <input id="email1" formControlName="email" type="email" placeholder="Digite seu e-mail" pInputText class="w-full md:w-30rem" style="padding:1rem">
             <small [ngClass]="{'invisible': !(f['email'].invalid && (f['email'].dirty || f['email'].touched)), 'p-error': true, 'pt-2': true, 'w-full': true, 'help': true}">E-mail informado não é valido.</small>
           </div>
+          <div class="flex flex-column mb-2">
+            <label for="Instagram" class="block text-900 text-xl font-medium mb-2">Instagram</label>
+            <input id="Instagram" formControlName="Instagram" type="text" placeholder="Digite seu Instagram" pInputText class="w-full md:w-30rem" style="padding:1rem">
+            <small [ngClass]="{'invisible': !(f['Instagram'].invalid && (f['Instagram'].dirty || f['Instagram'].touched)), 'p-error': true, 'pt-2': true, 'w-full': true, 'help': true}">Instagram informado não é valido.</small>
+          </div>
 
           <div class="flex flex-column">
             <label for="password1" class="block text-900 font-medium text-xl mb-2">Senha</label>
