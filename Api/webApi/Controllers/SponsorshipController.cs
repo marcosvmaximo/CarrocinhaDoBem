@@ -22,7 +22,7 @@ namespace webApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Sponsorship>>> GetSponsorships()
         {
-            var sponsorships = await _context.Sponsorships.ToListAsync();
+            var sponsorships = await _context.Sponsorships.Include(s => s.Animal).ToListAsync();
             if (sponsorships == null || !sponsorships.Any())
             {
                 return NotFound("Nenhum patrocínio encontrado.");
