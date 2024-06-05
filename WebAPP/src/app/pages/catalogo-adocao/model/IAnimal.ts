@@ -1,4 +1,5 @@
 export interface IAnimal{
+  id: number,
   institutionId: number,
   name: string,
   animalPic: ArrayBuffer,
