@@ -3,7 +3,7 @@ import {
 } from "./chunk-TKJMWDM5.js";
 import {
   CommonModule
-} from "./chunk-TWCCRDPJ.js";
+} from "./chunk-NIOFTOD7.js";
 import {
   Directive,
   ElementRef,
@@ -20,10 +20,10 @@ import {
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
   ɵɵlistener
-} from "./chunk-EMDT5EKX.js";
-import "./chunk-UKEHM6V6.js";
-import "./chunk-V2DXGMIT.js";
-import "./chunk-ZDOIMVJD.js";
+} from "./chunk-AG4Y745J.js";
+import "./chunk-KT3RQDJZ.js";
+import "./chunk-LMFWYZLC.js";
+import "./chunk-RVQ3RH6Y.js";
 
 // node_modules/primeng/fesm2022/primeng-styleclass.mjs
 var StyleClass = class _StyleClass {
