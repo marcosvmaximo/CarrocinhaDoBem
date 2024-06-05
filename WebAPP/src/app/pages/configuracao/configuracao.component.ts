@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-configuracao',
@@ -38,11 +39,18 @@ export class ConfiguracaoComponent {
     { label: 'Dark', value: 'dark' }
   ];
 
-  constructor(private layoutService: LayoutService) {
+  constructor(private layoutService: LayoutService, private router: Router) {
     this.config = this.layoutService.config();
   }
 
   onConfigChange() {
     this.layoutService.config.set(this.config);
+  }
+
+  deslogar(){
+    localStorage.setItem("logado", "false");
+    localStorage.setItem("user", "");
+
+    this.router.navigate(['/inicio'])
   }
 }

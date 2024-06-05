@@ -1,0 +1,21 @@
+.rounded {
+    width: 250px; /* Defina a largura desejada */
+    height: 250px; /* Defina a altura desejada */
+    border-radius: 50%; /* Isso tornará o container redondo */
+    overflow: hidden; /* Certifique-se de que a imagem fique dentro do container redondo */
+    border: 3px solid ;
+}
+
+.rounded img {
+    width: 100%; /* A imagem ocupará toda a largura do container */
+    height: 100%; /* A imagem ocupará toda a altura do container */
+    object-fit: cover; /* A imagem cobrirá todo o conteúdo do elemento pai */
+}
+
+span {
+    display: block;
+}
+.invisible {
+    visibility: hidden;
+  }
+  

@@ -30,8 +30,19 @@ public class AuthController : ControllerBase
     var user = new User
     {
       Email = request.Email,
-      UserName = request.UserName
+      UserName = request.UserName,
+      UserType = "costumer"
     };
+
+    if (request.UserName == "admin")
+    {
+      user = new User
+      {
+        Email = request.Email,
+        UserName = request.UserName,
+        UserType = "admin"
+      };
+    }
 
     user.PasswordHash = _service.HashPassword(user, request.Password);
 
