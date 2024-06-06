@@ -1,6 +1,10 @@
 import {
   BaseIcon
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-U342CCCU.js
 } from "./chunk-NY3OFH5L.js";
+========
+} from "./chunk-6BAXN7LJ.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-5YIFILGE.js
 import {
   Component,
   setClassMetadata,
@@ -14,7 +18,11 @@ import {
   ɵɵelementStart,
   ɵɵgetInheritedFactory,
   ɵɵnamespaceSVG
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-U342CCCU.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-5YIFILGE.js
 
 // node_modules/primeng/fesm2022/primeng-icons-bars.mjs
 var BarsIcon = class _BarsIcon extends BaseIcon {
@@ -71,4 +79,8 @@ var BarsIcon = class _BarsIcon extends BaseIcon {
 export {
   BarsIcon
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-U342CCCU.js
 //# sourceMappingURL=chunk-U342CCCU.js.map
+========
+//# sourceMappingURL=chunk-5YIFILGE.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-5YIFILGE.js

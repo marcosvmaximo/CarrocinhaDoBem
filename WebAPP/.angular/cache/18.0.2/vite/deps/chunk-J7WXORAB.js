@@ -1,6 +1,10 @@
 import {
   DOCUMENT
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-J7WXORAB.js
 } from "./chunk-JVYDLPP5.js";
+========
+} from "./chunk-NIOFTOD7.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-Q6GLU4YS.js
 import {
   ANIMATION_MODULE_TYPE,
   Inject,
@@ -12,7 +16,11 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinject
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-J7WXORAB.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-Q6GLU4YS.js
 
 // node_modules/@angular/animations/fesm2022/animations.mjs
 var AnimationMetadataType;
@@ -537,4 +545,8 @@ export {
    * License: MIT
    *)
 */
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-J7WXORAB.js
 //# sourceMappingURL=chunk-J7WXORAB.js.map
+========
+//# sourceMappingURL=chunk-Q6GLU4YS.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-Q6GLU4YS.js

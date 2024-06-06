@@ -1,6 +1,10 @@
 import {
   BaseIcon
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-YRPF6D5G.js
 } from "./chunk-NY3OFH5L.js";
+========
+} from "./chunk-6BAXN7LJ.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-KIFSE2SV.js
 import {
   Component,
   setClassMetadata,
@@ -14,7 +18,11 @@ import {
   ɵɵelementStart,
   ɵɵgetInheritedFactory,
   ɵɵnamespaceSVG
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-YRPF6D5G.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-KIFSE2SV.js
 
 // node_modules/primeng/fesm2022/primeng-icons-check.mjs
 var CheckIcon = class _CheckIcon extends BaseIcon {
@@ -69,4 +77,8 @@ var CheckIcon = class _CheckIcon extends BaseIcon {
 export {
   CheckIcon
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-YRPF6D5G.js
 //# sourceMappingURL=chunk-YRPF6D5G.js.map
+========
+//# sourceMappingURL=chunk-KIFSE2SV.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-KIFSE2SV.js

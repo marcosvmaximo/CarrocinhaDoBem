@@ -1,6 +1,10 @@
 import {
   ObjectUtils
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-HOBW7LAC.js
 } from "./chunk-6WP4GSXB.js";
+========
+} from "./chunk-LH5FHRHW.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-36OLM7CL.js
 import {
   Component,
   Directive,
@@ -19,13 +23,21 @@ import {
   ɵɵdirectiveInject,
   ɵɵprojection,
   ɵɵprojectionDef
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-HOBW7LAC.js
 } from "./chunk-RKTYYQA2.js";
 import {
   Subject
 } from "./chunk-XUSQUK27.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-36OLM7CL.js
 import {
   __spreadValues
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-HOBW7LAC.js
 } from "./chunk-J4B6MK7R.js";
+========
+} from "./chunk-RVQ3RH6Y.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-36OLM7CL.js
 
 // node_modules/primeng/fesm2022/primeng-api.mjs
 var _c0 = ["*"];
@@ -1131,4 +1143,8 @@ export {
   TranslationKeys,
   TreeDragDropService
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-HOBW7LAC.js
 //# sourceMappingURL=chunk-HOBW7LAC.js.map
+========
+//# sourceMappingURL=chunk-36OLM7CL.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-36OLM7CL.js

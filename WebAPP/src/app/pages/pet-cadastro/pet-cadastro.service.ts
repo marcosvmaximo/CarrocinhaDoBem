@@ -10,15 +10,8 @@ export class PetCadastroService {
 
   constructor(private http: HttpClient) { }
 
-  cadastrarPet(body: any): Observable<any>{
-    const formData = new FormData();
-    for (const key in body) {
-      if (body.hasOwnProperty(key)) {
-        formData.append(key, body[key]);
-      }
-    }
-
+  cadastrarPet(body: FormData): Observable<any>{
     console.log('1', body);
-    return this.http.post(`${apiUrl}/animals`, formData);
+    return this.http.post(`${apiUrl}/animals`, body);
   }
 }

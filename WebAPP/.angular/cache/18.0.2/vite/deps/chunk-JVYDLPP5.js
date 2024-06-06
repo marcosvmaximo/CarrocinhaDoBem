@@ -56,11 +56,19 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-JVYDLPP5.js
 } from "./chunk-RKTYYQA2.js";
 import {
   __spreadProps,
   __spreadValues
 } from "./chunk-J4B6MK7R.js";
+========
+} from "./chunk-AG4Y745J.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-RVQ3RH6Y.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-NIOFTOD7.js
 
 // node_modules/@angular/common/fesm2022/common.mjs
 var _DOM = null;
@@ -5018,4 +5026,8 @@ export {
    * License: MIT
    *)
 */
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-JVYDLPP5.js
 //# sourceMappingURL=chunk-JVYDLPP5.js.map
+========
+//# sourceMappingURL=chunk-NIOFTOD7.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-NIOFTOD7.js

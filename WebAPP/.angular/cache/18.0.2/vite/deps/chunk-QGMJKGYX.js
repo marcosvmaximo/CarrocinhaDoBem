@@ -1,4 +1,5 @@
 import {
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QGMJKGYX.js
   Dropdown,
   DropdownModule
 } from "./chunk-IYVA65BR.js";
@@ -21,11 +22,34 @@ import {
   PrimeTemplate,
   SharedModule
 } from "./chunk-HOBW7LAC.js";
+========
+  InputNumber,
+  InputNumberModule
+} from "./chunk-WZ7QF2CC.js";
+import {
+  AngleRightIcon
+} from "./chunk-QCLZ5LUB.js";
+import {
+  Dropdown,
+  DropdownModule
+} from "./chunk-OB52WMYQ.js";
+import {
+  Ripple,
+  RippleModule
+} from "./chunk-HRI3HVEQ.js";
+import {
+  BaseIcon
+} from "./chunk-6BAXN7LJ.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-TZLJRLKR.js
 import {
   FormsModule,
   NgControlStatus,
   NgModel
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QGMJKGYX.js
 } from "./chunk-TLNUMNJO.js";
+========
+} from "./chunk-JMZE6FOK.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-TZLJRLKR.js
 import {
   CommonModule,
   NgClass,
@@ -33,7 +57,16 @@ import {
   NgIf,
   NgStyle,
   NgTemplateOutlet
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QGMJKGYX.js
 } from "./chunk-JVYDLPP5.js";
+========
+} from "./chunk-NIOFTOD7.js";
+import {
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-36OLM7CL.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-TZLJRLKR.js
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -83,7 +116,11 @@ import {
   ɵɵtwoWayBindingSet,
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QGMJKGYX.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-TZLJRLKR.js
 
 // node_modules/primeng/fesm2022/primeng-icons-angledoubleleft.mjs
 var AngleDoubleLeftIcon = class _AngleDoubleLeftIcon extends BaseIcon {
@@ -1369,4 +1406,8 @@ export {
   Paginator,
   PaginatorModule
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QGMJKGYX.js
 //# sourceMappingURL=chunk-QGMJKGYX.js.map
+========
+//# sourceMappingURL=chunk-TZLJRLKR.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-TZLJRLKR.js

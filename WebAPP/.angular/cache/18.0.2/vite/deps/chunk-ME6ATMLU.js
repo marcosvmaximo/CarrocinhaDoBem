@@ -1,5 +1,6 @@
 import {
   SpinnerIcon
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-ME6ATMLU.js
 } from "./chunk-THXPG2GE.js";
 import {
   Ripple
@@ -7,6 +8,15 @@ import {
 import {
   AutoFocus
 } from "./chunk-RVRKZ5V5.js";
+========
+} from "./chunk-7C25R6IK.js";
+import {
+  Ripple
+} from "./chunk-HRI3HVEQ.js";
+import {
+  AutoFocus
+} from "./chunk-5FEHJEIP.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-XLARB6ZA.js
 import {
   DomHandler
 } from "./chunk-TKJMWDM5.js";
@@ -23,7 +33,18 @@ import {
   NgIf,
   NgStyle,
   NgTemplateOutlet
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-ME6ATMLU.js
 } from "./chunk-JVYDLPP5.js";
+========
+} from "./chunk-NIOFTOD7.js";
+import {
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-36OLM7CL.js";
+import {
+  ObjectUtils
+} from "./chunk-LH5FHRHW.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-XLARB6ZA.js
 import {
   ChangeDetectionStrategy,
   Component,
@@ -68,7 +89,11 @@ import {
   ɵɵtemplate,
   ɵɵtext,
   ɵɵtextInterpolate
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-ME6ATMLU.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-XLARB6ZA.js
 
 // node_modules/primeng/fesm2022/primeng-button.mjs
 var _c0 = ["*"];
@@ -1021,4 +1046,8 @@ export {
   Button,
   ButtonModule
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-ME6ATMLU.js
 //# sourceMappingURL=chunk-ME6ATMLU.js.map
+========
+//# sourceMappingURL=chunk-XLARB6ZA.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-XLARB6ZA.js

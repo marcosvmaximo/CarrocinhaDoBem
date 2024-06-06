@@ -7,7 +7,14 @@ import {
 import {
   DOCUMENT,
   isPlatformBrowser
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-EEQURHLN.js
 } from "./chunk-JVYDLPP5.js";
+========
+} from "./chunk-NIOFTOD7.js";
+import {
+  PrimeNGConfig
+} from "./chunk-36OLM7CL.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-HRI3HVEQ.js
 import {
   Directive,
   ElementRef,
@@ -22,7 +29,11 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵdirectiveInject
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-EEQURHLN.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-HRI3HVEQ.js
 
 // node_modules/primeng/fesm2022/primeng-ripple.mjs
 var Ripple = class _Ripple {
@@ -193,4 +204,8 @@ export {
   Ripple,
   RippleModule
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-EEQURHLN.js
 //# sourceMappingURL=chunk-EEQURHLN.js.map
+========
+//# sourceMappingURL=chunk-HRI3HVEQ.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-HRI3HVEQ.js

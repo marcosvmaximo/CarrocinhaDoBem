@@ -1,9 +1,16 @@
 import {
   BaseIcon
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-JIROAVYT.js
 } from "./chunk-NY3OFH5L.js";
 import {
   UniqueComponentId
 } from "./chunk-6WP4GSXB.js";
+========
+} from "./chunk-6BAXN7LJ.js";
+import {
+  UniqueComponentId
+} from "./chunk-LH5FHRHW.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-YGLLAPXL.js
 import {
   Component,
   setClassMetadata,
@@ -19,7 +26,11 @@ import {
   ɵɵgetInheritedFactory,
   ɵɵnamespaceSVG,
   ɵɵproperty
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-JIROAVYT.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-YGLLAPXL.js
 
 // node_modules/primeng/fesm2022/primeng-icons-exclamationtriangle.mjs
 var ExclamationTriangleIcon = class _ExclamationTriangleIcon extends BaseIcon {
@@ -171,4 +182,8 @@ export {
   ExclamationTriangleIcon,
   InfoCircleIcon
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-JIROAVYT.js
 //# sourceMappingURL=chunk-JIROAVYT.js.map
+========
+//# sourceMappingURL=chunk-YGLLAPXL.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-YGLLAPXL.js

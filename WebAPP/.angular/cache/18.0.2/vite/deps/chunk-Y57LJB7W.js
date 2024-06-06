@@ -1,6 +1,10 @@
 import {
   BaseIcon
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-Y57LJB7W.js
 } from "./chunk-NY3OFH5L.js";
+========
+} from "./chunk-6BAXN7LJ.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-O6GKK275.js
 import {
   Component,
   setClassMetadata,
@@ -14,7 +18,11 @@ import {
   ɵɵelementStart,
   ɵɵgetInheritedFactory,
   ɵɵnamespaceSVG
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-Y57LJB7W.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-O6GKK275.js
 
 // node_modules/primeng/fesm2022/primeng-icons-times.mjs
 var TimesIcon = class _TimesIcon extends BaseIcon {
@@ -69,4 +77,8 @@ var TimesIcon = class _TimesIcon extends BaseIcon {
 export {
   TimesIcon
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-Y57LJB7W.js
 //# sourceMappingURL=chunk-Y57LJB7W.js.map
+========
+//# sourceMappingURL=chunk-O6GKK275.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-O6GKK275.js

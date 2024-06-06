@@ -1,6 +1,10 @@
 import {
   BaseIcon
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QZ6PGBH7.js
 } from "./chunk-NY3OFH5L.js";
+========
+} from "./chunk-6BAXN7LJ.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QCLZ5LUB.js
 import {
   Component,
   setClassMetadata,
@@ -14,7 +18,11 @@ import {
   ɵɵelementStart,
   ɵɵgetInheritedFactory,
   ɵɵnamespaceSVG
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QZ6PGBH7.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QCLZ5LUB.js
 
 // node_modules/primeng/fesm2022/primeng-icons-angleright.mjs
 var AngleRightIcon = class _AngleRightIcon extends BaseIcon {
@@ -69,4 +77,8 @@ var AngleRightIcon = class _AngleRightIcon extends BaseIcon {
 export {
   AngleRightIcon
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QZ6PGBH7.js
 //# sourceMappingURL=chunk-QZ6PGBH7.js.map
+========
+//# sourceMappingURL=chunk-QCLZ5LUB.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-QCLZ5LUB.js

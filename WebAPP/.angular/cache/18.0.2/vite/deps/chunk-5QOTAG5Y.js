@@ -1,9 +1,16 @@
 import {
   BaseIcon
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-5QOTAG5Y.js
 } from "./chunk-NY3OFH5L.js";
 import {
   UniqueComponentId
 } from "./chunk-6WP4GSXB.js";
+========
+} from "./chunk-6BAXN7LJ.js";
+import {
+  UniqueComponentId
+} from "./chunk-LH5FHRHW.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-LZPXVJS2.js
 import {
   Component,
   setClassMetadata,
@@ -19,7 +26,11 @@ import {
   ɵɵgetInheritedFactory,
   ɵɵnamespaceSVG,
   ɵɵproperty
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-5QOTAG5Y.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-LZPXVJS2.js
 
 // node_modules/primeng/fesm2022/primeng-icons-timescircle.mjs
 var TimesCircleIcon = class _TimesCircleIcon extends BaseIcon {
@@ -94,4 +105,8 @@ var TimesCircleIcon = class _TimesCircleIcon extends BaseIcon {
 export {
   TimesCircleIcon
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-5QOTAG5Y.js
 //# sourceMappingURL=chunk-5QOTAG5Y.js.map
+========
+//# sourceMappingURL=chunk-LZPXVJS2.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-LZPXVJS2.js

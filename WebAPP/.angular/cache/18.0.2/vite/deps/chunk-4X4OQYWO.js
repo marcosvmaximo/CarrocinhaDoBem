@@ -1,9 +1,16 @@
 import {
   BaseIcon
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-4X4OQYWO.js
 } from "./chunk-NY3OFH5L.js";
 import {
   UniqueComponentId
 } from "./chunk-6WP4GSXB.js";
+========
+} from "./chunk-6BAXN7LJ.js";
+import {
+  UniqueComponentId
+} from "./chunk-LH5FHRHW.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-VTDTOOEZ.js
 import {
   Component,
   setClassMetadata,
@@ -19,7 +26,11 @@ import {
   ɵɵgetInheritedFactory,
   ɵɵnamespaceSVG,
   ɵɵproperty
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-4X4OQYWO.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-VTDTOOEZ.js
 
 // node_modules/primeng/fesm2022/primeng-icons-search.mjs
 var SearchIcon = class _SearchIcon extends BaseIcon {
@@ -94,4 +105,8 @@ var SearchIcon = class _SearchIcon extends BaseIcon {
 export {
   SearchIcon
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-4X4OQYWO.js
 //# sourceMappingURL=chunk-4X4OQYWO.js.map
+========
+//# sourceMappingURL=chunk-VTDTOOEZ.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-VTDTOOEZ.js

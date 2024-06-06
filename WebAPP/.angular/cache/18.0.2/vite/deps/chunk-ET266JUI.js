@@ -1,4 +1,5 @@
 import {
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-ET266JUI.js
   PrimeNGConfig
 } from "./chunk-HOBW7LAC.js";
 import {
@@ -7,6 +8,16 @@ import {
 import {
   CommonModule
 } from "./chunk-JVYDLPP5.js";
+========
+  NgModel
+} from "./chunk-JMZE6FOK.js";
+import {
+  CommonModule
+} from "./chunk-NIOFTOD7.js";
+import {
+  PrimeNGConfig
+} from "./chunk-36OLM7CL.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-WD7JAAP6.js
 import {
   ChangeDetectorRef,
   Directive,
@@ -22,7 +33,11 @@ import {
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
   ɵɵlistener
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-ET266JUI.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-WD7JAAP6.js
 
 // node_modules/primeng/fesm2022/primeng-inputtext.mjs
 var InputText = class _InputText {
@@ -139,4 +154,8 @@ export {
   InputText,
   InputTextModule
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-ET266JUI.js
 //# sourceMappingURL=chunk-ET266JUI.js.map
+========
+//# sourceMappingURL=chunk-WD7JAAP6.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-WD7JAAP6.js

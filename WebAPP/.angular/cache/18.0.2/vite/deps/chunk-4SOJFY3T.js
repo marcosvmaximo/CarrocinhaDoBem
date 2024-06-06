@@ -1,6 +1,10 @@
 import {
   withHttpTransferCache
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-4SOJFY3T.js
 } from "./chunk-H5AJZEDR.js";
+========
+} from "./chunk-QY6GSVYD.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-3F5VVEVM.js
 import {
   CommonModule,
   DOCUMENT,
@@ -11,7 +15,11 @@ import {
   isPlatformServer,
   parseCookieValue,
   setRootDomAdapter
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-4SOJFY3T.js
 } from "./chunk-JVYDLPP5.js";
+========
+} from "./chunk-NIOFTOD7.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-3F5VVEVM.js
 import {
   APP_ID,
   ApplicationModule,
@@ -67,11 +75,19 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-4SOJFY3T.js
 } from "./chunk-RKTYYQA2.js";
 import {
   __spreadProps,
   __spreadValues
 } from "./chunk-J4B6MK7R.js";
+========
+} from "./chunk-AG4Y745J.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-RVQ3RH6Y.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-3F5VVEVM.js
 
 // node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var GenericBrowserDomAdapter = class extends DomAdapter {
@@ -1900,4 +1916,8 @@ export {
    * License: MIT
    *)
 */
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-4SOJFY3T.js
 //# sourceMappingURL=chunk-4SOJFY3T.js.map
+========
+//# sourceMappingURL=chunk-3F5VVEVM.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-3F5VVEVM.js

@@ -3,6 +3,7 @@ import {
   DomHandler
 } from "./chunk-TKJMWDM5.js";
 import {
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-TVRFIVH6.js
   PrimeNGConfig
 } from "./chunk-HOBW7LAC.js";
 import {
@@ -13,6 +14,18 @@ import {
   CommonModule,
   isPlatformBrowser
 } from "./chunk-JVYDLPP5.js";
+========
+  CommonModule,
+  isPlatformBrowser
+} from "./chunk-NIOFTOD7.js";
+import {
+  PrimeNGConfig
+} from "./chunk-36OLM7CL.js";
+import {
+  UniqueComponentId,
+  zindexutils
+} from "./chunk-LH5FHRHW.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-CBKFYYNH.js
 import {
   Directive,
   ElementRef,
@@ -36,10 +49,17 @@ import {
   ɵɵdirectiveInject,
   ɵɵlistener,
   ɵɵresolveDocument
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-TVRFIVH6.js
 } from "./chunk-RKTYYQA2.js";
 import {
   __spreadValues
 } from "./chunk-J4B6MK7R.js";
+========
+} from "./chunk-AG4Y745J.js";
+import {
+  __spreadValues
+} from "./chunk-RVQ3RH6Y.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-CBKFYYNH.js
 
 // node_modules/primeng/fesm2022/primeng-tooltip.mjs
 var Tooltip = class _Tooltip {
@@ -871,4 +891,8 @@ export {
   Tooltip,
   TooltipModule
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-TVRFIVH6.js
 //# sourceMappingURL=chunk-TVRFIVH6.js.map
+========
+//# sourceMappingURL=chunk-CBKFYYNH.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-CBKFYYNH.js

@@ -1,6 +1,10 @@
 import {
   ObjectUtils
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-NY3OFH5L.js
 } from "./chunk-6WP4GSXB.js";
+========
+} from "./chunk-LH5FHRHW.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-6BAXN7LJ.js
 import {
   ChangeDetectionStrategy,
   Component,
@@ -13,7 +17,11 @@ import {
   ɵɵdefineComponent,
   ɵɵprojection,
   ɵɵprojectionDef
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-NY3OFH5L.js
 } from "./chunk-RKTYYQA2.js";
+========
+} from "./chunk-AG4Y745J.js";
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-6BAXN7LJ.js
 
 // node_modules/primeng/fesm2022/primeng-baseicon.mjs
 var _c0 = ["*"];
@@ -94,4 +102,8 @@ var BaseIcon = class _BaseIcon {
 export {
   BaseIcon
 };
+<<<<<<<< HEAD:WebAPP/.angular/cache/18.0.2/vite/deps/chunk-NY3OFH5L.js
 //# sourceMappingURL=chunk-NY3OFH5L.js.map
+========
+//# sourceMappingURL=chunk-6BAXN7LJ.js.map
+>>>>>>>> 2eabbdd (CADASTRO PET):WebAPP/.angular/cache/18.0.2/vite/deps/chunk-6BAXN7LJ.js
