@@ -1,30 +1,37 @@
-import { Component } from '@angular/core';
-import {AutoCompleteModule} from "primeng/autocomplete";
-import {CalendarModule} from "primeng/calendar";
-import {ChipsModule} from "primeng/chips";
-import {DropdownModule} from "primeng/dropdown";
-import {InputGroupAddonModule} from "primeng/inputgroupaddon";
-import {InputGroupModule} from "primeng/inputgroup";
-import {InputMaskModule} from "primeng/inputmask";
-import {InputNumberModule} from "primeng/inputnumber";
-import {InputTextModule} from "primeng/inputtext";
-import {InputTextareaModule} from "primeng/inputtextarea";
-import {MultiSelectModule} from "primeng/multiselect";
-import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {Ripple} from "primeng/ripple";
-import {MessageService} from "primeng/api";
-import {ToastModule} from "primeng/toast";
-import {PetCadastroService} from "./pet-cadastro.service";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
+import { PetCadastroService } from './pet-cadastro.service';
+import { DropdownModule } from 'primeng/dropdown';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { CalendarModule } from 'primeng/calendar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
+import { ChipsModule } from 'primeng/chips';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputMaskModule } from 'primeng/inputmask';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { Ripple } from 'primeng/ripple';
+import { FileUploadModule } from 'primeng/fileupload';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pet-cadastro',
+  templateUrl: './pet-cadastro.component.html',
+  styleUrls: ['./pet-cadastro.component.scss'],
   standalone: true,
   imports: [
+    DropdownModule,
     AutoCompleteModule,
     CalendarModule,
+    ReactiveFormsModule,
+    ToastModule,
     ChipsModule,
-    DropdownModule,
     InputGroupAddonModule,
     InputGroupModule,
     InputMaskModule,
@@ -32,14 +39,13 @@ import {Router} from "@angular/router";
     InputTextModule,
     InputTextareaModule,
     MultiSelectModule,
-    ReactiveFormsModule,
     FormsModule,
     Ripple,
-    ToastModule
+    FileUploadModule,
+    CommonModule
   ],
-  templateUrl: './pet-cadastro.component.html',
-  styleUrl: './pet-cadastro.component.scss'
 })
+
 export class PetCadastroComponent {
 
   name: string = "";
@@ -68,10 +74,9 @@ export class PetCadastroComponent {
 
   descricao: any;
 
-
-
-
   form: FormGroup;
+
+  petImageBinary: any;
 
   private fieldNames: {
     especie: string;
@@ -93,9 +98,9 @@ export class PetCadastroComponent {
       raca: ['', [Validators.required]],
       sexo: ['', [Validators.required]],
       porte: ['', [Validators.required]],
-      dataNascimento: ['', [Validators.required]],
-      dataResgate: ['', [Validators.required]],
-      descricao: ['', [Validators.maxLength(100)]]
+      dataNascimento: ['', [Validators.required, this.validarData]],
+      dataResgate: ['', [Validators.required,  this.validarData]],
+      descricao: ['', [Validators.maxLength(100)]],
     });
 
     this.fieldNames = {
@@ -106,7 +111,7 @@ export class PetCadastroComponent {
       porte: 'Porte',
       dataNascimento: 'Data de Nascimento',
       dataResgate: 'Data de Resgate',
-      descricao: 'Descrição'
+      descricao: 'Descrição',
     };
 
     this.especies = [
@@ -181,8 +186,17 @@ export class PetCadastroComponent {
   }
 
   ngOnInit() {
+
   }
 
+  onChangeEspecie() {
+    // Filtrar as raças com base na espécie selecionada
+    if (this.especie.value === '1') { // Selecione Cão
+      this.racasAux = this.racas.filter(raca => raca.especie === 'cão');
+    } else if (this.especie.value === '2') { // Selecione Gato
+      this.racasAux = this.racas.filter(raca => raca.especie === 'gato');
+    }
+  }
 
   buscarRacas(event: any) {
     // in a real application, make a request to a remote url with the query and
@@ -201,57 +215,53 @@ export class PetCadastroComponent {
   }
 
   onSubmit() {
-    console.log(this.form.valid);
     if(this.f['raca'].valid){
       this.validarRaca()
     }
-    if(this.f['dataNascimento'].valid){
-      this.validarData('dataNascimento', this.f['dataNascimento'].value);
-    }
-    if(this.f['dataResgate'].valid){
-      this.validarData('dataResgate', this.f['dataResgate'].value);
-    }
+
     if(this.form.invalid){
       this.showErrors();
     }
 
-    const name = this.f['name'].value;
-    const raca = this.f['raca'].value;
-    const sexo = this.f['sexo'].value;
-    const porte = this.f['porte'].value;
-    const dataNascimento = this.f['dataNascimento'].value;
-    const dataResgate = this.f['dataResgate'].value;
-    const descricao = this.f['descricao'].value;
+    const formData = new FormData();
+    formData.append('name', this.form.get('name')?.value);
+    formData.append('species', this.form.get('especie')?.value.value);
+    formData.append('breed', this.form.get('raca')?.value.name);
+    formData.append('sex', this.form.get('sexo')?.value.value);
+    formData.append('petSize', this.form.get('porte')?.value.value);
+    formData.append('birthDate', this.form.get('dataNascimento')?.value.toISOString());
+    formData.append('rescueDate', this.form.get('dataResgate')?.value.toISOString());
+    formData.append('description', this.form.get('descricao')?.value);
+    formData.append('animalPic', this.petImageBinary);
+    formData.append('InstitutionId', '1'); // Definindo InstitutionId como 1
 
-    console.log(name)
-    console.log(raca)
-    console.log(sexo)
-    console.log(porte)
-    console.log(dataNascimento)
-    console.log(dataResgate)
-    console.log(descricao)
+    console.log("request");
+    formData.forEach((data, i) => {console.log(i, data)})
 
-    // this.service.cadastrarPet()
-    //   .subscribe((response)=> {
-    //     this.msgService.add({ key: 'tst', severity: 'success', summary: 'Successo', detail: 'Pet cadastrado com sucesso' });
-    //
-    //     setTimeout(() => {
-    //       this.router.navigate(['/dashboard/pets']);
-    //     }, 1000);
-    //   }, err => {
-    //     this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: 'Ocorreu um erro inesperado ao realizar o login, tente novamente em alguns instantes.' });
-    //   });
+    // Call the service method to submit the form data
+    this.service.cadastrarPet(formData).subscribe(
+    response => {
+      // Handle success response here
+      console.log("Pet cadastrado com sucesso!", response);
+      // You may want to navigate to another page or show a success message
+    },
+    error => {
+      // Handle error response here
+      console.error("Erro ao cadastrar o pet:", error);
+      // You may want to display an error message to the user
+    }
+  );
   }
 
-  validarData(nomeCampo: string, data: Date): void{
-    const value = new Date(data);
-    const now = new Date();
-    const thirtyYearsAgo = new Date(now.setFullYear(now.getFullYear() - 30));
+  validarData(control: AbstractControl){
+    const dataEscolhida = new Date(control.value);
+    const dataAtual = new Date();
 
-    // @ts-ignore
-    value < thirtyYearsAgo ? this.showErrorViaToast('O campo ' + this.fieldNames[nomeCampo] + ' não deve ser mais que 30 anos no passado') : null;
-    // @ts-ignore
-    value > now ? this.showErrorViaToast('O campo ' + this.fieldNames[nomeCampo] + ' não deve ser no futuro') : null;
+    if(dataEscolhida > dataAtual) {
+      return { dataFuture: true };
+    }
+
+    return null;
   }
   validarRaca(){
     const racaValue = this.f['raca'].value;
@@ -273,6 +283,10 @@ export class PetCadastroComponent {
               // @ts-ignore
               this.showErrorViaToast('O campo ' + this.fieldNames[key] + ' é obrigatório.');
               break;
+            case 'dataFuture':
+               // @ts-ignore
+               this.showErrorViaToast('O campo ' + this.fieldNames[key] + ' nâo permite data no futuro.');
+               break;
             case 'minlength':
               // @ts-ignore
               this.showErrorViaToast('O valor do campo ' + this.fieldNames[key] + ' é menor do que permitido.');
@@ -290,7 +304,29 @@ export class PetCadastroComponent {
       }
     });
   }
+
   showErrorViaToast(message: string = "") {
     this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: message ? message : 'Validação falhou' });
+  }
+
+  onBasicUpload() {
+    this.msgService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
+  }
+
+  onFileSelect(event: any){
+    if (event.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const arrayBuffer = e.target.result; // Obtém o array de bytes da imagem
+        const blob = new Blob([new Uint8Array(arrayBuffer)], { type: 'image/jpeg' }); // Cria um Blob a partir do array de bytes
+        this.petImageBinary = blob; // Atribui ao petImageBinary
+      };
+      reader.readAsArrayBuffer(event.files[0]);
+    }
+  }
+
+
+  isFieldInvalid(field: string) {
+    return this.form.get(field)?.invalid && (this.form.get(field)?.dirty || this.form.get(field)?.touched);
   }
 }

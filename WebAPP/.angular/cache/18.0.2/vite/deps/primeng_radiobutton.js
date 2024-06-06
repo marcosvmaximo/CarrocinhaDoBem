@@ -4,10 +4,6 @@ import {
 } from "./chunk-RVRKZ5V5.js";
 import "./chunk-TKJMWDM5.js";
 import {
-  PrimeNGConfig
-} from "./chunk-HOBW7LAC.js";
-import "./chunk-6WP4GSXB.js";
-import {
   NG_VALUE_ACCESSOR,
   NgControl
 } from "./chunk-TLNUMNJO.js";
@@ -17,6 +13,10 @@ import {
   NgIf,
   NgStyle
 } from "./chunk-JVYDLPP5.js";
+import {
+  PrimeNGConfig
+} from "./chunk-HOBW7LAC.js";
+import "./chunk-6WP4GSXB.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -61,8 +61,8 @@ import {
   ɵɵtextInterpolate,
   ɵɵviewQuery
 } from "./chunk-RKTYYQA2.js";
-import "./chunk-HHK6Q7EG.js";
 import "./chunk-EEKLJX6I.js";
+import "./chunk-HHK6Q7EG.js";
 import "./chunk-XUSQUK27.js";
 import "./chunk-AOF462FV.js";
 import "./chunk-J4B6MK7R.js";
