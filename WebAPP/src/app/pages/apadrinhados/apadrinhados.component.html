@@ -5,28 +5,20 @@
       <tr>
         <th>Código</th>
         <th pSortableColumn="name">Animal</th>
-        <th pSortableColumn="name">Data Realização <p-sortIcon field="name"></p-sortIcon></th>
-        <th pSortableColumn="price">Valor Mensal <p-sortIcon field="price"></p-sortIcon></th>
-        <th pSortableColumn="price">Valor Acumulado <p-sortIcon field="price"></p-sortIcon></th>
+        <th pSortableColumn="initialDate">Data Realização <p-sortIcon field="initialDate"></p-sortIcon></th>
+        <th pSortableColumn="endDate">Data Término <p-sortIcon field="endDate"></p-sortIcon></th>
+        <th pSortableColumn="sponsorshipValue">Valor Mensal <p-sortIcon field="sponsorshipValue"></p-sortIcon></th>
+        <th pSortableColumn="sponsorshipType">Tipo de Patrocínio <p-sortIcon field="sponsorshipType"></p-sortIcon></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-padrinhamento>
-      <tr>
-        <td style="width: 20%; min-width: 2rem;">
-          {{ padrinhamento.codigo }}
-        </td>
-        <td style="width: 25%; min-width: 5rem;">
-          {{ padrinhamento.animal }}
-        </td>
-        <td style="width: 25%; min-width: 5rem;">
-          {{ padrinhamento.dataRealizacao }}
-        </td>
-        <td style="width: 25%;">
-          {{ padrinhamento.valorMensal }}
-        </td>
-        <td style="width: 35%; min-width: 7rem;">
-          {{ padrinhamento.valorAcumulado }}
-        </td>
+      <tr >
+        <td>{{ padrinhamento.id }}</td>
+        <td>{{ padrinhamento.animal?.name }}</td>
+        <td>{{ formatDate(padrinhamento.initialDate) }}</td>
+        <td>{{ formatDate(padrinhamento.endDate) }}</td>
+        <td>{{ formatCurrency(padrinhamento.sponsorshipValue) }}</td>
+        <td>{{ padrinhamento.sponsorshipType }}</td>
       </tr>
     </ng-template>
   </p-table>
