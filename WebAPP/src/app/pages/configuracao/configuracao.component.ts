@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   selector: 'app-configuracao',
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     FormsModule,
     ButtonModule,
     DropdownModule,
@@ -51,6 +51,12 @@ export class ConfiguracaoComponent {
     localStorage.setItem("logado", "false");
     localStorage.setItem("user", "");
 
+    this.router.navigate(['/inicio'])
+  }
+
+  apagarConta(){
+    localStorage.removeItem("logado");
+    localStorage.removeItem("user");
     this.router.navigate(['/inicio'])
   }
 }
