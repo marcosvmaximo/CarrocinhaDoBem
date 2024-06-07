@@ -1,41 +1,31 @@
 import {
+  BarsIcon
+} from "./chunk-X6ODNRD2.js";
+import {
   Paginator,
   PaginatorModule
-} from "./chunk-AEUHSN73.js";
-import "./chunk-FLRYLRW6.js";
-import {
-  BarsIcon
-} from "./chunk-U342CCCU.js";
-import "./chunk-QZ6PGBH7.js";
-import "./chunk-DOYU3WOQ.js";
-import "./chunk-KOPQ5KTJ.js";
-import "./chunk-WNY4QE2U.js";
-import "./chunk-4X4OQYWO.js";
-import "./chunk-CRQOOMHR.js";
-import "./chunk-LBVHDBJ4.js";
-import "./chunk-7RSNSCF2.js";
-import "./chunk-YVQBUTBA.js";
-import "./chunk-YRPF6D5G.js";
+} from "./chunk-YZHSPYOR.js";
+import "./chunk-E2Z3MSFG.js";
+import "./chunk-CX5Z2IEP.js";
+import "./chunk-QAWDUKDS.js";
+import "./chunk-AS5FQP7F.js";
+import "./chunk-XDB3O5IN.js";
+import "./chunk-RILRCMJX.js";
+import "./chunk-FTAJWVFG.js";
+import "./chunk-6KTXQSFJ.js";
+import "./chunk-ACL3I6FS.js";
+import "./chunk-Y34OVD7P.js";
 import {
   SpinnerIcon
-} from "./chunk-THXPG2GE.js";
-import "./chunk-OB6N6SV6.js";
-import "./chunk-Y57LJB7W.js";
+} from "./chunk-KDJDKIRF.js";
+import "./chunk-36FH3M5F.js";
+import "./chunk-HWOLDAAE.js";
+import "./chunk-RUAGADO2.js";
+import "./chunk-O6NGZPBH.js";
 import {
   BaseIcon
-} from "./chunk-NY3OFH5L.js";
-import "./chunk-RVRKZ5V5.js";
+} from "./chunk-7W2KIGYU.js";
 import "./chunk-TKJMWDM5.js";
-import "./chunk-TLNUMNJO.js";
-import "./chunk-J7WXORAB.js";
-import {
-  CommonModule,
-  NgClass,
-  NgIf,
-  NgStyle,
-  NgTemplateOutlet,
-  SlicePipe
-} from "./chunk-JVYDLPP5.js";
 import {
   FilterService,
   Footer,
@@ -44,11 +34,21 @@ import {
   PrimeTemplate,
   SharedModule,
   TranslationKeys
-} from "./chunk-HOBW7LAC.js";
+} from "./chunk-SXB6WBRO.js";
 import {
   ObjectUtils,
   UniqueComponentId
 } from "./chunk-6WP4GSXB.js";
+import "./chunk-Q2WRRNCQ.js";
+import "./chunk-OW37LZT6.js";
+import {
+  CommonModule,
+  NgClass,
+  NgIf,
+  NgStyle,
+  NgTemplateOutlet,
+  SlicePipe
+} from "./chunk-ZEIXLDWD.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -101,11 +101,10 @@ import {
   ɵɵtemplate,
   ɵɵtext,
   ɵɵtextInterpolate1
-} from "./chunk-RKTYYQA2.js";
-import "./chunk-EEKLJX6I.js";
-import "./chunk-HHK6Q7EG.js";
-import "./chunk-XUSQUK27.js";
-import "./chunk-AOF462FV.js";
+} from "./chunk-KIKK4YUN.js";
+import "./chunk-MOY5LPCH.js";
+import "./chunk-MJQNUHK2.js";
+import "./chunk-SAI3DHVA.js";
 import "./chunk-J4B6MK7R.js";
 
 // node_modules/primeng/fesm2022/primeng-icons-thlarge.mjs

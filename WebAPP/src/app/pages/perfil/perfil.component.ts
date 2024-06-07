@@ -18,33 +18,35 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { CalendarModule } from 'primeng/calendar';
 import { CommonModule } from '@angular/common';
-import { format, isValid, parseISO } from 'date-fns';
+import { format, isValid, parseISO, parse } from 'date-fns';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { PerfilService } from './perfil.service';
+import {FileUploadModule} from "primeng/fileupload";
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [
-    AutoCompleteModule,
-    CalendarModule,
-    ChipsModule,
-    DropdownModule,
-    InputGroupAddonModule,
-    InputGroupModule,
-    InputMaskModule,
-    InputNumberModule,
-    InputTextModule,
-    InputTextareaModule,
-    MultiSelectModule,
-    ReactiveFormsModule,
-    FormsModule,
-    Ripple,
-    ToastModule,
-    ButtonModule,
-    RippleModule,
-    CommonModule,
-    NgxMaskDirective
-  ],
+    imports: [
+        AutoCompleteModule,
+        CalendarModule,
+        ChipsModule,
+        DropdownModule,
+        InputGroupAddonModule,
+        InputGroupModule,
+        InputMaskModule,
+        InputNumberModule,
+        InputTextModule,
+        InputTextareaModule,
+        MultiSelectModule,
+        ReactiveFormsModule,
+        FormsModule,
+        Ripple,
+        ToastModule,
+        ButtonModule,
+        RippleModule,
+        CommonModule,
+        NgxMaskDirective,
+        FileUploadModule
+    ],
   providers: [
     provideNgxMask()
   ],
@@ -55,6 +57,7 @@ export class PerfilComponent implements OnInit{
   editando: boolean = false;
   user: any;
   form: FormGroup;
+  foto: any;
 
   private fieldNames = {};
 
@@ -75,6 +78,7 @@ export class PerfilComponent implements OnInit{
       phone: "Telefone",
       address: "Endereço",
       birthDate: "Data de Aniversário",
+      avatar: "Foto"
     }
    }
 
@@ -98,7 +102,8 @@ export class PerfilComponent implements OnInit{
       email: user.email,
       phone: user.phone,
       address: user.address,
-      birthDate: user.birthDate ? this.formatDate(user.birthDate) : "-",
+      birthDate: user.birthDate ? this.formatDate(user.birthDate) : null,
+      avatar: user.avatar
     }
 
     this.form.patchValue({
@@ -134,10 +139,11 @@ export class PerfilComponent implements OnInit{
       email: this.form.get("email")?.value,
       phone: this.form.get("phone")?.value,
       address: this.form.get("address")?.value,
-      birthDate: this.form.get("birthDate")?.value, 
-      avatar: null
+      birthDate: this.convertDateToDateTime(this.form.get("birthDate")?.value),
+      avatar: this.foto
     }
-    
+
+
     this.service.atualizarPerfil(this.user.id, data)
     .subscribe((response)=> {
       this.msgService.add({ key: 'tst', severity: 'success', summary: 'Successo', detail: response.message});
@@ -146,9 +152,26 @@ export class PerfilComponent implements OnInit{
       localStorage.setItem("user", JSON.stringify(response.data))
       this.obterUsuario();
     }, err => {
-      console.log(err)
       this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: 'Ocorreu um erro inesperado ao realizar o login, tente novamente em alguns instantes.' });
     });
+  }
+
+  convertDateToDateTime(date: string): string {
+    const ddMMyyyyRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+
+    let parsedDate: Date;
+
+    if (ddMMyyyyRegex.test(date)) {
+      parsedDate = parse(date, 'dd/MM/yyyy', new Date());
+    } else {
+      parsedDate = new Date(date);
+    }
+
+    if (!isValid(parsedDate) || date === '0001-01-01T00:00:00') {
+      return '-';
+    }
+
+    return format(parsedDate, 'yyyy-MM-dd\'T\'HH:mm:ss');
   }
 
   formatDate(date: string): string {
@@ -163,7 +186,7 @@ export class PerfilComponent implements OnInit{
 
   formatarTelefone(telefone: string): string {
     if (!telefone) return '-';
-    
+
     const regexMascara = /(\d{2})(\d{5})(\d{4})/;
     const regexCodigoPais = /^\+[\d]{2}$/;
 
@@ -172,6 +195,10 @@ export class PerfilComponent implements OnInit{
     } else {
       return telefone.replace(regexMascara, '($1) $2-$3');
     }
+  }
+
+  carregarImagem(imagem: ArrayBuffer) {
+    return 'data:image/jpeg;base64, ' + imagem;
   }
 
   showErrors(){
@@ -217,6 +244,21 @@ export class PerfilComponent implements OnInit{
 
   showErrorViaToast(message: string = "") {
     this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: message ? message : 'Validação falhou' });
+  }
+
+  onBasicUpload() {
+    this.msgService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
+  }
+
+  onFileSelect(event: any){
+    if (event.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const base64String = e.target.result.split(',')[1]; // Obtém a string base64
+        this.foto = base64String; // Armazena a string base64
+      };
+      reader.readAsDataURL(event.files[0]); // Lê o arquivo como uma URL de dados base64
+    }
   }
 
   validarData(nomeCampo: string, data: Date): void{

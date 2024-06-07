@@ -1,16 +1,16 @@
-<div class="card">  
+<div class="card">
     <p-toast key="tst"></p-toast>
     <form [formGroup]="form" class="flex gap-6 justify-content-between">
         <div class="flex flex-column gap-1">
             <h5>Perfil:</h5>
             <div class="rounded border border-primary">
-                <img src="assets/dog-banner.jpg" alt="">
+                <img [src]="carregarImagem(user.avatar)" alt="">
             </div>
             <span class="m-auto mt-2" [ngClass]="{'invisible': !editando}">
-                <button pButton pRipple label="Editar foto" icon="pi pi-images"></button>
+                <p-fileUpload chooseLabel="Upload" name="imagem" mode="basic" accept="image/*" [maxFileSize]="5000000" (onUpload)="onBasicUpload()" (onSelect)="onFileSelect($event)"></p-fileUpload>
             </span>
         </div>
-   
+
         <div *ngIf="editando" class="flex flex-column gap-1">
             <h5 class="mb-5">Atualizar usuário:</h5>
             <div style="width: 500px;" class="flex flex-column gap-3">
@@ -89,7 +89,7 @@
                 </div>
             </div>
         </div>
-       
+
     </form>
 
 

@@ -140,16 +140,16 @@
       </div>
 
       <div class="field w-full">
-        <h5>Pet image upload</h5>
+        <h5>Imagem do Pet</h5>
         <span class="p-float-label">
-            <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" (onUpload)="onBasicUpload()" (onSelect)="onFileSelect($event)"></p-fileUpload>
+            <p-fileUpload chooseLabel="Upload" name="imagem" mode="basic" accept="image/*" [maxFileSize]="5000000" (onUpload)="onBasicUpload()" (onSelect)="onFileSelect($event)"></p-fileUpload>
         </span>
       </div>
 
     </div>
 
     <div class="px-2">
-      <button type="button" pButton pRipple label="Cadastrar" (click)="onSubmit()"></button>
+      <button type="button" pButton pRipple label="Cadastrar" class="bg-primary border-none px-5 py-3" (click)="onSubmit()"></button>
     </div>
 
   </form>

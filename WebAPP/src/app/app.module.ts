@@ -12,7 +12,6 @@ import {EventService} from "./demo/service/event.service";
 import {IconService} from "./demo/service/icon.service";
 import {NodeService} from "./demo/service/node.service";
 import {NotfoundComponent} from "./demo/components/notfound/notfound.component";
-import {DragDropModule} from "primeng/dragdrop";
 import { NgxTippyModule } from 'ngx-tippy-wrapper';
 import {MessageService} from "primeng/api";
 
