@@ -11,21 +11,17 @@
             <p-dropdown id="menuMode" [(ngModel)]="config.menuMode" [options]="menuModes"></p-dropdown>
         </div>
         <div class="p-field p-col-12 p-md-4">
-            <label for="colorScheme">Esquema de Cores</label>
-            <p-dropdown id="colorScheme" [(ngModel)]="config.colorScheme" [options]="colorSchemes"></p-dropdown>
-        </div>
-        <div class="p-field p-col-12 p-md-4">
-            <label for="scale">Escala</label>
-            <p-slider id="scale" [(ngModel)]="config.scale" [min]="10" [max]="20"></p-slider>
-        </div>
-        <div class="p-field p-col-12 p-md-4">
             <label for="ripple">Ripple</label>
             <p-checkbox id="ripple" [(ngModel)]="config.ripple"></p-checkbox>
         </div>
     </div>
 
-    <div class="mt-5">
-        <h2>Sair</h2>
-        <p-button icon="pi pi-arrow-right" label="Sair de sua conta" ngxTippy="Realizar Logout"></p-button>
-    </div>
+  <div class="mt-5">
+    <h2>Sair</h2>
+    <p-button icon="pi pi-arrow-right" label="Sair de sua conta" ngxTippy="Realizar Logout" (click)="deslogar()"></p-button>
+  </div>
+  <div class="mt-5">
+    <h2>Apagar Conta</h2>
+    <p-button label="Apagar conta" ngxTippy="Deletar Conta" (click)="apagarConta()"></p-button>
+  </div>
 </div>

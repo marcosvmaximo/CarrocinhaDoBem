@@ -273,3 +273,4 @@ C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/Api/webApi/obj/Debug/n
 C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/webApi.genruntimeconfig.cache
 C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/Api/webApi/obj/Debug/net6.0/ref/webApi.dll
 /Users/marcosmaximo/WebstormProjects/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/dotnet-tools.json
+C:/Users/A498901/OneDrive - Grupo Marista/CarrocinhaDoBem/Api/webApi/bin/Debug/net6.0/dotnet-tools.json

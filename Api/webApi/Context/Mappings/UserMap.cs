@@ -47,7 +47,7 @@ public class UserMap : IEntityTypeConfiguration<User>
           .HasMaxLength(20);
 
         builder.Property(u => u.Avatar)
-            .HasColumnType("blob")
+            .HasColumnType("LONGBLOB")
             .HasColumnName("avatar");
 
         builder.Property(u => u.BirthDate)

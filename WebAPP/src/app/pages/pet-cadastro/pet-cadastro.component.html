@@ -1,15 +1,18 @@
-
 <div class="card">
   <form [formGroup]="form">
     <p-toast key="tst"></p-toast>
+
     <h5>Cadastre um novo Pet para adoção ;)</h5>
+
     <p>
       O cadastro só é permitido para membros da organização
       (
       <mark>Administradores, gerentes, colaboradores</mark>
       ).
     </p>
+
     <div class="flex flex-column p-fluid mt-3 py-5 px-2 gap-3">
+
       <div class="field w-full">
             <span class="p-float-label">
                 <input
@@ -24,27 +27,31 @@
                 <label for="inputtext">Nome</label>
             </span>
       </div>
+
       <div class="flex gap-3">
+
         <div class="field w-full">
             <span class="p-float-label">
                 <p-dropdown
-                  inputId="dropdown"
+                  inputId="dropdown0"
                   [autoDisplayFirst]="false"
                   [options]="especies"
                   [(ngModel)]="especie"
                   optionLabel="name"
                   formControlName="especie"
                   [class]="{ 'ng-dirty ng-invalid': f['especie'].invalid && (f['name'].dirty || f['name'].touched) }"
+                  (ngModelChange)="onChangeEspecie($event)"
                 ></p-dropdown>
-                <label for="dropdown">Espécie</label>
+                <label for="dropdown0">Espécie</label>
             </span>
         </div>
+
         <div class="field w-full">
             <span class="p-float-label">
                 <p-autoComplete
                   inputId="autocomplete"
                   [(ngModel)]="raca"
-                  [suggestions]="racasAux"
+                  [suggestions]="racas"
                   (completeMethod)="buscarRacas($event)"
                   field="name"
                   formControlName="raca"
@@ -53,12 +60,15 @@
                 <label for="autocomplete">Raça</label>
             </span>
         </div>
+
       </div>
+
       <div class="flex gap-3">
+
         <div class="field w-full">
             <span class="p-float-label">
                 <p-dropdown
-                  inputId="dropdown"
+                  inputId="dropdown2"
                   [autoDisplayFirst]="false"
                   [options]="sexos"
                   [(ngModel)]="sexo"
@@ -66,14 +76,15 @@
                   formControlName="sexo"
                   [class]="{ 'ng-dirty ng-invalid': f['sexo'].invalid && (f['name'].dirty || f['name'].touched) }"
                 ></p-dropdown>
-                <label for="dropdown">Sexo</label>
+                <label for="dropdown1">Sexo</label>
             </span>
         </div>
+
         <div class="field w-full">
             <span class="p-float-label">
                 <p-dropdown
                   [class]="false"
-                  inputId="dropdown"
+                  inputId="dropdown1"
                   [autoDisplayFirst]="false"
                   [options]="portes"
                   [(ngModel)]="porte"
@@ -81,34 +92,38 @@
                   formControlName="porte"
                   [class]="{ 'ng-dirty ng-invalid': f['porte'].invalid && (f['name'].dirty || f['name'].touched) }"
                 ></p-dropdown>
-                <label for="dropdown">Porte</label>
+                <label for="dropdown2">Porte</label>
             </span>
         </div>
       </div>
+
       <div class="flex gap-3">
+
         <div class="field w-full">
             <span class="p-float-label">
                 <p-calendar
-                  inputId="calendar"
+                  inputId="calendar1"
                   [(ngModel)]="dataNascimento"
                   formControlName="dataNascimento"
-                  [class]="{ 'ng-dirty ng-invalid': f['dataNascimento'].invalid && (f['name'].dirty || f['name'].touched) }"
+                  [class]="{ 'ng-dirty ng-invalid': f['dataNascimento'].invalid && (f['dataNascimento'].dirty || f['dataNascimento'].touched) }"
                 ></p-calendar>
-                <label for="calendar">Data Nascimento</label>
+                <label for="calendar1">Data Nascimento</label>
             </span>
         </div>
+
         <div class="field w-full">
             <span class="p-float-label">
                 <p-calendar
-                  inputId="calendar"
+                  inputId="calendar2"
                   [(ngModel)]="dataResgate"
                   formControlName="dataResgate"
-                  [class]="{ 'ng-dirty ng-invalid': f['dataResgate'].invalid && (f['name'].dirty || f['name'].touched) }"
+                  [class]="{ 'ng-dirty ng-invalid': f['dataResgate'].invalid && (f['dataResgate'].dirty || f['dataResgate'].touched) }"
                 ></p-calendar>
-                <label for="calendar">Data Resgate</label>
+                <label for="calendar2">Data Resgate</label>
             </span>
         </div>
       </div>
+
       <div class="field w-full">
             <span class="p-float-label">
                 <textarea
@@ -123,9 +138,19 @@
                 <label for="textarea">Descrição</label>
             </span>
       </div>
+
+      <div class="field w-full">
+        <h5>Imagem do Pet</h5>
+        <span class="p-float-label">
+            <p-fileUpload chooseLabel="Upload" name="imagem" mode="basic" accept="image/*" [maxFileSize]="5000000" (onUpload)="onBasicUpload()" (onSelect)="onFileSelect($event)"></p-fileUpload>
+        </span>
+      </div>
+
     </div>
+
     <div class="px-2">
-      <button pButton pRipple label="Cadastrar" (click)="onSubmit()"></button>
+      <button type="button" pButton pRipple label="Cadastrar" class="bg-primary border-none px-5 py-3" (click)="onSubmit()"></button>
     </div>
+
   </form>
 </div>

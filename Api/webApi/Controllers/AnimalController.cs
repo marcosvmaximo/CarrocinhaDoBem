@@ -64,6 +64,7 @@ namespace webApi.Controllers
         public async Task<IActionResult> Create([FromForm]AnimalRequest request, IFormFile animalPic)
         {
             var animal = _mapper.Map<Animal>(request);
+            
 
             if (!ModelState.IsValid)
             {

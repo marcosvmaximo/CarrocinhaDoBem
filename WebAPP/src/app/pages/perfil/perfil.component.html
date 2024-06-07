@@ -1,3 +1,105 @@
 <div class="card">
+    <p-toast key="tst"></p-toast>
+    <form [formGroup]="form" class="flex gap-6 justify-content-between">
+        <div class="flex flex-column gap-1">
+            <h5>Perfil:</h5>
+            <div class="rounded border border-primary">
+                <img [src]="carregarImagem(user.avatar)" alt="">
+            </div>
+            <span class="m-auto mt-2" [ngClass]="{'invisible': !editando}">
+                <p-fileUpload chooseLabel="Upload" name="imagem" mode="basic" accept="image/*" [maxFileSize]="5000000" (onUpload)="onBasicUpload()" (onSelect)="onFileSelect($event)"></p-fileUpload>
+            </span>
+        </div>
 
+        <div *ngIf="editando" class="flex flex-column gap-1">
+            <h5 class="mb-5">Atualizar usuário:</h5>
+            <div style="width: 500px;" class="flex flex-column gap-3">
+
+                <div class="field w-full">
+                    <span class="p-float-label w-full">
+                        <input type="text" class="w-full" pInputText formControlName="name"
+                             />
+                        <label for="nome">Nome</label>
+                    </span>
+                </div>
+
+                <div class="field w-full">
+                    <span class="p-float-label">
+                        <input type="text" class="w-full" pInputText formControlName="address"
+                            />
+                        <label for="adress">Endereço</label>
+                    </span>
+                </div>
+                <div class="flex gap-1">
+                    <div class="field w-full">
+                        <span class="p-float-label">
+                            <input type="text" class="w-full" pInputText formControlName="email"
+                                />
+                            <label for="email">E-mail</label>
+                        </span>
+                    </div>
+                    <div class="field w-full">
+                        <span class="p-float-label">
+                            <input type="text" class="w-full" pInputText formControlName="phone" mask="(00) 00000-0000"
+                               />
+                            <label for="phone">Telefone</label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="field w-full">
+                    <span class="p-float-label">
+                        <p-calendar inputId="calendar" class="m-auto" formControlName="birthDate" dateFormat="dd/mm/yy"></p-calendar>
+                        <label for="calendar">Data Nascimento</label>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="!editando" class="flex flex-column gap-1">
+            <h5>Usuário:</h5>
+            <div style="width: 500px;" class="flex flex-column gap-3">
+
+                <div class="field w-full">
+                    <span class="p-float-label w-full">
+                        <span>Nome: {{ user.name }}</span>
+                    </span>
+                </div>
+
+                <div class="field w-full">
+                    <span class="p-float-label">
+                        <span>Endereço: {{ user.address ? user.address : "-"}}</span>
+                    </span>
+                </div>
+                <div class="field w-full">
+                    <span class="p-float-label">
+                        <span>E-mail: {{ user.email ? user.email : "-" }}</span>
+                    </span>
+                </div>
+                <div class="field w-full">
+                    <span class="p-float-label">
+                        <span>Telefone: {{ user.phone ? formatarTelefone(user.phone) : "-" }}</span>
+                    </span>
+                </div>
+
+                <div class="field w-full">
+                    <span class="p-float-label">
+                        <span>Data de Aniversário: {{ user.birthDate }}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+    <div class="h-7rem flex justify-content-start align-items-end align-content-end">
+        <span *ngIf="!editando">
+            <button pButton pRipple label="Editar" class="bg-primary border-none px-5 py-3" icon="pi pi-user-edit" (click)="editar()"></button>
+        </span>
+        <span *ngIf="editando" class="p-buttonset mt-5">
+            <button pButton pRipple label="Save" icon="pi pi-check" class="bg-green-500 border-none px-5 py-3" (click)="salvar()"></button>
+            <button pButton pRipple label="Delete" icon="pi pi-times-circle" class="bg-red-600 border-none px-5 py-3" (click)="cancelar()"></button>
+        </span>
+    </div>
 </div>
