@@ -56,7 +56,59 @@ export class PetCadastroComponent {
 
   racas: any[];
 
-  racasAux: any[] = [];
+  racasAux: any[] = [
+    { name: 'Vira-Lata Cão', especie: 'cão' },
+    { name: 'Vira-Lata Gato', especie: 'gato' },
+    { name: 'Labrador Retriever', especie: 'cão' },
+    { name: 'Golden Retriever', especie: 'cão' },
+    { name: 'Beagle', especie: 'cão' },
+    { name: 'Bulldog Francês', especie: 'cão' },
+    { name: 'Poodle', especie: 'cão' },
+    { name: 'Bulldog Inglês', especie: 'cão' },
+    { name: 'Yorkshire Terrier', especie: 'cão' },
+    { name: 'Shih Tzu', especie: 'cão' },
+    { name: 'Boxer', especie: 'cão' },
+    { name: 'Rottweiler', especie: 'cão' },
+    { name: 'Dachshund', especie: 'cão' },
+    { name: 'Border Collie', especie: 'cão' },
+    { name: 'Chihuahua', especie: 'cão' },
+    { name: 'Pug', especie: 'cão' },
+    { name: 'Husky Siberiano', especie: 'cão' },
+    { name: 'Pastor Alemão', especie: 'cão' },
+    { name: 'Doberman', especie: 'cão' },
+    { name: 'Basset Hound', especie: 'cão' },
+    { name: 'Schnauzer', especie: 'cão' },
+    { name: 'Boston Terrier', especie: 'cão' },
+    { name: 'Siamês', especie: 'gato' },
+    { name: 'Persa', especie: 'gato' },
+    { name: 'Maine Coon', especie: 'gato' },
+    { name: 'Sphynx', especie: 'gato' },
+    { name: 'Ragdoll', especie: 'gato' },
+    { name: 'British Shorthair', especie: 'gato' },
+    { name: 'Bengal', especie: 'gato' },
+    { name: 'Scottish Fold', especie: 'gato' },
+    { name: 'Abissínio', especie: 'gato' },
+    { name: 'Sagrado da Birmânia', especie: 'gato' },
+    { name: 'Shiba Inu', especie: 'cão' },
+    { name: 'Maltese', especie: 'cão' },
+    { name: 'Dálmata', especie: 'cão' },
+    { name: 'Cocker Spaniel', especie: 'cão' },
+    { name: 'Setter Irlandês', especie: 'cão' },
+    { name: 'Pinscher Miniatura', especie: 'cão' },
+    { name: 'Staffordshire Bull Terrier', especie: 'cão' },
+    { name: 'Cane Corso', especie: 'cão' },
+    { name: 'Shar Pei', especie: 'cão' },
+    { name: 'Bulmastife', especie: 'cão' },
+    { name: 'Himalaia', especie: 'gato' },
+    { name: 'Birmanês', especie: 'gato' },
+    { name: 'Tonquinês', especie: 'gato' },
+    { name: 'Burmês', especie: 'gato' },
+    { name: 'Exótico', especie: 'gato' },
+    { name: 'Manx', especie: 'gato' },
+    { name: 'Nebelung', especie: 'gato' },
+    { name: 'Toyger', especie: 'gato' },
+    { name: 'Azul Russo', especie: 'gato' },
+  ];
 
   raca: any;
 
@@ -77,6 +129,7 @@ export class PetCadastroComponent {
   form: FormGroup;
 
   petImageBinary: any;
+  private racaEspecie: string;
 
   private fieldNames: {
     especie: string;
@@ -119,59 +172,7 @@ export class PetCadastroComponent {
       { name: 'Gato', value: "2" }
     ];
 
-    this.racas = [
-      { name: 'Vira-Lata Cão', especie: 'cão' },
-      { name: 'Vira-Lata Gato', especie: 'gato' },
-      { name: 'Labrador Retriever', especie: 'cão' },
-      { name: 'Golden Retriever', especie: 'cão' },
-      { name: 'Beagle', especie: 'cão' },
-      { name: 'Bulldog Francês', especie: 'cão' },
-      { name: 'Poodle', especie: 'cão' },
-      { name: 'Bulldog Inglês', especie: 'cão' },
-      { name: 'Yorkshire Terrier', especie: 'cão' },
-      { name: 'Shih Tzu', especie: 'cão' },
-      { name: 'Boxer', especie: 'cão' },
-      { name: 'Rottweiler', especie: 'cão' },
-      { name: 'Dachshund', especie: 'cão' },
-      { name: 'Border Collie', especie: 'cão' },
-      { name: 'Chihuahua', especie: 'cão' },
-      { name: 'Pug', especie: 'cão' },
-      { name: 'Husky Siberiano', especie: 'cão' },
-      { name: 'Pastor Alemão', especie: 'cão' },
-      { name: 'Doberman', especie: 'cão' },
-      { name: 'Basset Hound', especie: 'cão' },
-      { name: 'Schnauzer', especie: 'cão' },
-      { name: 'Boston Terrier', especie: 'cão' },
-      { name: 'Siamês', especie: 'gato' },
-      { name: 'Persa', especie: 'gato' },
-      { name: 'Maine Coon', especie: 'gato' },
-      { name: 'Sphynx', especie: 'gato' },
-      { name: 'Ragdoll', especie: 'gato' },
-      { name: 'British Shorthair', especie: 'gato' },
-      { name: 'Bengal', especie: 'gato' },
-      { name: 'Scottish Fold', especie: 'gato' },
-      { name: 'Abissínio', especie: 'gato' },
-      { name: 'Sagrado da Birmânia', especie: 'gato' },
-      { name: 'Shiba Inu', especie: 'cão' },
-      { name: 'Maltese', especie: 'cão' },
-      { name: 'Dálmata', especie: 'cão' },
-      { name: 'Cocker Spaniel', especie: 'cão' },
-      { name: 'Setter Irlandês', especie: 'cão' },
-      { name: 'Pinscher Miniatura', especie: 'cão' },
-      { name: 'Staffordshire Bull Terrier', especie: 'cão' },
-      { name: 'Cane Corso', especie: 'cão' },
-      { name: 'Shar Pei', especie: 'cão' },
-      { name: 'Bulmastife', especie: 'cão' },
-      { name: 'Himalaia', especie: 'gato' },
-      { name: 'Birmanês', especie: 'gato' },
-      { name: 'Tonquinês', especie: 'gato' },
-      { name: 'Burmês', especie: 'gato' },
-      { name: 'Exótico', especie: 'gato' },
-      { name: 'Manx', especie: 'gato' },
-      { name: 'Nebelung', especie: 'gato' },
-      { name: 'Toyger', especie: 'gato' },
-      { name: 'Azul Russo', especie: 'gato' },
-    ]
+    this.racas =
 
     this.sexos = [
       { name: "Macho", value: "1"},
@@ -185,25 +186,12 @@ export class PetCadastroComponent {
     ]
   }
 
-  ngOnInit() {
-
-  }
-
-  onChangeEspecie() {
-    // Filtrar as raças com base na espécie selecionada
-    if (this.especie.value === '1') { // Selecione Cão
-      this.racasAux = this.racas.filter(raca => raca.especie === 'cão');
-    } else if (this.especie.value === '2') { // Selecione Gato
-      this.racasAux = this.racas.filter(raca => raca.especie === 'gato');
-    }
-  }
-
   buscarRacas(event: any) {
-    // in a real application, make a request to a remote url with the query and
-    // return filtered results, for demo we filter at client side
+    this.racas = this.racasAux;
+    this.racas = this.racasAux.filter(raca => raca.especie === this.racaEspecie);
+
     const filtered: any[] = [];
     const query = event.query;
-    // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.racas.length; i++) {
       const raca = this.racas[i];
       if (raca.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
@@ -211,16 +199,22 @@ export class PetCadastroComponent {
       }
     }
 
-    this.racasAux = filtered;
+    this.racas = filtered;
   }
 
   onSubmit() {
     if(this.f['raca'].valid){
-      this.validarRaca()
+      this.validarRaca();
+    }
+
+    if(!this.petImageBinary) {
+      this.showErrorViaToast('Imagem do Pet não pode ser vazia.');
+      return;
     }
 
     if(this.form.invalid){
       this.showErrors();
+      return;
     }
 
     const formData = new FormData();
@@ -233,22 +227,15 @@ export class PetCadastroComponent {
     formData.append('rescueDate', this.form.get('dataResgate')?.value.toISOString());
     formData.append('description', this.form.get('descricao')?.value);
     formData.append('animalPic', this.petImageBinary);
-    formData.append('InstitutionId', '1'); // Definindo InstitutionId como 1
+    formData.append('InstitutionId', '1');
 
-    console.log("request");
-    formData.forEach((data, i) => {console.log(i, data)})
 
-    // Call the service method to submit the form data
     this.service.cadastrarPet(formData).subscribe(
     response => {
-      // Handle success response here
-      console.log("Pet cadastrado com sucesso!", response);
-      // You may want to navigate to another page or show a success message
+      this.msgService.add({ key: 'tst', severity: 'success', summary: 'Mensagem de Erro', detail: 'Pet cadastrado com sucesso!' });
     },
     error => {
-      // Handle error response here
-      console.error("Erro ao cadastrar o pet:", error);
-      // You may want to display an error message to the user
+      this.showErrorViaToast('Erro ao cadastrar o pet: ' + error);
     }
   );
   }
@@ -262,6 +249,18 @@ export class PetCadastroComponent {
     }
 
     return null;
+  }
+
+  onChangeEspecie(event: any) {
+    if (event) {
+      if (event.value === '1') {
+        this.racaEspecie = 'cão';
+      } else {
+        this.racaEspecie = 'gato';
+      }
+
+      this.racas = this.racasAux.filter(raca => raca.especie === this.racaEspecie);
+    }
   }
   validarRaca(){
     const racaValue = this.f['raca'].value;
@@ -323,10 +322,5 @@ export class PetCadastroComponent {
       };
       reader.readAsArrayBuffer(event.files[0]);
     }
-  }
-
-
-  isFieldInvalid(field: string) {
-    return this.form.get(field)?.invalid && (this.form.get(field)?.dirty || this.form.get(field)?.touched);
   }
 }

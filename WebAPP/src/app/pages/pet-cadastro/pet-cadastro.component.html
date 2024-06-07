@@ -40,7 +40,7 @@
                   optionLabel="name"
                   formControlName="especie"
                   [class]="{ 'ng-dirty ng-invalid': f['especie'].invalid && (f['name'].dirty || f['name'].touched) }"
-                  (ngModelChange)="onChangeEspecie()"
+                  (ngModelChange)="onChangeEspecie($event)"
                 ></p-dropdown>
                 <label for="dropdown0">Espécie</label>
             </span>
@@ -51,7 +51,7 @@
                 <p-autoComplete
                   inputId="autocomplete"
                   [(ngModel)]="raca"
-                  [suggestions]="racasAux"
+                  [suggestions]="racas"
                   (completeMethod)="buscarRacas($event)"
                   field="name"
                   formControlName="raca"
