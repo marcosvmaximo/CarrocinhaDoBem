@@ -56,9 +56,9 @@ public class AuthController : ControllerBase
   [HttpPost("login")]
   public async Task<IActionResult> Login(LoginUserRequest request)
   {
-    var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == request.Email);
+    var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
 
-    if (user == null) return BadRequest("Email ou senha inválidos.");
+    if (user == null) return BadRequest(new { Message = "Email ou senha inválidos."});
 
     var isPasswordValid = _service.VerifyPassword(user, request.Password);
 

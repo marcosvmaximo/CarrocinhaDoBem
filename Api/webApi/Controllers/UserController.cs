@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 namespace webApi.Controllers
 {
     [ApiController]
-    [Route("api/userController")] 
+    [Route("api/userController")]
     public class UserController : ControllerBase
     {
         private readonly DataContext _context;
@@ -45,13 +45,15 @@ namespace webApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(int id, [FromBody] User updatedUser)
+        public async Task<IActionResult> UpdateUser(int id, [FromBody] UpdateUser updatedUser)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             var user = await _context.Users.FindAsync(id);
             if (user == null) return NotFound("Usuário não encontrado.");
 
+            byte[] avatarBytes = Convert.FromBase64String(updatedUser.Avatar);
+            user.Avatar = avatarBytes;
             user.UserName = updatedUser.UserName;
             user.Email = updatedUser.Email;
             user.Phone = updatedUser.Phone;
@@ -62,7 +64,8 @@ namespace webApi.Controllers
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
 
-            return Ok("Usuário atualizado com sucesso.");
+            user.PasswordHash = null;
+            return Ok(new { Message = "Usuário atualizado com sucesso.", Data = user } );
         }
 
         [HttpDelete("{id}")]
