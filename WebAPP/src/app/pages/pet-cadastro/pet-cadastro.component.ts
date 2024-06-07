@@ -203,6 +203,10 @@ export class PetCadastroComponent {
   }
 
   onSubmit() {
+    if(this.form.invalid){
+      this.showErrors();
+      return;
+    }
     if(this.f['raca'].valid){
       this.validarRaca();
     }
