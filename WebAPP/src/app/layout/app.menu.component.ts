@@ -20,18 +20,23 @@ export class AppMenuComponent implements OnInit {
                   { label: 'Inicio', icon: 'pi pi-f2w pi-home', routerLink: ['/dashboard'] }
                 ]
             },
-            {
-                label: 'Pages',
-                items: [
-                    { label: 'Catalogo Adoções', icon: 'pi pi-fw pi-wallet', routerLink: ['/dashboard/pets'] },
-                    { label: 'Pet Cadastro', icon: 'pi pi-fw pi-plus-circle', routerLink: ['/dashboard/pets-cadastro'] },
-                    { label: 'Suas Doações', icon: 'pi pi-fw pi-wallet', routerLink: ['/dashboard/doacoes'] },
-                    { label: 'Seus Apadrinhados', icon: 'pi pi-fw pi-bookmark', routerLink: ['/dashboard/apadrinhados'] },
-                    { label: 'Sobre', icon: 'pi pi-fw pi-question-circle', routerLink: ['/dashboard/sobre'] },
-                    { label: 'Nossa Missão', icon: 'pi pi-fw pi-star', routerLink: ['/dashboard/nossa-missao'] },
-                    { label: 'Contato', icon: 'pi pi-fw pi-address-book', routerLink: ['/dashboard/contato'] }
-                ]
-            },
+          {
+            label: 'Pages',
+            items: [
+              { label: 'Catalogo Adoções', icon: 'pi pi-fw pi-wallet', routerLink: ['/dashboard/pets'] },
+              { label: 'Pet Cadastro', icon: 'pi pi-fw pi-plus-circle', routerLink: ['/dashboard/pets-cadastro'] },
+              { label: 'Suas Doações', icon: 'pi pi-fw pi-wallet', routerLink: ['/dashboard/doacoes']},
+              { label: 'Seus Apadrinhados', icon: 'pi pi-fw pi-bookmark', routerLink: ['/dashboard/apadrinhados'] },
+            ]
+          },
+          {
+            label: 'Site',
+            items: [
+              { label: 'Sobre', icon: 'pi pi-fw pi-question-circle', routerLink: ['/dashboard/sobre'] },
+              { label: 'Nossa Missão', icon: 'pi pi-fw pi-star', routerLink: ['/dashboard/nossa-missao'] },
+              { label: 'Contato', icon: 'pi pi-fw pi-address-book', routerLink: ['/dashboard/contato'] }
+            ]
+          },
             {
                 label: 'Profile',
                 items: [

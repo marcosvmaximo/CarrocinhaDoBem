@@ -71,15 +71,15 @@ export class LoginComponent{
         localStorage.setItem("logado", "true");
         localStorage.setItem("user", JSON.stringify(response.data));
 
+        if(email === 'admin@gmail.com' && senha === 'Admin123'){
+          localStorage.setItem("admin", "true");
+        }
+
         setTimeout(() => {
           this.router.navigate(['/dashboard']);
         }, 1000);
       }, err => {
-        if(err.status == 400){
-          this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: err.error });
-          return
-        }
-        this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: 'Ocorreu um erro inesperado ao realizar o login, tente novamente em alguns instantes.' });
+        this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: 'Email ou senha inválidos.' });
       });
   }
 

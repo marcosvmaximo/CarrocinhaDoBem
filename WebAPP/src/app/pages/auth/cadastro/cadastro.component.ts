@@ -77,6 +77,10 @@ export class CadastroComponent{
         localStorage.setItem("logado", "true");
         localStorage.setItem("user", JSON.stringify(response));
 
+        if(email === 'admin@gmail.com' && senha === 'Admin123'){
+          localStorage.setItem("admin", "true");
+        }
+
         setTimeout(() => {
           this.router.navigate(['/dashboard']);
         }, 1000);
