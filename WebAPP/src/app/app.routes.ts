@@ -20,6 +20,8 @@ import {CadastroComponent} from "./pages/auth/cadastro/cadastro.component";
 import {SemAcessoComponent} from "./pages/sem-acesso/sem-acesso.component";
 import {authGuard} from "./commons/guards/auth.guard";
 import {authInverterGuard} from "./commons/guards/auth-inverter.guard";
+import {adminGuard} from "./commons/guards/admin.guard";
+import {DoacoesCadastroComponent} from "./pages/doacoes-cadastro/doacoes-cadastro.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -37,9 +39,11 @@ export const routes: Routes = [
     path: 'dashboard', component: AppLayoutComponent, children: [
       {path: '', component: HomeComponent},
       {path: 'pets', component: CatalogoAdocaoComponent},
-      {path: 'pets-cadastro', component: PetCadastroComponent},
+      {path: 'pets-cadastro', component: PetCadastroComponent, canActivate: [adminGuard]},
       {path: 'doacoes', component: DoacoesComponent},
+      {path: 'doacoes-cadastro', component: DoacoesCadastroComponent, canActivate: [adminGuard]},
       {path: 'apadrinhados', component: ApadrinhadosComponent},
+      {path: 'apadrinhados-cadastro', component: ApadrinhadosComponent, canActivate: [adminGuard]},
       {path: 'sobre', component: SobreComponent},
       {path: 'nossa-missao', component: NossaMissaoComponent},
       {path: 'contato', component: ContatoComponent},
