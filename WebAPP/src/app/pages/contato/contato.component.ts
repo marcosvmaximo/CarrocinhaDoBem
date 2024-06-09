@@ -58,8 +58,6 @@ export class ContatoComponent {
 
     if(envio){
       this.msgService.add({ key: 'tst', severity: 'success', summary: 'Successo', detail: 'Enviou com sucesso' });
-
-      this.router.navigate(['/inicio']);
     } else {
       this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: 'Ocorreu um erro inesperado ao enviar o formulário, tente novamente em alguns instantes.' });
     }

@@ -70,7 +70,6 @@ export class LadingPageComponent implements OnInit{
     const user = localStorage.getItem("user");
     // @ts-ignore
     const obj = JSON.parse(user);
-    console.log(obj)
     return `Seja bem-vindo ${obj.userName}`;
   }
 }

@@ -11,7 +11,6 @@ export class PetCadastroService {
   constructor(private http: HttpClient) { }
 
   cadastrarPet(body: FormData): Observable<any>{
-    console.log('1', body);
     return this.http.post(`${apiUrl}/animals`, body);
   }
 }
