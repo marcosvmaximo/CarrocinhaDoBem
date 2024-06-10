@@ -48,8 +48,33 @@ namespace webApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Adoption adoption)
+        public async Task<IActionResult> Create([FromBody] AdoptionRequest request)
         {
+            var user = await _context.Users.FindAsync(request.UserId);
+            if (user == null)
+            {
+              return NotFound("Usuário não encontrado.");
+            }
+
+            var animal = await _context.Animals.FindAsync(request.AnimalId);
+            if (animal == null)
+            {
+              return NotFound("Animais não encontrado.");
+            }
+
+            var adoption = new Adoption
+            {
+                UserId = request.UserId,
+                AnimalId = request.AnimalId,
+                AdoptionDate = DateTime.Now,
+                AdoptionStatus = true
+            };
+
+            animal.Status = false;
+
+            _context.Adoptions.Add(adoption);
+            _context.Animals.Update(animal);
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

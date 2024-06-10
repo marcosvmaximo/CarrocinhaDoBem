@@ -60,6 +60,10 @@ public class AnimalMap : IEntityTypeConfiguration<Animal>
         .HasColumnName("AnimalPic")
         .HasColumnType("LONGBLOB");
 
+      builder.Property(a => a.Status)
+        .HasColumnName("Status")
+        .HasColumnType("tinyint(1)");
+
       // Define o relacionamento com a tabela Institution
       builder.HasOne(a => a.Institution)
         .WithMany()
