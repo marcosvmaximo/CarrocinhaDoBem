@@ -14,10 +14,12 @@ import {NodeService} from "./demo/service/node.service";
 import {NotfoundComponent} from "./demo/components/notfound/notfound.component";
 import { NgxTippyModule } from 'ngx-tippy-wrapper';
 import {MessageService} from "primeng/api";
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [AppComponent, NotfoundComponent],
-  imports: [AppRoutingModule, AppLayoutModule, NgxTippyModule],
+  imports: [AppRoutingModule, AppLayoutModule, ReactiveFormsModule , NgxTippyModule],
   providers: [
     { provide: LocationStrategy, useClass: PathLocationStrategy },
     CountryService, CustomerService, EventService, IconService, NodeService,

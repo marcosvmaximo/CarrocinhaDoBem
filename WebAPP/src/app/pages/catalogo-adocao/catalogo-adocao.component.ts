@@ -1,17 +1,17 @@
-import {Component, OnInit} from '@angular/core';
-import {Button} from "primeng/button";
-import {DataView, DataViewModule} from "primeng/dataview";
-import {DropdownModule} from "primeng/dropdown";
-import {InputTextModule} from "primeng/inputtext";
-import {NgClass, NgForOf, NgIf} from "@angular/common";
-import {MessageService, PrimeTemplate, SelectItem} from "primeng/api";
-import {RatingModule} from "primeng/rating";
-import {FormsModule} from "@angular/forms";
-import {IAnimal} from "./model/IAnimal";
-import {CatalogoAdocaoService} from "./catalogo-adocao.service";
-import {NgxTippyModule} from "ngx-tippy-wrapper";
-import {UtilsService} from "../../commons/utils.service";
+import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import { Button } from "primeng/button";
+import { DataView, DataViewModule } from "primeng/dataview";
+import { DropdownModule } from "primeng/dropdown";
+import { InputTextModule } from "primeng/inputtext";
+import { NgClass, NgForOf, NgIf } from "@angular/common";
+import {MessageService, PrimeTemplate, SelectItem } from "primeng/api";
+import { RatingModule } from "primeng/rating";
+import { FormsModule } from "@angular/forms";
+import { IAnimal } from "./model/IAnimal";
+import { CatalogoAdocaoService } from "./catalogo-adocao.service";
+import { NgxTippyModule } from "ngx-tippy-wrapper";
+import { UtilsService } from "../../commons/utils.service";
 
 @Component({
   selector: 'app-catalogo-adocao',
@@ -94,4 +94,7 @@ export class CatalogoAdocaoComponent implements OnInit{
     this.router.navigate(['/dashboard/pets-adocao', id]);
   }
 
+  navigateToApadrinhamento(animal: IAnimal) {
+    this.router.navigate(['dashboard/apadrinhados-cadastro'], { state: { animal } });
+  }
 }

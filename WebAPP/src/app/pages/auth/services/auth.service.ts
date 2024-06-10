@@ -30,6 +30,7 @@ export class AuthService {
   }
 
   obterIdLogado() {
-    return localStorage.getItem('logado') === 'true';
+    const user = JSON.parse(localStorage.getItem('user')!);
+    return user.id;
   }
 }

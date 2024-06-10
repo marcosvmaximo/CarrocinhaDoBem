@@ -52,6 +52,7 @@ export class ApadrinhadosComponent implements OnInit {
     this.apadrinhamentoService.getActiveIApadrinhamentos().subscribe(
       (data: IApadrinhamento[]) => {
         this.padrinhamentos = data;
+        console.log('loadSponsorships', data);
       },
       (error: any) => {
         console.error('Erro ao carregar patrocínios:', error);
