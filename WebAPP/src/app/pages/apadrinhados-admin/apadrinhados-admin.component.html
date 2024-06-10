@@ -1,1 +1,26 @@
-<p>apadrinhados-admin works!</p>
+<div class="card">
+    <h5>Pets apadrinhados</h5>
+    <p-table [value]="padrinhamentos" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Código</th>
+          <th pSortableColumn="name">Animal</th>
+          <th pSortableColumn="initialDate">Data Realização <p-sortIcon field="initialDate"></p-sortIcon></th>
+          <th pSortableColumn="endDate">Data Término <p-sortIcon field="endDate"></p-sortIcon></th>
+          <th pSortableColumn="sponsorshipValue">Valor Mensal <p-sortIcon field="sponsorshipValue"></p-sortIcon></th>
+          <th pSortableColumn="sponsorshipType">Tipo de Patrocínio <p-sortIcon field="sponsorshipType"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-padrinhamento>
+        <tr >
+          <td>{{ padrinhamento.id }}</td>
+          <td>{{ padrinhamento.animal?.name }}</td>
+          <td>{{ formatDate(padrinhamento.initialDate) }}</td>
+          <td>{{ formatDate(padrinhamento.endDate) }}</td>
+          <td>{{ formatCurrency(padrinhamento.sponsorshipValue) }}</td>
+          <td>{{ padrinhamento.sponsorshipType }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  
