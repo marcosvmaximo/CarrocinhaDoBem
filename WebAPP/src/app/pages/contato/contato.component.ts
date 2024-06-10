@@ -6,6 +6,8 @@ import {ButtonDirective} from "primeng/button";
 import {Ripple} from "primeng/ripple";
 import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
+import {ContatoService} from "./contato.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-contato',
@@ -25,9 +27,6 @@ import {MessageService} from "primeng/api";
 export class ContatoComponent {
 
   form: FormGroup;
-  nome: any;
-  email: any;
-  mensagem: any;
 
   private fieldNames: {
     nome: "Nome";
@@ -35,11 +34,11 @@ export class ContatoComponent {
     mensagem: "Mensagem";
   };
 
-  constructor(private fb: FormBuilder, private msgService: MessageService) {
+  constructor(private fb: FormBuilder, private msgService: MessageService, private service: ContatoService, private router: Router) {
     this.form = this.fb.group({
-      nome: ['', Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern('[a-zA-ZÀ-ÿ\s]{3,50}')],
-      email: ['', Validators.required, Validators.email],
-      mensagem: ['', Validators.maxLength(100)]
+      nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern('[a-zA-ZÀ-ÿ\s]{3,50}')]],
+      email: ['', [Validators.required, Validators.email]],
+      mensagem: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
     });
 
     this.fieldNames = {
@@ -53,6 +52,14 @@ export class ContatoComponent {
   onSubmit() {
     if(this.form.invalid){
       this.showErrors();
+    }
+
+    const envio = this.service.enviarFormulario(this.form.value);
+
+    if(envio){
+      this.msgService.add({ key: 'tst', severity: 'success', summary: 'Successo', detail: 'Enviou com sucesso' });
+    } else {
+      this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: 'Ocorreu um erro inesperado ao enviar o formulário, tente novamente em alguns instantes.' });
     }
   }
 

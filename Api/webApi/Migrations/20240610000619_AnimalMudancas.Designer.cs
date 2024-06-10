@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace webApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240519195200_NullUpdate")]
-    partial class NullUpdate
+    [Migration("20240610000619_AnimalMudancas")]
+    partial class AnimalMudancas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,22 +59,13 @@ namespace webApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("AnimalAge")
-                        .HasMaxLength(100)
+                    b.Property<byte[]>("AnimalPic")
+                        .HasColumnType("LONGBLOB")
+                        .HasColumnName("AnimalPic");
+
+                    b.Property<DateTime>("BirthDate")
                         .HasColumnType("DATE")
-                        .HasColumnName("AnimalAge");
-
-                    b.Property<string>("AnimalName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("VARCHAR(100)")
-                        .HasColumnName("AnimalName");
-
-                    b.Property<string>("AnimalType")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnName("AnimalType");
+                        .HasColumnName("BirthDate");
 
                     b.Property<string>("Breed")
                         .IsRequired()
@@ -82,24 +73,41 @@ namespace webApi.Migrations
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnName("Breed");
 
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("VARCHAR(20)")
-                        .HasColumnName("Color");
+                    b.Property<string>("Description")
+                        .HasMaxLength(100)
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnName("Description");
 
                     b.Property<int>("InstitutionId")
                         .HasColumnType("int")
                         .HasColumnName("InstitutionID");
 
-                    b.Property<float>("PetSize")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("FLOAT")
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnName("AnimalName");
+
+                    b.Property<int>("PetSize")
+                        .HasColumnType("INT")
                         .HasColumnName("PetSize");
 
                     b.Property<DateTime>("RescueDate")
                         .HasColumnType("DATE")
                         .HasColumnName("RescueDate");
+
+                    b.Property<int>("Sex")
+                        .HasColumnType("INT")
+                        .HasColumnName("Sex");
+
+                    b.Property<int>("Species")
+                        .HasMaxLength(50)
+                        .HasColumnType("INT")
+                        .HasColumnName("Species");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)")
+                        .HasColumnName("Status");
 
                     b.HasKey("Id")
                         .HasName("AnimalID");
@@ -224,10 +232,10 @@ namespace webApi.Migrations
                         .HasColumnName("address");
 
                     b.Property<byte[]>("Avatar")
-                        .HasColumnType("blob")
+                        .HasColumnType("LONGBLOB")
                         .HasColumnName("avatar");
 
-                    b.Property<DateTime>("BirthDate")
+                    b.Property<DateTime?>("BirthDate")
                         .HasColumnType("DATE")
                         .HasColumnName("birthDate");
 

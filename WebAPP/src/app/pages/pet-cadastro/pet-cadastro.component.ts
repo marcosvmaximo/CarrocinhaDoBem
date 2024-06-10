@@ -237,8 +237,10 @@ export class PetCadastroComponent {
     this.service.cadastrarPet(formData).subscribe(
     response => {
       this.msgService.add({ key: 'tst', severity: 'success', summary: 'Mensagem de Erro', detail: 'Pet cadastrado com sucesso!' });
+      this.router.navigate(['/dashboard/pets']);
     },
     error => {
+      console.log(error);
       this.showErrorViaToast('Erro ao cadastrar o pet: ' + error);
     }
   );

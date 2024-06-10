@@ -54,5 +54,7 @@ public class Animal : ModelBase
     [DisplayName("Foto")]
     public byte[]? AnimalPic { get; set; }
 
+    public bool Status { get; set; }
+
     public virtual Institution Institution { get; set; }
 }

@@ -52,21 +52,20 @@ export class ApadrinhadosComponent implements OnInit {
     this.apadrinhamentoService.getActiveIApadrinhamentos().subscribe(
       (data: IApadrinhamento[]) => {
         this.padrinhamentos = data;
-        console.log(1, this.padrinhamentos)
       },
       (error: any) => {
         console.error('Erro ao carregar patrocínios:', error);
       }
     );
   }
-  
- 
-  
+
+
+
 
   formatCurrency(value: number | undefined): string {
     return value !== undefined ? this.currencyPipe.transform(value, 'BRL', 'symbol', '1.2-2') || '' : '';
   }
-  
+
   formatDate(date: string | undefined): string {
     return date !== undefined ? this.datePipe.transform(date, 'dd/MM/yyyy') || '' : '';
   }

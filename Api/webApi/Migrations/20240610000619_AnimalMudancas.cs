@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace webApi.Migrations
 {
-    public partial class First : Migration
+    public partial class AnimalMudancas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,14 +42,14 @@ namespace webApi.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     password = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    phone = table.Column<string>(type: "varchar(14)", maxLength: 14, nullable: false)
+                    phone = table.Column<string>(type: "varchar(14)", maxLength: 14, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     address = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    userType = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false)
+                    userType = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    avatar = table.Column<byte[]>(type: "blob", nullable: true),
-                    birthDate = table.Column<DateTime>(type: "DATE", nullable: false)
+                    avatar = table.Column<byte[]>(type: "LONGBLOB", nullable: true),
+                    birthDate = table.Column<DateTime>(type: "DATE", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -64,17 +64,19 @@ namespace webApi.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     InstitutionID = table.Column<int>(type: "int", nullable: false),
-                    PetSize = table.Column<float>(type: "FLOAT", maxLength: 100, nullable: false),
-                    AnimalAge = table.Column<DateTime>(type: "DATE", maxLength: 100, nullable: false),
-                    RescueDate = table.Column<DateTime>(type: "DATE", nullable: false),
                     AnimalName = table.Column<string>(type: "VARCHAR(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    Sex = table.Column<int>(type: "INT", nullable: false),
+                    PetSize = table.Column<int>(type: "INT", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "DATE", nullable: false),
+                    RescueDate = table.Column<DateTime>(type: "DATE", nullable: false),
                     Breed = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Color = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false)
+                    Species = table.Column<int>(type: "INT", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "VARCHAR(100)", maxLength: 100, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    AnimalType = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    AnimalPic = table.Column<byte[]>(type: "LONGBLOB", nullable: true),
+                    Status = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {

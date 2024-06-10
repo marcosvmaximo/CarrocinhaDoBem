@@ -22,7 +22,10 @@ import {authGuard} from "./commons/guards/auth.guard";
 import {authInverterGuard} from "./commons/guards/auth-inverter.guard";
 import {adminGuard} from "./commons/guards/admin.guard";
 import {DoacoesCadastroComponent} from "./pages/doacoes-cadastro/doacoes-cadastro.component";
+import {AdocaoComponent} from "./pages/adocao/adocao.component";
 import {ApadrinhadosCadastroComponent} from "./pages/apadrinhados-cadastro/apadrinhados-cadastro.component";
+import {DoacoesAdminComponent} from "./pages/doacoes-admin/doacoes-admin.component";
+import {ApadrinhadosAdminComponent} from "./pages/apadrinhados-admin/apadrinhados-admin.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -41,10 +44,13 @@ export const routes: Routes = [
       {path: '', component: HomeComponent},
       {path: 'pets', component: CatalogoAdocaoComponent},
       {path: 'pets-cadastro', component: PetCadastroComponent, canActivate: [adminGuard]},
+      {path: 'pets-adocao/:id', component: AdocaoComponent},
       {path: 'doacoes', component: DoacoesComponent},
       {path: 'doacoes-cadastro', component: DoacoesCadastroComponent, canActivate: [adminGuard]},
+      {path: 'doacoes-admin', component: DoacoesAdminComponent, canActivate: [adminGuard]},
       {path: 'apadrinhados', component: ApadrinhadosComponent},
       {path: 'apadrinhados-cadastro', component: ApadrinhadosCadastroComponent, canActivate: [adminGuard]},
+      {path: 'apadrinhados-admin', component: ApadrinhadosAdminComponent, canActivate: [adminGuard]},
       {path: 'sobre', component: SobreComponent},
       {path: 'nossa-missao', component: NossaMissaoComponent},
       {path: 'contato', component: ContatoComponent},

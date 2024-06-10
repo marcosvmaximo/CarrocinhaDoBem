@@ -24,9 +24,13 @@ export class AppMenuComponent implements OnInit {
             label: 'Pages',
             items: [
               { label: 'Catalogo Adoções', icon: 'pi pi-fw pi-wallet', routerLink: ['/dashboard/pets'] },
-              { label: 'Pet Cadastro', icon: 'pi pi-fw pi-plus-circle', routerLink: ['/dashboard/pets-cadastro'] },
+              { label: 'Pet Cadastro', icon: 'pi pi-fw pi-plus-circle', routerLink: ['/dashboard/pets-cadastro'], admin: true },
               { label: 'Suas Doações', icon: 'pi pi-fw pi-wallet', routerLink: ['/dashboard/doacoes']},
+              { label: 'Realizar Doação', icon: 'pi pi-fw pi-file-arrow-up', routerLink: ['/dashboard/doacoes-cadastro'] },
+              { label: 'Todas Doações', icon: 'pi pi-fw pi-list-check', routerLink: ['/dashboard/doacoes-admin'], admin: true },
               { label: 'Seus Apadrinhados', icon: 'pi pi-fw pi-bookmark', routerLink: ['/dashboard/apadrinhados'] },
+              { label: 'Realizar Apadrinhamento', icon: 'pi pi-fw pi-file-plus', routerLink: ['/dashboard/apadrinhados-cadastro'] },
+              { label: 'Todos Apadrinhados', icon: 'pi pi-fw pi-list-check', routerLink: ['/dashboard/apadrinhados-admin'], admin: true },
             ]
           },
           {

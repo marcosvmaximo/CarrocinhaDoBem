@@ -2,6 +2,7 @@ namespace webApi.Models.Responses;
 
 public class AnimalResponse
 {
+  public int Id { get; set; }
   public int InstitutionId { get; set; }
   public string Name { get; set; }
   public string Sex{ get; set; }

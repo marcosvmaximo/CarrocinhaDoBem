@@ -1,0 +1,37 @@
+<div class="card flex flex-column gap-5 justify-content-between">
+  <p-toast key="tst"></p-toast>
+  <div>
+    <div>
+      <h3>Adoção</h3>
+    </div>
+  </div>
+  <div class="flex justify-content-around gap-5 my-5">
+    <div>
+      <h5>Pet:</h5>
+      <div class="flex flex-column gap-4">
+        <div><span class="font-bold">Nome: </span><span>{{pet.name}}</span></div>
+        <div><span class="font-bold">Data de nascimento: </span><span>{{formatDate(pet.birthDate)}}</span></div>
+        <div><span class="font-bold">Porte: </span><span>{{pet.petSize}}</span></div>
+        <div><span class="font-bold">Sexo: </span><span>{{pet.sex}}</span></div>
+        <div><span class="font-bold">Especie: </span><span>{{pet.species}}</span></div>
+        <div><span class="font-bold">Raça: </span><span>{{pet.breed}}</span></div>
+        <div><span class="font-bold">Descrição: </span><span>{{pet.description}}</span></div>
+      </div>
+    </div>
+    <div>
+      <h5>Usuário:</h5>
+      <div class="flex flex-column gap-4">
+        <div><span class="font-bold">Nome: </span><span>{{usuario.userName}}</span></div>
+        <div><span class="font-bold">Endereço: </span><span>{{usuario.address}}</span></div>
+        <div><span class="font-bold">E-mail: </span><span>{{usuario.email}}</span></div>
+        <div><span class="font-bold">Telefone: </span><span>{{formatarTelefone(usuario.phone)}}</span></div>
+        <div><span class="font-bold">Data de nascimento: </span><span>{{formatDate(usuario.birthDate)}}</span></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <span class="p-buttonset mt-5">
+      <button pButton label="Confimar adoção" icon="pi pi-check" class="bg-primary border-none px-5 py-3" (click)="confirmarAdocao()"></button>
+    </span>
+  </div>
+</div>

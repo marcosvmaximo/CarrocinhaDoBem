@@ -25,3 +25,9 @@ public class Adoption : ModelBase
     // Relacionamento com a tabela User
     public virtual User User { get; set; }
 }
+
+public class AdoptionRequest
+{
+  public int UserId { get; set; }
+  public int AnimalId { get; set; }
+}

@@ -44,15 +44,15 @@ namespace webApi.Controllers
             (_, "asc") => query.OrderBy(a => a.Id)
           };
 
-          var animals = await query.ToListAsync();
+          var animals = await query.Where(a => a.Status).ToListAsync();
           return Ok(_mapper.Map<IEnumerable<AnimalResponse>>(animals));
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var animal = await _context.Animals.Include(a => a.Institution).FirstOrDefaultAsync(a => a.Id == id);
-            if (animal == null)
+            var animal = await _context.Animals.Include(a => a.Institution).Where(a => a.Status).FirstOrDefaultAsync(a => a.Id == id);
+            if (animal == null || !animal.Status)
             {
                 return NotFound("Animal não encontrado.");
             }
@@ -64,7 +64,7 @@ namespace webApi.Controllers
         public async Task<IActionResult> Create([FromForm]AnimalRequest request, IFormFile animalPic)
         {
             var animal = _mapper.Map<Animal>(request);
-            
+            animal.Status = true;
 
             if (!ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace webApi.Controllers
             }
 
             var animal = await _context.Animals.FindAsync(id);
-            if (animal == null)
+            if (animal == null || !animal.Status)
             {
                 return NotFound("Animal não encontrado.");
             }

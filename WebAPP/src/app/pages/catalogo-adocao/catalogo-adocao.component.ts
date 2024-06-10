@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router} from "@angular/router";
 import { Button } from "primeng/button";
 import { DataView, DataViewModule } from "primeng/dataview";
 import { DropdownModule } from "primeng/dropdown";
 import { InputTextModule } from "primeng/inputtext";
 import { NgClass, NgForOf, NgIf } from "@angular/common";
-import { PrimeTemplate, SelectItem } from "primeng/api";
+import {MessageService, PrimeTemplate, SelectItem } from "primeng/api";
 import { RatingModule } from "primeng/rating";
 import { FormsModule } from "@angular/forms";
 import { IAnimal } from "./model/IAnimal";
@@ -32,18 +32,17 @@ import { UtilsService } from "../../commons/utils.service";
   templateUrl: './catalogo-adocao.component.html',
   styleUrl: './catalogo-adocao.component.scss'
 })
-export class CatalogoAdocaoComponent implements OnInit {
+export class CatalogoAdocaoComponent implements OnInit{
   animals: IAnimal[] = [];
+
   sortOptions: SelectItem[] = [];
+
   sortOrder: number = 0;
+
   sortField: string = '';
 
-  constructor(
-    private service: CatalogoAdocaoService,
-    private util: UtilsService,
-    private router: Router
-  ) { }
-
+  constructor(private service: CatalogoAdocaoService, private util: UtilsService, private router: Router, private msgService: MessageService) {
+  }
   ngOnInit() {
     this.buscarAnimals();
 
@@ -57,10 +56,12 @@ export class CatalogoAdocaoComponent implements OnInit {
     ];
   }
 
-  buscarAnimals() {
+  buscarAnimals(){
     this.service.getAnimals(this.sortField, this.sortOrder)
       .then(data => this.animals = data)
-      .catch(err => alert("Erro" + err.errors));
+      .catch(err => {
+        this.msgService.add({severity: 'error', summary: 'Erro ao buscar animais', detail: err.errors});
+      });
   }
 
   onSortChange(event: any) {
@@ -81,12 +82,16 @@ export class CatalogoAdocaoComponent implements OnInit {
     dv.filter((event.target as HTMLInputElement).value, 'contains');
   }
 
-  calcularIdade(dataAniversario: Date): string {
+  calcularIdade(dataAniversario: Date): string{
     return this.util.calcularIdade(dataAniversario);
   }
 
   carregarImagem(imagem: ArrayBuffer) {
     return 'data:image/jpeg;base64, ' + imagem;
+  }
+
+  adotarAnimal(id: number) {
+    this.router.navigate(['/dashboard/pets-adocao', id]);
   }
 
   navigateToApadrinhamento(animal: IAnimal) {

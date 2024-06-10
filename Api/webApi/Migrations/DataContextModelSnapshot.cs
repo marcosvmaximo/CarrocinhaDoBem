@@ -103,6 +103,10 @@ namespace webApi.Migrations
                         .HasColumnType("INT")
                         .HasColumnName("Species");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)")
+                        .HasColumnName("Status");
+
                     b.HasKey("Id")
                         .HasName("AnimalID");
 
@@ -226,7 +230,7 @@ namespace webApi.Migrations
                         .HasColumnName("address");
 
                     b.Property<byte[]>("Avatar")
-                        .HasColumnType("blob")
+                        .HasColumnType("LONGBLOB")
                         .HasColumnName("avatar");
 
                     b.Property<DateTime?>("BirthDate")
