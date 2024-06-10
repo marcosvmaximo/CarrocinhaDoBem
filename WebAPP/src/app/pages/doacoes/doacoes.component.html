@@ -4,25 +4,17 @@
     <ng-template pTemplate="header">
       <tr>
         <th>Código</th>
-        <th pSortableColumn="name">Data Realização <p-sortIcon field="name"></p-sortIcon></th>
-        <th pSortableColumn="price">Valor <p-sortIcon field="price"></p-sortIcon></th>
-        <th>Descrição </th>
+        <th pSortableColumn="description">Descrição</th>
+        <th pSortableColumn="donationDate">Data Realização <p-sortIcon field="dataRealizacao"></p-sortIcon></th>
+        <th pSortableColumn="donationValue">Valor <p-sortIcon field="valor"></p-sortIcon></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-doacao>
       <tr>
-        <td style="width: 20%; min-width: 2rem;">
-          {{ doacao.codigo }}
-        </td>
-        <td style="width: 25%; min-width: 5rem;">
-          {{ doacao.dataRealizacao }}
-        </td>
-        <td style="width: 25%;">
-          {{ doacao.valor }}
-        </td>
-        <td style="width: 35%; min-width: 7rem;">
-          {{ doacao.descricao }}
-        </td>
+        <td>{{ doacao.id }}</td>
+        <td>{{ doacao.description }}</td>
+        <td>{{ formatDate(doacao.donationDate) }}</td>
+        <td>{{ formatCurrency(doacao.donationValue) }}</td>
       </tr>
     </ng-template>
   </p-table>

@@ -1,6 +1,6 @@
 export interface IDoacao{
-  codigo: string,
-  dataRealizacao: string,
-  valor: number,
-  descricao: string,
+  id: number,
+  DonationDate: string,
+  DonationValue: number,
+  Description: string,
 }
