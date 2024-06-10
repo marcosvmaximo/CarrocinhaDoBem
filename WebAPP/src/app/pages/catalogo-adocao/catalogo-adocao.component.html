@@ -66,6 +66,8 @@
             <div class="flex align-items-center justify-content-between">
               <span class="text-2xl font-semibold">{{ calcularIdade(animal["birthDate"]) }}</span>
               <p-button icon="pi pi-arrow-right" label="Adotar" [disabled]="!animals" ngxTippy="Ir para adoção"></p-button>
+              <p-button icon="pi pi-arrow-right" label="Apadrinhar" ngxTippy="Ir para apadrinhamento" (click)="navigateToApadrinhamento(animal)"></p-button>
+
             </div>
           </div>
         </div>
