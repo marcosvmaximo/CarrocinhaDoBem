@@ -12,11 +12,12 @@ export class ApadrinhamentoService {
 
   constructor(private http: HttpClient) { }
 
-  getActiveIApadrinhamentos(): Observable<IApadrinhamento[]> {
-    return this.http.get<IApadrinhamento[]>(this.apiUrl).pipe(
+  getActiveIApadrinhamentos(params?: {}): Observable<IApadrinhamento[]> {
+    return this.http.get<IApadrinhamento[]>(this.apiUrl, { params }).pipe(
       catchError(this.handleError)
     );
   }
+  
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
