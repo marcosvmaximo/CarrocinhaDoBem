@@ -43,7 +43,7 @@ namespace webApi.Controllers
             return Ok(sponsorship);
         }
 
-      
+
 
         [HttpPost]
         public async Task<ActionResult<Sponsorship>> PostSponsorship(Sponsorship sponsorship)

@@ -240,7 +240,6 @@ export class PetCadastroComponent {
       this.router.navigate(['/dashboard/pets']);
     },
     error => {
-      console.log(error);
       this.showErrorViaToast('Erro ao cadastrar o pet: ' + error);
     }
   );

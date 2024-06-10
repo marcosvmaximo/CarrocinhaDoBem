@@ -1,1 +1,63 @@
-<p>doacoes-cadastro works!</p>
+<div class="card grid">
+  <p-toast key="tst"></p-toast>
+  <div class="col-12 md:col-6">
+    <div class="p-fluid">
+      <h5>Cadastro de Doações</h5>
+      <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="flex flex-column gap-3 mt-5">
+        <div class="field w-full">
+            <span class="p-float-label">
+                  <p-calendar
+                    inputId="donationDate"
+                    formControlName="donationDate"
+                  ></p-calendar>
+                  <label for="donationDate">Data da Doação</label>
+              </span>
+          <div *ngIf="cadastroForm.get('donationDate')?.invalid && cadastroForm.get('donationDate')?.touched" class="p-error">
+            Data da doação é obrigatória.
+          </div>
+          <div *ngIf="getErrorMessage('donationDate')">
+            <div *ngFor="let error of getErrorMessage('donationDate')"  class="text-red-500">{{ error }}</div>
+          </div>
+        </div>
+        <div class="field w-full">
+            <span class="p-float-label">
+                <input
+                  type="text"
+                  id="donationValue"
+                  pInputText type="number"
+                  formControlName="donationValue"
+                />
+                <label for="donationValue">Valor da Doação</label>
+            </span>
+          <div *ngIf="cadastroForm.get('donationValue')?.invalid && cadastroForm.get('donationValue')?.touched" class="p-error">
+            Valor da doação é obrigatório e deve ser um número.
+          </div>
+          <div *ngIf="getErrorMessage('donationValue')" >
+            <div *ngFor="let error of getErrorMessage('donationValue')" class="p-error">{{ error }}</div>
+          </div>
+        </div>
+        <div class="field w-full">
+          <span class="p-float-label">
+                <textarea
+                  inputId="textarea"
+                  rows="3"
+                  cols="30"
+                  pInputTextarea
+                  formControlName="description"
+                ></textarea>
+                <label for="textarea">Descrição</label>
+            </span>
+          <div *ngIf="cadastroForm.get('description')?.invalid && cadastroForm.get('description')?.touched" class="p-error">
+            Descrição é obrigatória.
+          </div>
+          <div *ngIf="getErrorMessage('description')">
+            <div *ngFor="let error of getErrorMessage('description')" class="p-error">{{ error }}</div>
+          </div>
+        </div>
+        <div class="flex align-items-start flex-column gap-3 mx-2 justify-content-between">
+          <p-button icon="" label="Apadrinhar" ngxTippy="Realizar apadrinhamento" (click)="onSubmit()"></p-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
