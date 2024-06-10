@@ -22,6 +22,7 @@ import {authGuard} from "./commons/guards/auth.guard";
 import {authInverterGuard} from "./commons/guards/auth-inverter.guard";
 import {adminGuard} from "./commons/guards/admin.guard";
 import {DoacoesCadastroComponent} from "./pages/doacoes-cadastro/doacoes-cadastro.component";
+import {ApadrinhadosCadastroComponent} from "./pages/apadrinhados-cadastro/apadrinhados-cadastro.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -43,7 +44,7 @@ export const routes: Routes = [
       {path: 'doacoes', component: DoacoesComponent},
       {path: 'doacoes-cadastro', component: DoacoesCadastroComponent, canActivate: [adminGuard]},
       {path: 'apadrinhados', component: ApadrinhadosComponent},
-      {path: 'apadrinhados-cadastro', component: ApadrinhadosComponent, canActivate: [adminGuard]},
+      {path: 'apadrinhados-cadastro', component: ApadrinhadosCadastroComponent, canActivate: [adminGuard]},
       {path: 'sobre', component: SobreComponent},
       {path: 'nossa-missao', component: NossaMissaoComponent},
       {path: 'contato', component: ContatoComponent},

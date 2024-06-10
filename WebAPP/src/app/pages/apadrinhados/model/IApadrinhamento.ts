@@ -7,6 +7,8 @@ export interface IApadrinhamento {
   sponsorshipValue?: number; // Usar number para valores
   sponsorshipType?: string;
   animal?: IAnimal; // Adicionar esta linha para a relação com IAnimal
+  animalId: number; // Use animalId instead of animal
+  userId: number; 
   status?: string;
   
 }

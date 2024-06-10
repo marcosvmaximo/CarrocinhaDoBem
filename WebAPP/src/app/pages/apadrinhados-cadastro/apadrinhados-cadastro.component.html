@@ -1,1 +1,71 @@
-<p>apadrinhados-cadastro works!</p>
+<div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="card p-fluid">
+        <h5>Cadastro de Apadrinhados</h5>
+        <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+          <div class="field">
+            <label for="initialDate">Data Inicial</label>
+            <input pInputText id="initialDate" formControlName="initialDate" type="date" />
+            <div *ngIf="cadastroForm.get('initialDate')?.invalid && cadastroForm.get('initialDate')?.touched">
+              Data inicial é obrigatória.
+            </div>
+            <div *ngIf="getErrorMessage('initialDate')">
+              <div *ngFor="let error of getErrorMessage('initialDate')">{{ error }}</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="endDate">Data Final</label>
+            <input pInputText id="endDate" formControlName="endDate" type="date" />
+            <div *ngIf="cadastroForm.get('endDate')?.invalid && cadastroForm.get('endDate')?.touched">
+              Data final é obrigatória.
+            </div>
+            <div *ngIf="getErrorMessage('endDate')">
+              <div *ngFor="let error of getErrorMessage('endDate')">{{ error }}</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="sponsorshipValue">Valor do Patrocínio</label>
+            <input pInputText id="sponsorshipValue" formControlName="sponsorshipValue" type="number" />
+            <div *ngIf="cadastroForm.get('sponsorshipValue')?.invalid && cadastroForm.get('sponsorshipValue')?.touched">
+              Valor do patrocínio é obrigatório e deve ser um número.
+            </div>
+            <div *ngIf="getErrorMessage('sponsorshipValue')">
+              <div *ngFor="let error of getErrorMessage('sponsorshipValue')">{{ error }}</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="sponsorshipType">Tipo de Patrocínio</label>
+            <input pInputText id="sponsorshipType" formControlName="sponsorshipType" type="text" />
+            <div *ngIf="cadastroForm.get('sponsorshipType')?.invalid && cadastroForm.get('sponsorshipType')?.touched">
+              Tipo de patrocínio é obrigatório e não pode ter mais de 20 caracteres.
+            </div>
+            <div *ngIf="getErrorMessage('sponsorshipType')">
+              <div *ngFor="let error of getErrorMessage('sponsorshipType')">{{ error }}</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="animal">Animal</label>
+            <input pInputText id="animal" formControlName="animal" type="text" readonly />
+            <div *ngIf="cadastroForm.get('animal')?.invalid && cadastroForm.get('animal')?.touched">
+             
+            </div>
+            <div *ngIf="getErrorMessage('animal')">
+              <div *ngFor="let error of getErrorMessage('animal')">{{ error }}</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="status">Status</label>
+            <input pInputText id="status" formControlName="status" type="text" />
+            <div *ngIf="cadastroForm.get('status')?.invalid && cadastroForm.get('status')?.touched">
+              Status é obrigatório.
+            </div>
+            <div *ngIf="getErrorMessage('status')">
+              <div *ngFor="let error of getErrorMessage('status')">{{ error }}</div>
+            </div>
+          </div>
+          <button type="submit" pButton label="Cadastrar" ></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
