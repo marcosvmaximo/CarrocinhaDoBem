@@ -51,10 +51,10 @@
     loadSponsorships(): void {
       const userString = localStorage.getItem("user");
       const user = JSON.parse(userString!);
-    
+
       let params = { userId: user.id };
       console.log(params);
-      
+
       this.apadrinhamentoService.getActiveIApadrinhamentos(params).subscribe(
         (data: IApadrinhamento[]) => {
           this.padrinhamentos = data;

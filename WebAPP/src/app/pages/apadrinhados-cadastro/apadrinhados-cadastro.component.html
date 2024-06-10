@@ -1,1 +1,79 @@
-<p>apadrinhados-cadastro works!</p>
+<div class="card grid">
+  <p-toast key="tst"></p-toast>
+    <div class="col-12 md:col-6">
+      <div class="p-fluid">
+        <h5>Cadastro de Apadrinhados</h5>
+        <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="flex flex-column gap-3 mt-5">
+          <div class="field w-full">
+            <span class="p-float-label">
+                  <p-calendar
+                    inputId="initialDate"
+                    formControlName="initialDate"
+                  ></p-calendar>
+                  <label for="initialDate">Data Inicial</label>
+              </span>
+            <div *ngIf="cadastroForm.get('initialDate')?.invalid && cadastroForm.get('initialDate')?.touched" class="p-error">
+              Data inicial é obrigatória.
+            </div>
+            <div *ngIf="getErrorMessage('initialDate')">
+              <div *ngFor="let error of getErrorMessage('initialDate')"  class="text-red-500">{{ error }}</div>
+            </div>
+          </div>
+          <div class="field w-full">
+              <span class="p-float-label">
+                  <p-calendar
+                    inputId="endDate"
+                    formControlName="endDate"
+                  ></p-calendar>
+                  <label for="endDate">Data Final</label>
+              </span>
+            <div *ngIf="cadastroForm.get('endDate')?.invalid && cadastroForm.get('endDate')?.touched" class="p-error">
+              Data final é obrigatória.
+            </div>
+            <div *ngIf="getErrorMessage('endDate')">
+              <div *ngFor="let error of getErrorMessage('endDate')" class="p-error">{{ error }}</div>
+            </div>
+          </div>
+          <div class="field w-full">
+            <span class="p-float-label">
+                <input
+                  type="text"
+                  id="sponsorshipValue"
+                  pInputText type="number"
+                  formControlName="sponsorshipValue"
+                />
+                <label for="sponsorshipValue">Valor do Patrocínio</label>
+            </span>
+            <div *ngIf="cadastroForm.get('sponsorshipValue')?.invalid && cadastroForm.get('sponsorshipValue')?.touched" class="p-error">
+              Valor do patrocínio é obrigatório e deve ser um número.
+            </div>
+            <div *ngIf="getErrorMessage('sponsorshipValue')" >
+              <div *ngFor="let error of getErrorMessage('sponsorshipValue')" class="p-error">{{ error }}</div>
+            </div>
+          </div>
+          <div class="field w-full">
+            <span class="p-float-label">
+                <input
+                  readonly
+                  type="text"
+                  id="animal"
+                  pInputText
+                  formControlName="animal"
+                  pattern="[a-zA-Z]+"
+                />
+                <label for="animal">Nome Animal</label>
+            </span>
+            <div *ngIf="cadastroForm.get('animal')?.invalid && cadastroForm.get('animal')?.touched" class="p-error">
+              Animal é obrigatório.
+            </div>
+            <div *ngIf="getErrorMessage('animal')">
+              <div *ngFor="let error of getErrorMessage('animal')" class="p-error">{{ error }}</div>
+            </div>
+          </div>
+          <div class="flex align-items-start flex-column gap-3 mx-2 justify-content-between">
+            <p-button icon="" label="Apadrinhar" ngxTippy="Realizar apadrinhamento" (click)="onSubmit()"></p-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

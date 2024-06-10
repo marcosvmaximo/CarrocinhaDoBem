@@ -14,7 +14,7 @@
     <ng-template pTemplate="body" let-padrinhamento>
       <tr >
         <td>{{ padrinhamento.id }}</td>
-        <td>{{ padrinhamento.animal?.name }}</td>
+        <td>{{ padrinhamento.animalOutput?.name }}</td>
         <td>{{ formatDate(padrinhamento.initialDate) }}</td>
         <td>{{ formatDate(padrinhamento.endDate) }}</td>
         <td>{{ formatCurrency(padrinhamento.sponsorshipValue) }}</td>

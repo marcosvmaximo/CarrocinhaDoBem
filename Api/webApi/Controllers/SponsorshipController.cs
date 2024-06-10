@@ -53,7 +53,7 @@ public async Task<ActionResult<IEnumerable<Sponsorship>>> GetSponsorships([FromQ
             return Ok(sponsorship);
         }
 
-      
+
 
         [HttpPost]
         public async Task<ActionResult<Sponsorship>> PostSponsorship(Sponsorship sponsorship)
