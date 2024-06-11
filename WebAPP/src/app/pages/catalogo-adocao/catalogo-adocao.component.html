@@ -33,8 +33,11 @@
           <div
             class="flex flex-row md:flex-column justify-content-center w-full md:w-auto align-items-center md:align-items-center mt-5 md:mt-0">
             <span class="text-2xl font-semibold mb-2 align-self-center md:align-self-center">{{ calcularIdade(animal["birthDate"]) }}</span>
-            <p-button icon="pi pi-arrow-right" label="Adotar" styleClass="mb-2 p-button-sm" ngxTippy="Ir para adoção"></p-button>
-            <p-button icon="pi pi-arrow-right" label="Apadrinhar" ngxTippy="Ir para apadrinhamento" (click)="navigateToApadrinhamento(animal)"></p-button>
+
+            <div class="flex align-items-center justify-content-between gap-3 my-2">
+              <p-button icon="pi pi-arrow-right" label="Adotar" [disabled]="!animals" ngxTippy="Ir para adoção"></p-button>
+              <p-button icon="pi pi-arrow-right" label="Apadrinhar" ngxTippy="Ir para apadrinhamento" (click)="navigateToApadrinhamento(animal)"></p-button>
+            </div>
             <div>
               <i class="mr-1" [class]="animal.sex === 'Fêmea' ? 'pi pi-venus' : 'pi pi-mars'"></i>
               <span>{{animal["sex"]}}</span>
@@ -66,7 +69,7 @@
             </div>
             <div class="flex align-items-start flex-column gap-3 mx-2 justify-content-between">
               <span class="text-2xl font-semibold">{{ calcularIdade(animal["birthDate"]) }}</span>
-              <div class="flex align-items-center gap-3">
+              <div class="flex align-items-center justify-content-between gap-3">
                 <p-button icon="pi pi-arrow-right" label="Adotar" [disabled]="!animals" ngxTippy="Ir para adoção"></p-button>
                 <p-button icon="pi pi-arrow-right" label="Apadrinhar" ngxTippy="Ir para apadrinhamento" (click)="navigateToApadrinhamento(animal)"></p-button>
               </div>

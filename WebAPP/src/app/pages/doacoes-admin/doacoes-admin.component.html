@@ -1,1 +1,21 @@
-<p>doacoes-admin works!</p>
+<div class="card">
+  <h5>Suas Doações</h5>
+  <p-table [value]="doacoes" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Código</th>
+        <th pSortableColumn="description">Descrição</th>
+        <th pSortableColumn="donationDate">Data Realização <p-sortIcon field="dataRealizacao"></p-sortIcon></th>
+        <th pSortableColumn="donationValue">Valor <p-sortIcon field="valor"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-doacao>
+      <tr>
+        <td>{{ doacao.id }}</td>
+        <td>{{ doacao.description }}</td>
+        <td>{{ formatDate(doacao.donationDate) }}</td>
+        <td>{{ formatCurrency(doacao.donationValue) }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -41,12 +41,12 @@ export class LadingPageComponent implements OnInit{
           {
             label: 'Perfil',
             icon: 'pi pi-user',
-            command: event => this.router.navigate(['/dashboard/testes'])
+            command: event => this.router.navigate(['/dashboard/perfil'])
           },
           {
             label: 'Configurações',
             icon: 'pi pi-cog',
-            command: event => this.router.navigate(['/dashboard/teste'])
+            command: event => this.router.navigate(['/dashboard/configuracao'])
           },
           {
             label: 'Sair',
@@ -63,6 +63,7 @@ export class LadingPageComponent implements OnInit{
 
   deslogar(){
     localStorage.setItem("logado", "false");
+    localStorage.setItem("admin", "false");
     localStorage.setItem("user", "");
   }
 

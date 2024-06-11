@@ -49,6 +49,7 @@ export class ConfiguracaoComponent {
 
   deslogar(){
     localStorage.setItem("logado", "false");
+    localStorage.setItem("admin", "false");
     localStorage.setItem("user", "");
 
     this.router.navigate(['/inicio'])

@@ -20,14 +20,23 @@ namespace webApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Sponsorship>>> GetSponsorships()
+        public async Task<ActionResult<IEnumerable<Sponsorship>>> GetSponsorships([FromQuery] int? userId)
         {
-            var sponsorships = await _context.Sponsorships.Include(s => s.Animal).ToListAsync();
-            if (sponsorships == null || !sponsorships.Any())
-            {
-                return NotFound("Nenhum patrocínio encontrado.");
-            }
-            return Ok(sponsorships);
+          var query = _context.Sponsorships.Include(s => s.Animal).AsQueryable();
+
+          if (userId.HasValue)
+          {
+            query = query.Where(s => s.UserId == userId.Value);
+          }
+
+          var sponsorships = await query.ToListAsync();
+
+          if (sponsorships == null || !sponsorships.Any())
+          {
+            return NotFound("Nenhum patrocínio encontrado.");
+          }
+
+          return Ok(sponsorships);
         }
 
         [HttpGet("{id}")]

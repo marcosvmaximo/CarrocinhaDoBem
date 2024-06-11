@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { IDoacao } from './model/IDoacao';
@@ -12,8 +12,14 @@ export class DoacoesService {
 
   constructor(private http: HttpClient) { }
 
-  getDoacoes(): Observable<IDoacao[]> {
-    return this.http.get<IDoacao[]>(this.apiUrl).pipe(
+  getDoacoes(params?: any): Observable<IDoacao[]> {
+    let queryParams = new HttpParams();
+    if (params) {
+      Object.keys(params).forEach(key => {
+        queryParams = queryParams.append(key, params[key]);
+      });
+    }
+    return this.http.get<IDoacao[]>(this.apiUrl, { params: queryParams }).pipe(
       catchError(this.handleError)
     );
   }

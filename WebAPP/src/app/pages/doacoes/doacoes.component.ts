@@ -47,10 +47,12 @@ export class DoacoesComponent implements OnInit {
   }
 
   loadDonations(): void {
-    this.doacoesService.getDoacoes().subscribe(
+    const user = JSON.parse(localStorage.getItem("user")!);
+
+    const params = { userId: user.id };
+    this.doacoesService.getDoacoes(params).subscribe(
       (data: IDoacao[]) => {
         this.doacoes = data;
-        console.log('Doações carregadas:', this.doacoes);
       },
       (error: any) => {
         console.error('Erro ao carregar doações:', error);

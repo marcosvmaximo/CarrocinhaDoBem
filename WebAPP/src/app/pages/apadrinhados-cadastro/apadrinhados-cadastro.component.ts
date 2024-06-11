@@ -125,7 +125,6 @@ export class ApadrinhadosCadastroComponent {
   }
 
   showErrors(){
-    console.log('showErrors', this.cadastroForm.controls);
     Object.keys(this.cadastroForm.controls).forEach(key => {
       // @ts-ignore
       const controlErrors = this.cadastroForm.get(key).errors;
@@ -159,7 +158,6 @@ export class ApadrinhadosCadastroComponent {
   }
 
   showErrorViaToast(message: string = "") {
-    console.log('showErrorViaToast', message);
     this.msgService.add({ key: 'tst', severity: 'error', summary: 'Mensagem de Erro', detail: message ? message : 'Validação falhou' });
   }
 }

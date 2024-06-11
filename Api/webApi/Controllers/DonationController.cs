@@ -21,9 +21,23 @@ namespace webApi.Controllers
 
         // GET: api/Donation
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Donation>>> GetDonations()
+        public async Task<ActionResult<IEnumerable<Donation>>> GetDonations([FromQuery] int? userId)
         {
-            return await _context.Donations.ToListAsync();
+          var query = _context.Donations.AsQueryable();
+
+          if (userId.HasValue)
+          {
+            query = query.Where(d => d.UserId == userId.Value);
+          }
+
+          var donations = await query.ToListAsync();
+
+          if (donations == null || !donations.Any())
+          {
+            return NotFound("Nenhuma doação encontrada.");
+          }
+
+          return Ok(donations);
         }
 
         // GET: api/Donation/5

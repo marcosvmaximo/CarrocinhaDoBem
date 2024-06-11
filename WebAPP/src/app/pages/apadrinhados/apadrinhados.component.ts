@@ -49,10 +49,13 @@ export class ApadrinhadosComponent implements OnInit {
   }
 
   loadSponsorships(): void {
-    this.apadrinhamentoService.getActiveIApadrinhamentos().subscribe(
+    const user = JSON.parse(localStorage.getItem("user")!);
+
+    const params = { userId: user.id };
+
+    this.apadrinhamentoService.getActiveIApadrinhamentos(params).subscribe(
       (data: IApadrinhamento[]) => {
         this.padrinhamentos = data;
-        console.log('loadSponsorships', data);
       },
       (error: any) => {
         console.error('Erro ao carregar patrocínios:', error);
