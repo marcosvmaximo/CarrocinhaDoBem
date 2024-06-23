@@ -15,6 +15,11 @@ import {
   Ripple,
   RippleModule
 } from "./chunk-36FH3M5F.js";
+import {
+  RouterLink,
+  RouterLinkActive,
+  RouterModule
+} from "./chunk-K7CYL3EE.js";
 import "./chunk-7W2KIGYU.js";
 import {
   DomHandler
@@ -29,11 +34,6 @@ import {
   UniqueComponentId,
   zindexutils
 } from "./chunk-6WP4GSXB.js";
-import {
-  RouterLink,
-  RouterLinkActive,
-  RouterModule
-} from "./chunk-K7CYL3EE.js";
 import "./chunk-U5ZZS4CA.js";
 import "./chunk-ELV4WA5W.js";
 import {
@@ -108,8 +108,8 @@ import {
   ɵɵtextInterpolate1,
   ɵɵviewQuery
 } from "./chunk-KIKK4YUN.js";
-import "./chunk-MOY5LPCH.js";
 import "./chunk-MJQNUHK2.js";
+import "./chunk-MOY5LPCH.js";
 import {
   Subject,
   debounce,
