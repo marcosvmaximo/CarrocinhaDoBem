@@ -65,4 +65,27 @@ public class AuthController : ControllerBase
     user.PasswordHash = null;
     return isPasswordValid ? Ok(new {sucess = true, message = "Login realizado com sucesso.", data = user}) : BadRequest("Email ou senha inválidos.");
   }
+  
+  [HttpPost("logout")]
+  public IActionResult Logout()
+  {
+    HttpContext.Session.Clear(); // Limpar a sessão ao fazer logout
+    return Ok(new { success = true, message = "Logout realizado com sucesso." });
+  }
+
+  [HttpGet("validate-session")]
+  public IActionResult ValidateSession()
+  {
+    var userId = HttpContext.Session.GetString("UserId");
+
+    if (string.IsNullOrEmpty(userId))
+    {
+      return Unauthorized("Sessão expirada ou inválida.");
+    }
+      else
+      {
+       // A sessão está ativa
+       return Ok(new { success = true, message = "Sessão ativa." });
+      }
+  }
 }
